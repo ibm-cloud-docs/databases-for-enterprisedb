@@ -10,10 +10,10 @@ This repo contains the documentation for the IBM Cloud Databases for EnterpriseD
 
 The output from the `draft` branch is available on the staging server: 
 
-- [Staging Docs](https://test.cloud.ibm.com/docs/services/databases-for-enterprisedb)
+- [Staging Docs](https://test.cloud.ibm.com/docs/databases-for-enterprisedb)
 
 The output from the `publish` branch is mirrored on [github.com](https://github.com/ibm-cloud-docs/databases-for-enterprisedb) and available in production:
-- [Production Docs](https://cloud.ibm.com/docs/services/databases-for-enterprisedb)
+- [Production Docs](https://cloud.ibm.com/docs/databases-for-enterprisedb)
 **Not Live until you push to publish branch**
 
 ## Resources
