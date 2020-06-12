@@ -7,7 +7,6 @@ Databases For EnterpriseDB
 	{: .navgroup id="learn"}
 	getting-started.md
 	learn-dashboard-overview.md
-
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
