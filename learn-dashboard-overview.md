@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-22"
 
 keywords: deployment, crn, task, gui, api endpoint
 

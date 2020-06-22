@@ -19,7 +19,7 @@ subcollection: databases-for-enterprisedb
 # Setting the Admin Password
 {: #admin-password}
 
-The {{}} service is provisioned with an admin user.
+The [{{site.data.keyword.databases-for-enterprisedb}}] service is provisioned with an admin user.
 
 You have to set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Password_ panel to set a new admin password.
 
@@ -27,7 +27,7 @@ You have to set the admin password before you can use it to connect. To set the 
 
 ## Setting the admin password via the command line
 
-Use the `cdb user-password` command from the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the admin password with the command line.
+Use the `cdb user-password` command from the [{{site.data.keyword.databases-for-enterprisedb}} CLI Plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the admin password with the command line.
 
 For example, to set the admin password for a deployment named "example-deployment", use the following command.
 ```
