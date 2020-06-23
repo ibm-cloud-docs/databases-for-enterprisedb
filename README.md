@@ -1,6 +1,6 @@
 # Databases for EnterpriseDB Documentation
 
-This repo contains the documentation for the IBM Cloud Databases for EnterpriseDB service. Please use issues or pull requests in this repo for any changes or problems in the Databases for EnterpriseDB documentation. 
+This repo contains the documentation for the {{site.data.keyword.databases-for-enterprisedb_full}} IBM Cloud Databases for EnterpriseDB service. Please use issues or pull requests in this repo for any changes or problems in the Databases for EnterpriseDB documentation. 
 
 ## Contacts for this repo
 

@@ -20,11 +20,11 @@ subcollection: databases-for-enterprisedb
 # The UI - Dashboard Overview
 {: #dashboard-overview}
 
-The _Overview_ page shows you information about your {{}} database. The overview includes essential identifying information.
+The _Overview_ page shows you information about your {{site.data.keyword.databases-for-enterprisedb_full}} database. The overview includes essential identifying information.
 
 ## Deployment Details
 
-The _Deployment Details_ panel shows a quick description of your deployment.
+The _Deployment Details_ panel shows a quick description of your {{site.data.keyword.databases-for-enterprisedb}} deployment.
 
 ### Type
 
@@ -40,7 +40,7 @@ Every time that you make administrative changes to your service (such as scaling
 
 ## Connections
 
-The _Connections_ panel contains connection strings for your deployment. Each tab contains connection information tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, as well as the TLS self-signed certificate and arguments that can be passed to the driver or binary that you are using to connect. 
+The _Connections_ panel contains connection strings for your {{site.data.keyword.databases-for-enterprisedb}} deployment. Each tab contains connection information tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, as well as the TLS self-signed certificate and arguments that can be passed to the driver or binary that you are using to connect. 
 
 Reference tables for the different connection types are available on the [Getting Connection Strings]() page.
 
@@ -48,11 +48,11 @@ Connection strings reflect whether your deployment uses public endpoints, privat
 
 ## Security
 
-Encryption at rest is enabled for all {{}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
+Encryption at rest is enabled for all {{site.data.keyword.databases-for-enterprisedb}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
 
 ## Instance Administration API
 
-You can manage your {{}} service through the {{site.data.keyword.databases-for}} API. This panel provides the essential information for using the API.
+You can manage your {{site.data.keyword.databases-for-enterprisedb}} service through the {{site.data.keyword.databases-for}} API. This panel provides the essential information for using the API.
 
 ### Foundation Endpoint
 
@@ -95,4 +95,4 @@ The _Observability_ tab provides access to the IBM Cloud monitoring, logging, an
 
 ## Docs
 
-The _Docs_ link opens the main documentation page for {{}} in a new tab.
+The _Docs_ link opens the main documentation page for {{site.data.keyword.databases-for-enterprisedb}} in a new tab.

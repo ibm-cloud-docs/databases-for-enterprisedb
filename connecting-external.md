@@ -213,7 +213,7 @@ You can display the decoded certificate for your deployment with the CLI plug-in
 PostgreSQL has a vast array of language drivers. The table covers a few of the most common.
 
 Language|Driver|Examples
-----------|-----------
+----------|----------|-----------
 PHP|`pgsql`|[Link](http://php.net/manual/en/pgsql.examples-basic.php)
 Ruby|`ruby-pg`|[Link](https://github.com/ged/ruby-pg)
 Ruby on Rails|Rails|[Rails Guide](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-postgresql-database)

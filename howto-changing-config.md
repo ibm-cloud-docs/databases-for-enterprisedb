@@ -19,7 +19,7 @@ subcollection: databases-for-enterprisedb
 # Changing the PostgreSQL Configuration
 {: #changing-configuration}
 
-{{site.data.keyword.databases-for-enterprisedb_full}} allows you to change some of the PosgreSQL configuration settings so you can tune your PostgreSQL databases to your use-case. To make permanent changes to the database configuration, use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment.
+{{site.data.keyword.databases-for-enterprisedb_full}} allows you to change some of the PosgreSQL configuration settings so you can tune your {{site.data.keyword.databases-for-enterprisedb}} databases to your use-case. To make permanent changes to the database configuration, use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment.
 
 The configuration is defined in a schema. To make a change, you send a JSON object with the settings and their new values to the API or the CLI.  For example, to set the `max_connections` setting to 150, you would supply 
 ```

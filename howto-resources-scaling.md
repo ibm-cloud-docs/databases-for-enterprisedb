@@ -24,7 +24,7 @@ You can manually adjust the amount of resources available to your {{site.data.ke
 
 ## Resource Breakdown
 
-{{site.data.keyword.databases-for-enterprisedb}} deployments have two data members in a cluster, and resources are allocated to both members equally. For example, the minimum storage of a PostgreSQL deployment is 10240 MB, which equates to an initial size of 5120 MB per member. The minimum RAM for a PostgreSQL deployment is 2048 MB, which equates to an initial allocation of 1028 MB per member.
+{{site.data.keyword.databases-for-enterprisedb}} deployments have two data members in a cluster, and resources are allocated to both members equally. For example, the minimum storage of a {{site.data.keyword.databases-for-enterprisedb}} deployment is 10240 MB, which equates to an initial size of 5120 MB per member. The minimum RAM for a {{site.data.keyword.databases-for-enterprisedb}} deployment is 2048 MB, which equates to an initial allocation of 1028 MB per member.
 
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}

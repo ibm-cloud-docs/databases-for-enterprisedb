@@ -21,7 +21,7 @@ subcollection: databases-for-enterprisedb
 # Managing Users, Roles, and Privileges 
 {: #user-management}
 
-PostgreSQL uses a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. You can determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
+{{site.data.keyword.databases-for-enterprisedb_full}} and PostgreSQL use a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. You can determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
 
 ![Table Results from \du command](images/user_management_du.png)
 
@@ -29,7 +29,7 @@ When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are
 
 ## The `admin` user
 
-When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage PostgreSQL. Once you [set the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password), you can use it to connect to your deployment.
+When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage PostgreSQL. Once you [set the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password), you can use it to connect to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
 
 When admin creates a resource in a database, like a table, admin owns that object. Resources that are created by admin are not accessible by other users, unless you expressly grant permissions to them.
 
