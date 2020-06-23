@@ -31,11 +31,11 @@ A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as
 Resources | Breakdown | Price
 -------|-------|-------
 20 GB-Month disk | 2 members x 20 GB x $0.58 | $23.20
-1 GB-Month RAM | 2 members x 1 GB  x $5 | $10
+1 GB-Month RAM | 2 members x 1 GB  x $11.50 | $23
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
-Total per month = $33.20/Month
-Total per hour = $.05/Hour
+Total per month = $46.20/Month
+Total per hour = $.06/Hour
 
 All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
@@ -52,7 +52,7 @@ Users also receive their total disk space purchased, per database, in free backu
 
 ## Dedicated Cores Pricing
 
-You have the option of selecting the CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $30 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 6 cores, and billed at $180 per month. 
+You have the option of selecting the CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $100 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 6 cores, and billed at $600 per month. 
 
 Dedicated cores are an optional feature. The default `Shared CPU` setting provisions your deployment on hosts with shared compute resources and incurs no additional charge.
 
