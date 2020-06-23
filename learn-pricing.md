@@ -20,7 +20,7 @@ subcollection: databases-for-enterprisedb
 # Pricing
 {: #pricing}
 
-A {{site.data.keyword.databases-for-enterprisedb}} Standard plan deploys as one highly available PostgreSQL cluster with two data members. Your data is replicated on both members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 5 GB of disk and 1 GB of RAM per data member.
+A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as one highly available PostgreSQL cluster with two data members. Your data is replicated on both members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 5 GB of disk and 1 GB of RAM per data member.
 
 ## Cost Breakdown
 

@@ -34,7 +34,7 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 
 pgAdmin runs as a server and you connect to it through a browser. When the server is started, it runs on localhost, at default `http://127.0.0.1:53113/browser/`.
 
-When you first open pgAdmin, you get a prompt for setting a Master Password. This password is different from your deployment's password; it'll be used specifically for pgAdmin to store passwords to your PostgreSQL servers or PostgreSQL deployments.
+When you first open pgAdmin, you get a prompt for setting a Master Password. This password is different from your deployment's password; it'll be used specifically for pgAdmin to store passwords to your {{site.data.keyword.databases-for-enterprisedb}} servers or deployments.
 
 The _Dashboard_ panel has a _Welcome_ screen. From the _Quick Links_, click _Add New Server_.
 

@@ -43,13 +43,6 @@ Databases For EnterprisDB
 		howto-logical-replication.md
 
 	{: .topicgroup}
-	Migrating EnterprisDB
-		howto-migration.md
-		howto-migration-compose.md
-	
-	howto-upgrading.md
-
-	{: .topicgroup}
 	Configuring EnterprisDB
 		howto-changing-config.md
 		howto-extensions.md
