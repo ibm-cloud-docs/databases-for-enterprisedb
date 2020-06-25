@@ -72,8 +72,8 @@ For more information about the {{site.data.keyword.databases-for}} API, see the 
 ## Resources
 
 The resources tab contains information and configuration options on the size and resource usage of your deployment. You can 
-- [Scale disk, memory, and CPU]()
-- [Configure Autoscaling]()
+- [Scale disk, memory, and CPU](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling)
+- [Configure Autoscaling](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling)
 
 ## Backups
 
@@ -91,7 +91,7 @@ The _Settings_ tab contains the UI for many of the tunable settings for your dep
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
 - [Activity Tracker](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker)
 - [Logging](/docs/databases-for-enterprisedb?topic=cloud-databases-logging)
-- [Monitoring]()
+- [Monitoring](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring)
 
 ## Docs
 

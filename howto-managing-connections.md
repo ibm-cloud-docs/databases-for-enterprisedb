@@ -17,10 +17,10 @@ subcollection: databases-for-enterprisedb
 {:pre: .pre}
 
 
-# Managing PostgreSQL Connections
+# Managing {{site.data.keyword.databases-for-enterprisedb}} Connections
 {: #managing-connections}
 
-Connections to your {{site.data.keyword.databases-for-enterprisedb_full}} deployment use resources, so it is important to consider how many connections you need when tuning your deployment's performance. PostgreSQL uses a `max_connections` setting to limit the number of connections (and resources that are consumed by connections) to prevent run-away connection behavior from overwhelming your deployment's resources.
+Connections to your {{site.data.keyword.databases-for-enterprisedb_full}} deployment use resources, so it is important to consider how many connections you need when tuning your deployment's performance. {{site.data.keyword.databases-for-enterprisedb}} uses a `max_connections` setting to limit the number of connections (and resources that are consumed by connections) to prevent run-away connection behavior from overwhelming your deployment's resources.
 
 You can check the value of `max_connections` with your [admin user](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management#the-admin-user) and [`psql`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql).
 ```
@@ -31,12 +31,9 @@ ibmclouddb=> SHOW max_connections;
 (1 row)
 ```
 
-Many of the queries rely on the admin user's role as `pg_monitor`, which is only available in PostgreSQL 10 and above. Users on PostgreSQL 9.x, might not have permissions to run all of the queries in these docs.
-{: .tip}
+## {{site.data.keyword.databases-for-enterprisedb}} Connection Limits 
 
-## PostgreSQL Connection Limits 
-
-At provision, {{site.data.keyword.databases-for-enterprisedb}} sets the maximum number of connections to your PostgreSQL database to **115**. 15 connections are reserved for the superuser to maintain the state and integrity of your database, and 100 connections are available for you and your applications. If the number of connections to the database exceeds the 100 connection limit, new connections fail and return an error.
+At provision, {{site.data.keyword.databases-for-enterprisedb}} sets the maximum number of connections to your {{site.data.keyword.databases-for-enterprisedb}} database to **115**. 15 connections are reserved for the superuser to maintain the state and integrity of your database, and 100 connections are available for you and your applications. If the number of connections to the database exceeds the 100 connection limit, new connections fail and return an error.
 ```
 FATAL: remaining connection slots are reserved for
 non-replication superuser connections
@@ -60,7 +57,7 @@ SELECT * FROM pg_stat_activity WHERE datname='ibmclouddb';
 
 ## Terminating Connections
 
-If you are on PostgreSQL 9.6 and above, your admin user has the `pg_signal_backend` role. If you find connections that need to be reset or closed, the admin user can use both [`pg_cancel_backend` and `pg_terminate_backend`](https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-SIGNAL-TABLE). The `pid` of a process is found from the `pg_stat_activity` table.
+Your admin user has the `pg_signal_backend` role. If you find connections that need to be reset or closed, the admin user can use both [`pg_cancel_backend` and `pg_terminate_backend`](https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-SIGNAL-TABLE). The `pid` of a process is found from the `pg_stat_activity` table.
 
 - `pg_cancel_backend` cancels a connection's current query without terminating the connection, and without stopping any other queries that it might be running.
   ```sql

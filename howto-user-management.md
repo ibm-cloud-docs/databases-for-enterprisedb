@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-06-22"
 
-keywords: admin, superuser, roles, service credentials
+keywords: admin, superuser, roles, service credentials, postgresql
 
 subcollection: databases-for-enterprisedb
 
@@ -21,15 +21,15 @@ subcollection: databases-for-enterprisedb
 # Managing Users, Roles, and Privileges 
 {: #user-management}
 
-{{site.data.keyword.databases-for-enterprisedb_full}} and PostgreSQL use a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. You can determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
+{{site.data.keyword.databases-for-enterprisedb_full}} uses a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. You can determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
 
 ![Table Results from \du command](images/user_management_du.png)
 
-When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage PostgreSQL.
+When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage {{site.data.keyword.databases-for-enterprisedb}}.
 
 ## The `admin` user
 
-When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage PostgreSQL. Once you [set the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password), you can use it to connect to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
+When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage {{site.data.keyword.databases-for-enterprisedb}}. Once you [set the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password), you can use it to connect to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
 
 When admin creates a resource in a database, like a table, admin owns that object. Resources that are created by admin are not accessible by other users, unless you expressly grant permissions to them.
 
@@ -91,9 +91,9 @@ The `ibm` and the `ibm-replication` accounts are the only superusers on your dep
 
 ## Users created with `psql`
 
-You can bypass creating users through IBM Cloud entirely, and create users directly in PostgreSQL with `psql`. This allows you to make use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html). Users/roles created in `psql` have to have all of their privileges set manually, as well as privileges to the objects that they create.
+You can bypass creating users through IBM Cloud entirely, and create users directly in {{site.data.keyword.databases-for-enterprisedb}} with `psql`. This allows you to make use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html). Users/roles created in `psql` have to have all of their privileges set manually, as well as privileges to the objects that they create.
 
-Users that are created directly in PostgreSQL do not appear in _Service Credentials_, but you can [add them](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#adding-users-to-_service-credentials_) if you choose. 
+Users that are created directly in {{site.data.keyword.databases-for-enterprisedb}} do not appear in _Service Credentials_, but you can [add them](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#adding-users-to-_service-credentials_) if you choose. 
 
 Note that these users are not integrated with IAM controls, even if added to _Service Credentials_.
 {: .tip}

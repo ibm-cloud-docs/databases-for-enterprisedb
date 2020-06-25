@@ -20,7 +20,7 @@ subcollection: databases-for-enterprisedb
 # Pricing
 {: #pricing}
 
-A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as one highly available PostgreSQL cluster with three data members. Your data is replicated on all three members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 20 GB of disk and 1 GB of RAM per data member.
+A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as one highly available cluster with three data members. Your data is replicated on all three members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 20 GB of disk and 1 GB of RAM per data member.
 
 ## Cost Breakdown
 
@@ -35,13 +35,13 @@ Resources | Breakdown | Price
 -------|-------|-------
 20 GB-Month disk | 3 members x 20 GB x $0.58 | $34.80
 20 GB-Month backup| 3 members x 20 GB x $0.03| $1.80
-1 GB-Month RAM | 3 members x 1 GB  x $11.50 | $33.50
+1 GB-Month RAM | 3 members x 1 GB  x $11.50 | $34.50
 3 Virtual Processor Cores | 3 members x 3 cores x $100 | $900
  
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
-Total per month = $936.60/Month  
-Total per hour = $1.26/Hour
+Total per month = $971.10/Month  
+Total per hour = $1.35/Hour
 
 All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
@@ -50,7 +50,7 @@ All prices here are in US dollars. To see pricing in your local currency, you ca
 
 For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-enterprisedb}} catalog page](https://cloud.ibm.com/catalog/databases-for-enterprisedb). Input your total consumption across three data members into the calculator. This is roughly triple the size of your data because your data is replicated to all three members. For example, 20 GB of disk and 1 GB of RAM across two data members would be priced at 60 GB of disk and 3 GB of RAM respectively. 
 
-![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png)
+![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-estimate.png)
 
 ## Backups Pricing
 

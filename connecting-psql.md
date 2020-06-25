@@ -22,14 +22,14 @@ subcollection: databases-for-enterprisedb
 
 You can access your {{site.data.keyword.databases-for-enterprisedb_full}} database directly from its command line client, `psql`. You can use `psql` for direct interaction and monitoring of the data structures that are created within the database. It is also useful for testing and monitoring the queries and performance, installing and modifying scripts, and other management activities.
 
-The admin user comes with the PostgreSQL default role [`pg_monitor`](https://www.postgresql.org/docs/10/static/default-roles.html), allowing access to PostgreSQL monitoring views and functions. By default, the admin user does not have permissions on objects that are created by other users.
+The admin user comes with the {{site.data.keyword.databases-for-enterprisedb}} default role [`pg_monitor`](https://www.postgresql.org/docs/10/static/default-roles.html), allowing access to {{site.data.keyword.databases-for-enterprisedb}} monitoring views and functions. By default, the admin user does not have permissions on objects that are created by other users.
 
 You have to set the admin password before you use it to connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password) page.
 {: .tip}
 
 ## Installing `psql`
 
-Install the command line client for PostgreSQL, `psql`. To use `psql`, the PostgreSQL client tools need to be installed on the local system. They can be installed with the full PostgreSQL package that is provided from [postgresql.org](https://www.postgresql.org/download/), or as a [package from your operating system's package manager](https://www.compose.com/articles/postgresql-tips-installing-the-postgresql-client/). 
+Install the command line client for {{site.data.keyword.databases-for-enterprisedb}}, `psql`. To use `psql`, the {{site.data.keyword.databases-for-enterprisedb}} client tools need to be installed on the local system. They can be installed with the full PostgreSQL package that is provided from [postgresql.org](https://www.postgresql.org/download/), or as a [package from your operating system's package manager](https://www.compose.com/articles/postgresql-tips-installing-the-postgresql-client/). 
 
 For more information about `psql`, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/static/app-psql.html).
 

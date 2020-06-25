@@ -2,11 +2,11 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="databases-for-enterprisedb" audience="service" category="databases" href="/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started" console-page="/catalog/services/databases-for-enterprisedb" product-page="https://www.ibm.com/cloud/databases-for-enterprisedb" path="databases-for-enterprisedb"}
-Databases For EnterprisDB
+Databases For EnterpriseDB
 
 	{: .navgroup id="learn"}
 	getting-started.md
-	[What is EnterprisDB](https://www.ibm.com/cloud/learn/enterprisedb)
+	[What is EnterpriseDB](https://www.ibm.com/cloud/learn/enterprisedb)
 	learn-dashboard-overview.md
 	learn-high-availability.md
 	learn-performance.md
@@ -20,7 +20,7 @@ Databases For EnterprisDB
 	howto-getting-connection-strings.md
 	
 	{: .topicgroup}
-	Connecting to Databases for EnterprisDB
+	Connecting to Databases for EnterpriseDB
 		connecting-external.md
 		connecting-ibmcloud-app.md
 		connecting-psql.md
@@ -47,10 +47,8 @@ Databases For EnterprisDB
 		howto-migration.md
 
 	{: .topicgroup}
-	Configuring EnterprisDB
+	Configuring EnterpriseDB
 		howto-changing-config.md
-		howto-extensions.md
-		howto-wal2json.md
 
 	{: .topicgroup}
 	Tutorials

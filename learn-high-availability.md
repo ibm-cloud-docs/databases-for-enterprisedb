@@ -38,7 +38,7 @@ Several minutes of database unavailability or connection interruption are not ex
 ## Connection Limits
 {. #connection-limits-ha}
 
-{{site.data.keyword.databases-for-enterprisedb}} sets the maximum number of connections to your PostgreSQL database to **115**. 15 connections are reserved for the superuser to maintain the state and integrity of your database, and 100 connections are available for you and your applications. After the connection limit has been reached, any attempts at starting a new connection results in an error. To prevent overwhelming your deployment with connections, use connection pooling, or scale your deployment and increase its connection limit. For more information, see the [Managing PostgreSQL Connections](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-managing-connections) page.
+{{site.data.keyword.databases-for-enterprisedb}} sets the maximum number of connections to your PostgreSQL database to **115**. 15 connections are reserved for the superuser to maintain the state and integrity of your database, and 100 connections are available for you and your applications. After the connection limit has been reached, any attempts at starting a new connection results in an error. To prevent overwhelming your deployment with connections, use connection pooling, or scale your deployment and increase its connection limit. For more information, see the [Managing {{site.data.keyword.databases-for-enterprisedb}} Connections](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-managing-connections) page.
 
 ## SLA
 

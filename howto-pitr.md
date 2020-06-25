@@ -25,9 +25,9 @@ The _Backups_ tab of your deployment's UI keeps all your PITR information under 
 
 ![PITR section of the Backups tab](images/pitr-backups-tab.png)
 
-Included information is the earliest time for a PITR. To discover the earliest recovery point through the CLI, use the [`cdb postgresql earliest-pitr-timestamp`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#postgresql-earliest-pitr-timestamp) command.
+Included information is the earliest time for a PITR. To discover the earliest recovery point through the CLI, use the [`cdb enterprisedb earliest-pitr-timestamp`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#postgresql-earliest-pitr-timestamp) command.
 ```
-ibmcloud cdb postgresql earliest-pitr-timestamp <deployment name or CRN>
+ibmcloud cdb enterprisedb earliest-pitr-timestamp <deployment name or CRN>
 ```
 
 To discover the earliest recovery point through the API, use the [`/deployments/{id}/point_in_time_recovery_data`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-earliest-point-in-time-recovery-timestamp) endpoint to find the earliest PITR time. 
