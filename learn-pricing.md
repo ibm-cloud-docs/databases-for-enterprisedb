@@ -20,39 +20,45 @@ subcollection: databases-for-enterprisedb
 # Pricing
 {: #pricing}
 
-A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as one highly available PostgreSQL cluster with two data members. Your data is replicated on both members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 20 GB of disk and 1 GB of RAM per data member.
+A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as one highly available PostgreSQL cluster with three data members. Your data is replicated on all three members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 20 GB of disk and 1 GB of RAM per data member.
 
 ## Cost Breakdown
 
 **Disk storage per data member** - gigabytes of disk that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member, or the size of your data.  
 **RAM per data member** - gigabytes of RAM that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.  
-**Backup storage** - amount of storage used for backups by a {{site.data.keyword.databases-for-enterprisedb}} deployment. 
+**Backup storage** - amount of storage used for backups by a {{site.data.keyword.databases-for-enterprisedb}} deployment.  
+**Virtual processor core** - number of virtual processor cores allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.
+
+![Standard pricing](images/standard-pricing.png)
 
 Resources | Breakdown | Price
 -------|-------|-------
-20 GB-Month disk | 2 members x 20 GB x $0.58 | $23.20
-1 GB-Month RAM | 2 members x 1 GB  x $11.50 | $23
+20 GB-Month disk | 3 members x 20 GB x $0.58 | $34.80
+20 GB-Month backup| 3 members x 20 GB x $0.03| $1.80
+1 GB-Month RAM | 3 members x 1 GB  x $11.50 | $33.50
+3 Virtual Processor Cores | 3 members x 3 cores x $100 | $900
+ 
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
-Total per month = $46.20/Month
-Total per hour = $.06/Hour
+Total per month = $936.60/Month  
+Total per hour = $1.26/Hour
 
 All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
 
 ## Using the Pricing Calculator
 
-For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-enterprisedb}} catalog page](https://cloud.ibm.com/catalog/databases-for-enterprisedb). Input your total consumption across two data members into the calculator. This is roughly double the size of your data because your data is replicated to both members. For example, 20 GB of disk and 1 GB of RAM across two data members would be priced at 40 GB of disk and 2 GB of RAM respectively. 
+For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-enterprisedb}} catalog page](https://cloud.ibm.com/catalog/databases-for-enterprisedb). Input your total consumption across three data members into the calculator. This is roughly triple the size of your data because your data is replicated to all three members. For example, 20 GB of disk and 1 GB of RAM across two data members would be priced at 60 GB of disk and 3 GB of RAM respectively. 
 
 ![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png)
 
 ## Backups Pricing
 
-Users also receive their total disk space purchased, per database, in free backup storage. For example, in a given month, if you have a {{site.data.keyword.databases-for-enterprisedb}} deployment that has 20 GB of disk per member, and has two data members, you receive 40 GB of backup storage free for that month. If your backup storage utilization is greater than 40 GB for the month in this scenario, each gigabyte is charged at an overage $0.03/month. Most deployments will not ever go over the allotted credit.
+Users also receive their total disk space purchased, per database, in free backup storage. For example, in a given month, if you have a {{site.data.keyword.databases-for-enterprisedb}} deployment that has 20 GB of disk per member, and has three data members, you receive 60 GB of backup storage free for that month. If your backup storage utilization is greater than 60 GB for the month in this scenario, each gigabyte is charged at an overage $0.03/month. Most deployments will not ever go over the allotted credit.
 
 ## Dedicated Cores Pricing
 
-You have the option of selecting the CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $100 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 6 cores, and billed at $600 per month. 
+You have the option of selecting the CPU allocation for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The cost of dedicated cores is $100 per core per month, and each member gets the selected number of cores. For example, if you provision a deployment with 3 dedicated cores per member, that is a total of 9 cores, and billed at $900 per month. 
 
 Dedicated cores are an optional feature. The default `Shared CPU` setting provisions your deployment on hosts with shared compute resources and incurs no additional charge.
 
