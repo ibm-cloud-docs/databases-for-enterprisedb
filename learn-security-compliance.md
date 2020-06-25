@@ -1,7 +1,7 @@
 ---
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-25"
 
 keywords: postgresql, databases, soc, hipaa, gdpr, terms
 
