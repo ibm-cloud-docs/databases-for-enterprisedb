@@ -16,22 +16,22 @@ subcollection: databases-for-enterprisedb
 {:pre: .pre}
 {:tip: .tip}
 
-# Oracle to EnterpriseDB Migration
+# Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration
 {: #oracle-migrating}
 
-This document contains details about how to setup and execute and migration from a local Oracle database
-to {{site.data.keyword.databases-for-enterprisedb_full}} formation using EnterpriseDB Migration portal (EMP) and EnterpriseDB Migration toolkit (MTK)
+This document contains details about how to set up and run a migration from a local Oracle Database
+to {{site.data.keyword.databases-for-enterprisedb_full}} formation by using EnterpriseDB Migration portal (EMP) and EnterpriseDB Migration Toolkit (MTK)
 
 
 ## Prerequisites
 
-- Create an Enterprisedb account [here](https://www.enterprisedb.com/) 
-- Request Enterprisedb repo access: [here](https://info.enterprisedb.com/rs/069-ALB-339/images/Repository%20Access%2004-09-2019.pdf?_ga=2.254315016.140796928.1589217151-186337169.1584631506)
-- Ceate an Oracle account: [here](https://www.oracle.com/index.html)
+- Create an EnterpriseDB account [here](https://www.enterprisedb.com/) 
+- Request EnterpriseDB repo access [here](https://info.enterprisedb.com/rs/069-ALB-339/images/Repository%20Access%2004-09-2019.pdf?_ga=2.254315016.140796928.1589217151-186337169.1584631506)
+- Create an Oracle account: [here](https://www.oracle.com/index.html)
 - Docker
 
 
-### {{site.data.keyword.databases-for-enterprisedb}} setup:
+### {{site.data.keyword.databases-for-enterprisedb}} set up
 
 1. Target a dev cluster on ICD
     ```text
@@ -42,8 +42,8 @@ to {{site.data.keyword.databases-for-enterprisedb_full}} formation using Enterpr
        icdctl ns $YOUR_NAMESPACE
        icdctl provision enterprisedb edb-migration    
     ```
-3. Migrating from Oracle to {{site.data.keyword.databases-for-enterprisedb}} using MTK requires using superuser. To create a superuser on edb formation
-    1. Target the created edb formatioon 
+3. Migrating from Oracle to {{site.data.keyword.databases-for-enterprisedb}} by using MTK requires superuser. To create a superuser on edb formation
+    1. Target the created edb formation 
     ```text
        icdctl f edb-migration
     ```
@@ -55,7 +55,7 @@ to {{site.data.keyword.databases-for-enterprisedb_full}} formation using Enterpr
      ```text
         icdctl console -c mgmt $LEADER_POD
      ```
-    2. Login to the database as a superuser
+    2. Log in to the database as a superuser
     ```text
         psql -d ibmclouddb
     ```
@@ -64,7 +64,7 @@ to {{site.data.keyword.databases-for-enterprisedb_full}} formation using Enterpr
         CREATE ROLE enterprisedb LOGIN SUPERUSER PASSWORD 'password';
     ```
 
-### Local Oracle DB Setup:
+### Local Oracle DB set up
 
 1. Get the publicly available `oracle-12c-ee docker` image [here](https://hub.docker.com/r/absolutapps/oracle-12c-ee)
     ```text
@@ -74,7 +74,7 @@ to {{site.data.keyword.databases-for-enterprisedb_full}} formation using Enterpr
     ```text
        mkdir ~/oracle-12c-ee
     ``` 
-3. Start oracle container and wait for it to finish setup
+3. Start Oracle container and wait for it to finish setup
     ```text
        docker run -d --name oracle --privileged -v ~/oracle-12c-ee:/u01/app/oracle -p 8080:8080 -p 1521:1521 absolutapps/oracle-12c-ee
     ```
@@ -82,7 +82,7 @@ to {{site.data.keyword.databases-for-enterprisedb_full}} formation using Enterpr
    ```text
         docker logs -f --tail all oracle
    ```
-5. The oracle database will be created with the following defaults
+5. The Oracle Database is created with the following defaults
     ```text
     Defaults:
 		username: system
@@ -90,15 +90,15 @@ to {{site.data.keyword.databases-for-enterprisedb_full}} formation using Enterpr
 		SID: ORCL
     ```
 
-#### Install SQL developer for easier interaction with the database:
+#### Install SQL developer for interaction with the database
 1. Download SQL Developer [here](https://www.oracle.com/tools/downloads/sqldev-v192-downloads.html)
-2. Setup a new connection `oracle`
+2. Set up a new connection `oracle`
 ![oracle-conn](images/sql-developer-oracle-conn.png)
 
-#### Create OT schema and load data:
-1. Download the OT oracle schema from [here](https://www.oracletutorial.com/getting-started/oracle-sample-database/)
-2. Using `oracle` connection we created above open a work sheet and copy paste the content of `ot_create_user.sql`and add to it
-the following then click on `run script`. 
+#### Create OT schema and load data
+1. Download the OT Oracle schema from [here](https://www.oracletutorial.com/getting-started/oracle-sample-database/)
+2. Using the `oracle` connection that we created earlier, open a worksheet and copy paste the content of `ot_create_user.sql`and add to it
+the following then click `run script`. 
 ```text
 	-- grant more priviledges
 	GRANT SELECT_CATALOG_ROLE TO OT;
@@ -109,22 +109,22 @@ the following then click on `run script`.
 	GRANT create sequence TO OT1;
 	ALTER USER OT quota unlimited on USERS;
 ``` 
-Note: `ot_create_user.sql` has OT password set to `yourpassword`, this guide will assume that is changed to `password`
+Note: `ot_create_user.sql` has the OT password set to `yourpassword`; the following steps assume that `yourpassword` is changed to `password`
 1. Create a new connection in SQL Developer for OT schema as the following and connect to it 
 ![oracle-conn](images/OT-conn.png)
-2. Create the OT oracle schema by coying and pasting the content of `ot_schema.sql` to  SQL Developer worksheet and click on `run script`
-3. Load data to the created schema by copying and pasting the content of `ot_data.sql` to  SQL Developer worksheet and click on `run script`
+2. Create the OT Oracle schema by copying and pasting the content of `ot_schema.sql` to SQL Developer worksheet and click `run script`
+3. Load data to the created schema by copying and pasting the content of `ot_data.sql` to SQL Developer worksheet and click `run script`
 
 
-### Extract the oracle schema using Enterisedb DDL Extractor:
-1. Login to edb migration portal [here](https://migration.enterprisedb.com/)
-2. Click on `Portal Wiki`
+### Extract the Oracle schema by using the Enterisedb DDL Extractor
+1. Log in to the EnterpriseDB migration portal [here](https://migration.enterprisedb.com/)
+2. Click `Portal Wiki`
 3. Follow the steps in `DDL Extractor guide` section
-4. On successful attempt a file like `_gen_ot_ddls_200511173723.sql` will be created in the specified path
+4. After a successful attempt, a file like `_gen_ot_ddls_200511173723.sql` is created in the specified path
 
-### Validate the extracted schema with migration portal:
-1. Login to edb migration portal [here](https://migration.enterprisedb.com/)
-2. Create a new project and load DDL Extractor generated file for assessment 
+### Validate the extracted schema with migration portal
+1. Log in to the EnterpriseDB migration portal [here](https://migration.enterprisedb.com/)
+2. Create a new project and load the DDL Extractor-generated file for assessment 
 ![migration-portal-setup](images/migration-portal-setup.png)
 3. You will face Errors with Constraints assessment, like the following, and to fix that you need to change foreign key converted type from `Number` to `BIGINT or SMALLINT`
 	```text
@@ -132,12 +132,12 @@ Note: `ot_create_user.sql` has OT password set to `yourpassword`, this guide wil
     ```
 4. Fix all the constraints and make sure your are getting 100% coverage successfully
 
-### Export converted schema from migration portal to EnterpriseDB formation:
-1. Target the created {{site.data.keyword.databases-for-enterprisedb}} formation and get the connection info 
+### Export converted schema from migration portal to EnterpriseDB formation
+1. Target the created edb-migration formation and get the connection information 
     ```text
        icdctl f edb-migration
     ``` 
-    for example:
+    For example:
     ```text
        Connections:
            postgres://edb-migration.9e905d830c72461aba945f7788bbee87.databases.appdomain.cloud:32338
@@ -146,12 +146,12 @@ Note: `ot_create_user.sql` has OT password set to `yourpassword`, this guide wil
 ![exporting-schema](images/exporting-schema.png)
 
 
-### Verify schema migration to EnterpriseDB formation:
+### Verify schema migration to EnterpriseDB formation
 1. Get to the `mgmt` container 
     ```text
        icdctl console -c mgmt m-0
     ```
-2. list the available databases
+2. List the available databases
     ```text
     bash-4.2# psql -d ibmclouddb -c "\l"
                                              List of databases
@@ -169,8 +169,8 @@ Note: `ot_create_user.sql` has OT password set to `yourpassword`, this guide wil
     ``` 
 
 
-### Install EnterpriseDB Migration toolkit into the oracle container:
-1. Get a shell to the running oracle container 
+### Install EnterpriseDB Migration Toolkit into the Oracle container
+1. Get a shell to the running Oracle container 
 	```text
 	docker exec -it oracle /bin/bash
 	```
@@ -182,20 +182,20 @@ Note: `ot_create_user.sql` has OT password set to `yourpassword`, this guide wil
 	```text
 	yum install java-1.8.0-openjdk-devel
 	```
-4. Follow the steps below on how to install Enterprisedb migration toolkit (skip IDENT Authentication section)
+4. Follow the steps on how to install EnterpriseDB Migration Toolkit (skip IDENT Authentication section)
     [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit)
-5. Migration toolkit script will be located in oracle container at: `/usr/edb/migrationtoolkit/bin/runMTK.sh`
+5. Migration Toolkit script is located in the Oracle container at: `/usr/edb/migrationtoolkit/bin/runMTK.sh`
 
 
-### Migration toolkit setup:
-MTK comes by default with edb jdbc driver, but to connect to oracle instance it needs you to install oracle jdbc
+### Migration Toolkit setup
+MTK comes by default with edb jdbc driver, but to connect to Oracle instance it needs you to install Oracle jdbc
 1. Download `ojdbc-full.tar.gz` from [here](https://www.oracle.com/database/technologies/jdbc-upc-downloads.html)
-2. Move `ojdbc-full.tar.gz` to the mounted folder on your machine and unzip it
+2. Move `ojdbc-full.tar.gz` to the mounted folder on your comoputer and extract it
     ```text
         cp ~/Downloads/ojdbc-full.tar.gz ~/oracle-12c-ee/
         tar -xzf ojdbc-full.tar.gz
     ``` 
-3. From the oracle container cd to the output folder of the tar command
+3. From the Oracle container cd to the output folder of the `tar` command
     ```text
         cd /u01/app/oracle/OJDBC-Full
     ```
@@ -205,16 +205,16 @@ MTK comes by default with edb jdbc driver, but to connect to oracle instance it 
 		cp ucp.jar /usr/edb/migrationtoolkit/lib 
     ```
 
-### Execute MTK to migrate data from oracle to edb-migration formation:
-1. Edit `toolkit.properties` file to setup source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [more about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/building_toolkit.properties_file.html)
+### Run MTK to migrate data from Oracle to edb-migration formation
+1. Edit `toolkit.properties` file to set up source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [More about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/building_toolkit.properties_file.html)
 Note: TARGET_HOST and TARGET_PORT can be retrieved from running `icdctl formation edb-migration`
     ```text
         Connections:
         	postgres://edb-migration.9e905d830c72461aba945f7788bbee87.databases.appdomain.cloud:32338
     ```
-    In the above case, TARGET_HOST:TARGET_PORT = edb-migration.9e905d830c72461aba945f7788bbee87.databases.appdomain.cloud:32338
+    In the prior case, TARGET_HOST:TARGET_PORT = edb-migration.9e905d830c72461aba945f7788bbee87.databases.appdomain.cloud:32338
 
-2. Following our setup in this guide, this is how the file should look like:
+1. Following these set up steps, this is how the file should look:
     ```text
         SRC_DB_URL=jdbc:oracle:thin:@localhost:1521:ORCL
         SRC_DB_USER=ot
@@ -224,7 +224,7 @@ Note: TARGET_HOST and TARGET_PORT can be retrieved from running `icdctl formatio
         TARGET_DB_USER=enterprisedb
         TARGET_DB_PASSWORD=password
 	```
-3. Envoke MTK to start the data migration process from `OT` oracle schema to `ot` enterprisedb schema under `ot_migration` database. [for more about MTK args](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/mtk_command_options.html)
+3. Invoke MTK to start the data migration process from `OT` Oracle schema to `ot` EnterpriseDB schema under `ot_migration` database. [For more about MTK args](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/mtk_command_options.html)
 
     ```text
         /usr/edb/migrationtoolkit/bin/runMTK.sh -dataOnly -targetSchema ot -truncLoad OT
@@ -253,7 +253,7 @@ Note: TARGET_HOST and TARGET_PORT can be retrieved from running `icdctl formatio
         *************************************************************
     ```
 
-### Verify data migration on edb-migration formation:
+### Verify data migration on edb-migration formation
 1. Get to `mgmt` container 
     ```text
        icdct console -c mgmt m-0 

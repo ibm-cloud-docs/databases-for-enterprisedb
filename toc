@@ -45,7 +45,6 @@ Databases For EnterprisDB
 	{: .topicgroup}
 	Migration
 		howto-migration.md
-		howto-migration-oracle.md
 
 	{: .topicgroup}
 	Configuring EnterprisDB
