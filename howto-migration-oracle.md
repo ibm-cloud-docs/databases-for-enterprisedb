@@ -29,8 +29,8 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 - Provision an {{site.data.keyword.databases-for-enterprisedb_full}}
 
 ## Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration by using MTK only
-You can run schema extraction, schema migration and Data migration by using MTK only. To do that you need to:
-1. Install and setup MTK locally following the steps noted under the heading: [`Install EnterpriseDB Migration toolkit (MTK)`](###install-enterprisedb-migrationtoolkit-mtk)
+You can run schema extraction, schema migration, and data migration by using MTK only. To do that you need to:
+1. Install and setup MTK locally following the steps noted under the heading: [`Install EnterpriseDB Migration toolkit`](###install-enterprisedb-migrationtoolkit)
 2. Follow the MTK command options for `Import Options` and `Schema Creation` to extract and migrate Oracle schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html)
 3. MTK also supports offline migration for both schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html#offline-migration-options)
 
@@ -44,7 +44,7 @@ You can run schema extraction, schema migration and Data migration by using MTK 
 
 ### Validate the extracted schema with migration portal
 1. Log in to the EnterpriseDB migration portal [here](https://migration.enterprisedb.com/)
-2. Create a new project and load the DDL Extractor-generated file for assessment 
+2. Create a project and load the DDL Extractor-generated file for assessment 
 ![migration-portal-setup](images/migration-portal-setup.png)
 3. Fix any issue report by the EMP and make sure your are getting 100% coverage successfully
 
@@ -72,7 +72,7 @@ You can run schema extraction, schema migration and Data migration by using MTK 
     ``` 
 
 
-### Install EnterpriseDB Migration Toolkit (MTK)
+### Install EnterpriseDB Migration Toolkit
 1. Follow the steps on how to install EnterpriseDB Migration Toolkit (skip IDENT Authentication section)
     [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit)
 2. Migration Toolkit script is located in the Oracle container at: `/usr/edb/migrationtoolkit/bin/runMTK.sh`
@@ -81,7 +81,7 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
 
 ### Run MTK to migrate data from Oracle to edb-migration formation
 1. Edit `toolkit.properties` file to set up source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [More about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/building_toolkit.properties_file.html)
-2. Following these set-up steps, this is how the `toolkit.properties` file should appear:
+2. Following the set-up steps, the `toolkit.properties` file now resembles:
     ```text
         SRC_DB_URL=jdbc:oracle:thin:@localhost:1521:ORCL
         SRC_DB_USER=ot
@@ -91,7 +91,7 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
         TARGET_DB_USER=enterprisedb
         TARGET_DB_PASSWORD=password
 	```
-3. Launch MTK to start the data migration process from `OT` Oracle schema to `ot` EnterpriseDB schema under `ot_migration` database. [For more about MTK args](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/mtk_command_options.html)
+3. Start MTK to begin the data migration process from `OT` Oracle schema to `ot` EnterpriseDB schema under `ot_migration` database. [For more about MTK args](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/mtk_command_options.html)
 
     ```text
         /usr/edb/migrationtoolkit/bin/runMTK.sh -dataOnly -targetSchema ot -truncLoad OT
