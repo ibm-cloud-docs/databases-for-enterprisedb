@@ -16,10 +16,10 @@ subcollection: databases-for-enterprisedb
 {:pre: .pre}
 {:tip: .tip}
 
-# Migrating to {{site.data.keyword.databases-for-enterprisedb}}
+# Migrating from PostgreSQL to {{site.data.keyword.databases-for-enterprisedb}}
 {: #migrating}
 
-Various options exist to migrate data from existing PostgreSQL databases to {{site.data.keyword.databases-for-enterprisedb_full}}. We focus on the simplest and most effective. To get started, you need PostgreSQL installed locally so you have the `psql` and `pg_dump` tools. And while not strictly required, the {{site.data.keyword.databases-for}} CLI makes it easier to connect and restore to a new {{site.data.keyword.databases-for-enterprisedb}} deployment. 
+Various options exist to migrate data from existing PostgreSQL databases to {{site.data.keyword.databases-for-enterprisedb_full}}. We focus on the simplest and most effective method. To get started, you need PostgreSQL installed locally so you have the `psql` and `pg_dump` tools. And while not strictly required, the {{site.data.keyword.databases-for}} CLI makes it easier to connect and restore to a new {{site.data.keyword.databases-for-enterprisedb}} deployment. 
 
 ## pg_dump
 

@@ -44,7 +44,7 @@ Databases For EnterpriseDB
 
 	{: .topicgroup}
 	Migration
-		howto-migration.md
+		howto-migration-postgresql.md
 
 	{: .topicgroup}
 	Configuring EnterpriseDB
