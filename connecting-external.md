@@ -210,7 +210,7 @@ You can display the decoded certificate for your deployment with the CLI plug-in
 
 ## Other Drivers
 
-PostgreSQL has a vast array of language drivers. The table covers a few of the most common.
+PostgreSQL has a vast array of language drivers that can also be used to connect to a {{site.data.keyword.databases-for-enterprisedb}} deployment. The table covers a few of the most common.
 
 Language|Driver|Examples
 ----------|----------|-----------

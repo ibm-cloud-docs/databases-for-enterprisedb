@@ -24,7 +24,7 @@ You can manually adjust the amount of resources available to your {{site.data.ke
 
 ## Resource Breakdown
 
-{{site.data.keyword.databases-for-enterprisedb}} deployments have two data members in a cluster, and resources are allocated to both members equally. For example, the minimum storage of a {{site.data.keyword.databases-for-enterprisedb}} deployment is 20480 MB, which equates to an initial size of 10280 MB per member. The minimum RAM for a {{site.data.keyword.databases-for-enterprisedb}} deployment is 1028 MB, which equates to an initial allocation of 514 MB per member.
+{{site.data.keyword.databases-for-enterprisedb}} deployments have three data members in a cluster, and resources are allocated to all members equally. For example, the minimum storage of a {{site.data.keyword.databases-for-enterprisedb}} deployment is 20480 MB per member, which equates to an initial size of 61440 MB. The minimum RAM for a {{site.data.keyword.databases-for-enterprisedb}} deployment is 1028 MB per member, which equates to an initial allocation of 3084 MB.
 
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
@@ -48,7 +48,7 @@ The amount of memory allocated to the database's shared buffer pool is **not** a
 
 ### Dedicated Cores
 
-You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts. Going from a 0 to a >0 CPU count provisions and moves your deployment to new hosts, and your databases are restarted as part of that move. Going from >0 to a 0 CPU count, moves your deployment to a shared host and also restarts your databases as part of the move.
+You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify.
 
 ## Scaling Considerations
 
@@ -90,32 +90,32 @@ Group   member
 Count   2
 |
 +   Memory
-|   Allocation              4096mb
-|   Allocation per member   2048mb
-|   Minimum                 2048mb
-|   Step Size               256mb
+|   Allocation              3072mb
+|   Allocation per member   1024mb
+|   Minimum                 1024mb
+|   Step Size               1024mb
 |   Adjustable              true
 |
 +   CPU
-|   Allocation              6
+|   Allocation              9
 |   Allocation per member   3
-|   Minimum                 6
-|   Step Size               2
+|   Minimum                 9
+|   Step Size               1
 |   Adjustable              true
 |
 +   Disk
-|   Allocation              10240mb
-|   Allocation per member   5120mb
+|   Allocation              61440mb
+|   Allocation per member   20480mb
 |   Minimum                 10240mb
 |   Step Size               1024mb
 |   Adjustable              true
 ```
 
-The deployment has two members, with 4096 MB of RAM and 10240 MB of disk allocated in total. The "per member" allocation is 2048 MB of RAM and 5120 MB of disk. The minimum value is the lowest the total allocation can be set. The step size is the smallest amount by which the total allocation can be adjusted.
+The deployment has three members, with 3072 MB of RAM and 61440 MB of disk allocated in total. The "per member" allocation is 1024 MB of RAM and 20480 MB of disk. The minimum value is the lowest the total allocation can be set. The step size is the smallest amount by which the total allocation can be adjusted.
 
-The `cdb deployment-groups-set` command allows either the total RAM or total disk allocation to be set, in MB. For example, to scale the memory of the "example-deployment" to 2048 MB of RAM for each memory member (for a total memory of 4096 MB), you use the command 
+The `cdb deployment-groups-set` command allows either the total RAM or total disk allocation to be set, in MB. For example, to scale the memory of the "example-deployment" to 2048 MB of RAM for each memory member (for a total memory of 6144 MB), you use the command 
 ```
-ibmcloud cdb deployment-groups-set example-deployment member --memory 4096
+ibmcloud cdb deployment-groups-set example-deployment member --memory 6144
 ```
 
 ## Scaling in the API

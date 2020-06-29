@@ -3,7 +3,7 @@ copyright:
   years: 2017, 2019, 2020
 lastupdated: "2020-06-25"
 
-keywords: postgresql, databases, psql
+keywords: postgresql, databases, psql, edb-psql
 
 subcollection: databases-for-enterprisedb
 

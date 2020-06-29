@@ -18,13 +18,10 @@ subcollection: databases-for-enterprisedb
 {:tip: .tip}
 
 
-# Databases for {{site.data.keyword.databases-for-enterprisedb}} as a Logical Replication Destination
+# Configuring {{site.data.keyword.databases-for-enterprisedb}} as a Logical Replication Destination
 {: #logical-replication}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} supports [logical replication](https://www.postgresql.org/docs/current/logical-replication.html) from an external PostgreSQL instance to your deployment. You can set up your external PostgreSQL as a publisher, your {{site.data.keyword.databases-for-enterprisedb}} deployment as a subscriber, and replicate your data across from an external database into your deployment.
-
-Logical Replication is only available on deployments running PostgreSQL 10 or above. Links to the PostgreSQL documentation from this page direct you to the current version of PostgreSQL. If you need find documentation for a specific version, you can find links to specific PostgreSQL versions at the top of the PostgreSQL documentation page.
-{: .tip}
 
 ## Configuring the Publisher
 

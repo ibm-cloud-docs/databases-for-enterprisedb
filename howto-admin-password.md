@@ -19,7 +19,7 @@ subcollection: databases-for-enterprisedb
 # Setting the Admin Password
 {: #admin-password}
 
-The [{{site.data.keyword.databases-for-enterprisedb}}] service is provisioned with an admin user.
+The {{site.data.keyword.databases-for-enterprisedb}} service is provisioned with an admin user.
 
 You have to set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Password_ panel to set a new admin password.
 
