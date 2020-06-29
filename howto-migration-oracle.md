@@ -104,7 +104,6 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
         
         Schema OT imported successfully.
         
-        
         Migration process completed successfully.
         
         Migration logs have been saved to /root/.enterprisedb/migration-toolkit/logs
@@ -119,4 +118,3 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
         
         *************************************************************
     ```
-
