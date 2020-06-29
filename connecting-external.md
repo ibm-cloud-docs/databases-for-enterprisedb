@@ -220,5 +220,7 @@ Ruby on Rails|Rails|[Rails Guide](http://edgeguides.rubyonrails.org/configuring.
 C#|`ODBC`|[Link](https://wiki.postgresql.org/wiki/Using_Microsoft_.NET_with_the_PostgreSQL_Database_Server_via_ODBC)
 Go|`pq`|[Link](https://godoc.org/github.com/lib/pq)
 Node|`node-postgres`|[Link](https://node-postgres.com/)
+JDBC| EDB Postgres JDBC Connector|[JDBC Guide](https://www.enterprisedb.com/edb-docs/d/jdbc-connector/user-guides/jdbc-guide/42.2.8.1/using_the_advanced_server_jdbc_connector_with_java_applications.html)
 {: caption="Table 2. PostgreSQL drivers" caption-side="top"}
+
 

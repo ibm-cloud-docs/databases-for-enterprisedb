@@ -38,7 +38,7 @@ A read-only replica is set up to replicate all of your data from the leader depl
 
 - The read-only replica does not participate in master/follower elections for the leader cluster and failover to the read-only replica is not automated. Promotion of the read-only replica to a full deployment is a manual, user-initiated task.
 
-- The minimum size of a read-only replica is 2 GB RAM and 40 GB of disk. This is true even if your leader deployment is smaller.
+- The minimum size of a read-only replica is 3 GB RAM and 60 GB of disk. This is true even if your leader deployment is smaller.
 
 - Read-only replicas do not auto-scale to match the leader. If the amount of data you store outgrows the disk that is allocated to your deployments, scale the disk on the read-only replicas and then the leader. Scaling the read-only replica first ensures that you do not run out of space on the read-only replicas. If you scaled the leader's disk for performance and not for space, it is not necessary to scale the read-only replicas.
 
@@ -72,8 +72,8 @@ For example, to provision a read-only replica through the CLI,
 ibmcloud resource service-instance-create <replica_name> databases-for-enterprisedb standard <region> \
 -p \ '{
   "remote_leader_id": "crn:v1:bluemix:public:databases-for-enterprisedb:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71819::",
-  "members_memory_allocation_mb": "2048",
-  "members_disk_allocation_mb": "10240"
+  "members_memory_allocation_mb": "3072",
+  "members_disk_allocation_mb": "61440"
 }'
 ```
 
@@ -89,12 +89,12 @@ curl -X POST \
     "resource_group": "<your_resource_group_id>",
     "resource_plan_id": "databases-for-enterprisedb-standard",
     "remote_leader_id": "crn:v1:bluemix:public:databases-for-enterprisedb:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71819::",
-    "members_memory_allocation_mb": "2048",
-    "members_disk_allocation_mb": "10240"
+    "members_memory_allocation_mb": "3072",
+    "members_disk_allocation_mb": "61440"
   }'
 ```
 
-For both the CLI and API commands, you have to specify both the RAM and disk amounts, keeping in mind the minimum size is 2 GB RAM and 10 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
+For both the CLI and API commands, you have to specify both the RAM and disk amounts, keeping in mind the minimum size is 3 GB RAM and 60 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
 
 ## The Read-only Replica
 

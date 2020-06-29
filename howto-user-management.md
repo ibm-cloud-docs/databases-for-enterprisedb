@@ -77,10 +77,6 @@ Users that are created directly from the API and CLI do not appear in _Service C
 
 The `ibm-cloud-base-user-ro` manages privileges for users that are created to access read-only replicas. More information can be found on the [Configuring Read-only Replicas](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas) page.
 
-## The `repl` user
-
-The `repl` user has Replication privileges and is used if you enable the [`wal2json` plugin](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-wal2json) on your deployment. In the process of enabling `wal2json`, you set the `repl` user's password, which allows the `wal2json` plugin to use it.
-
 ## Other `ibm` Users
 
 If you run the `\du` command with your admin account, you might notice users that are named `ibm`,  `ibm-cloud-base-user`, and `ibm-replication`.

@@ -23,21 +23,21 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 
 
 ## Prerequisites
-
+EMP is managed by an external party, [EnterpriseDB](https://www.enterprisedb.com/). For more information review the [EnterpriseDB Migration Portal User Guide](https://www.enterprisedb.com/edb-docs/p/edb-postgres-migration-portal). 
 - Create an EnterpriseDB account [here](https://www.enterprisedb.com/) 
 - Request EnterpriseDB repo access [here](https://info.enterprisedb.com/rs/069-ALB-339/images/Repository%20Access%2004-09-2019.pdf?_ga=2.254315016.140796928.1589217151-186337169.1584631506)
-- Provision an {{site.data.keyword.databases-for-enterprisedb_full}}
+- Provision an {{site.data.keyword.databases-for-enterprisedb_full}} instance
 
 ## Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration by using MTK only
-You can run schema extraction, schema migration, and data migration by using MTK only. To do that you need to:
+You can run schema extraction, schema migration, and data migration by using Migration Toolkit (MTK) only. To do that you need to:
 1. Install and setup MTK locally following the steps noted under the heading: [`Install EnterpriseDB Migration toolkit`](###install-enterprisedb-migrationtoolkit)
 2. Follow the MTK command options for `Import Options` and `Schema Creation` to extract and migrate Oracle schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html)
 3. MTK also supports offline migration for both schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html#offline-migration-options)
 
 ## Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration by using EMP and MTK
 
-### Extract the Oracle schema by using the Enterisedb DDL Extractor
-1. Log in to the EnterpriseDB migration portal [here](https://migration.enterprisedb.com/)
+### Extract the Oracle schema by using the EnteriseDB DDL Extractor
+1. Log in to the EnterpriseDB migration portal (EMP) [here](https://migration.enterprisedb.com/)
 2. Click `Portal Wiki`
 3. Follow the steps in `DDL Extractor guide` section
 4. After a successful attempt, a file like `_gen_ot_ddls_200511173723.sql` is created in the specified path
@@ -81,7 +81,7 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
 
 ### Run MTK to migrate data from Oracle to edb-migration formation
 1. Edit `toolkit.properties` file to set up source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [More about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/building_toolkit.properties_file.html)
-2. Following the set-up steps, the `toolkit.properties` file now resembles:
+2. Following the setup steps, the `toolkit.properties` file now resembles:
     ```text
         SRC_DB_URL=jdbc:oracle:thin:@localhost:1521:ORCL
         SRC_DB_USER=ot
