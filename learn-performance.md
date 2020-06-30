@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2020 
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, monitoring, scaling, autoscaling, resources, connection limits
+keywords: postgresql, databases, monitoring, scaling, autoscaling, resources, connection limits, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -27,7 +27,7 @@ subcollection: databases-for-enterprisedb
 
 ## Disk IOPS
 
-The number of Input-Output Operations Per Second (IOPS) is limited by the type of storage volume. Storage volumes for {{site.data.keyword.databases-for-enterprisedb}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance). If your operational load saturates or exceeds the IOPS limit, database requests and operations are delayed until the disk can catch up. Extended periods of heavy-load can cause your deployment to be unable to process queries and become effectively unavailable. If you experience delayed responses and failing operations, you could be exceeding the disk's IOPS limit. You can increase the number IOPS available to your deployment by increasing disk space.
+The number of Input-Output Operations Per Second (IOPS) is limited by the type of storage volume. Storage volumes for {{site.data.keyword.databases-for-enterprisedb}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance). If your operational load saturates or exceeds the IOPS limit, database requests and operations are delayed until the disk can catch up. Extended periods of heavy-load can cause your deployment to be unable to process queries and become effectively unavailable. If you experience delayed responses and failing operations, you might be exceeding the disk's IOPS limit. You can increase the number IOPS available to your deployment by increasing disk space.
 
 ## Memory Usage
 

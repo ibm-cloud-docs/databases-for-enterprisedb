@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, connection limits, terminating connections, connection pooling
+keywords: postgresql, databases, connection limits, terminating connections, connection pooling, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -59,12 +59,12 @@ SELECT * FROM pg_stat_activity WHERE datname='ibmclouddb';
 
 Your admin user has the `pg_signal_backend` role. If you find connections that need to be reset or closed, the admin user can use both [`pg_cancel_backend` and `pg_terminate_backend`](https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-SIGNAL-TABLE). The `pid` of a process is found from the `pg_stat_activity` table.
 
-- `pg_cancel_backend` cancels a connection's current query without terminating the connection, and without stopping any other queries that it might be running.
+- `pg_cancel_backend` Cancels a connection's current query without terminating the connection, and without stopping any other queries that it might be running.
   ```sql
   SELECT pg_cancel_backend(pid);
   ```
 
-- `pg_terminate_backend` stops the entire process and closes the connection. 
+- `pg_terminate_backend` Stops the entire process and closes the connection. 
   ```sql
   SELECT pg_terminate_backend(pid);
   ```
@@ -73,9 +73,9 @@ The admin user does have the power to reset or close the connections for any use
 
 ### Killing All Connections
 
-If your deployment has reached the connection limit or you are having trouble connecting to your deployment and suspect that a high number of connections is a problem, you can kill all of the connections to your deployment. 
+If your deployment reaches the connection limit or you are having trouble connecting to your deployment and suspect that a high number of connections is a problem, you can kill all of the connections to your deployment. 
 
-In the UI, on the _Settings_ tab, there is a button to kill all connections to your deployment. Use caution, as it will disrupt anything that is connected to your deployment.
+In the UI, on the _Settings_ tab, there is a button to kill all connections to your deployment. Use caution, as it disrupts anything that is connected to your deployment.
 
 ![Kill All Connections UI](images/settings-kill-connections.png)
 
@@ -107,7 +107,7 @@ ibmcloud cdb deployment-groups-set example-deployment member --memory 6144
 ibmcloud cdb deployment-configuration example-deployment '{"configuration":{"max_connections":215}}'
 ```
 
-To make the changes through the API,
+To make the changes by using the API,
 ```
 curl -X PATCH `https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member' \
 -H "Authorization: Bearer $APIKEY" \

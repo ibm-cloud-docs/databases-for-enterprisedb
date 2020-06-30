@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, read-only replica, resync, promote, cross-region replication
+keywords: postgresql, databases, read-only replica, resync, promote, cross-region replication, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -22,7 +22,7 @@ subcollection: databases-for-enterprisedb
 
 You can set up your {{site.data.keyword.databases-for-enterprisedb_full}} deployment to be a read-only replica of another {{site.data.keyword.databases-for-enterprisedb}} deployment. 
 
-A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment using asynchronous replication. As the name implies, read-only replicas support read transactions and can be used to balance databases that have both write-heavy and read-heavy operations. The read-only replica has a single {{site.data.keyword.databases-for-enterprisedb}} data member, and it is billed at the [same per member consumption rates as the leader](https://{DomainName}/catalog/services/databases-for-enterprisedb/).
+A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment by using asynchronous replication. As the name implies, read-only replicas support read transactions and can be used to balance databases that have both write-heavy and read-heavy operations. The read-only replica has a single {{site.data.keyword.databases-for-enterprisedb}} data member, and it is billed at the [same per member consumption rates as the leader](https://{DomainName}/catalog/services/databases-for-enterprisedb/).
 
 ## Read-only Replica Considerations
 
@@ -30,7 +30,7 @@ A read-only replica is set up to replicate all of your data from the leader depl
 
 - A read-only replica must be the same major version as its leader. 
 
-- Backups are disabled on read-only replicas. Backups are taken only on leader deployments.
+- Backups are unavailable on read-only replicas. Backups are taken only on leader deployments.
 
 - Read replication is not supported into or out of EU Cloud-enabled regions (currently `eu-de`). It is supported within those regions.
 
@@ -48,17 +48,17 @@ A read-only replica is set up to replicate all of your data from the leader depl
 
 ## The Leader
 
-On the _Settings_ tab of a {{site.data.keyword.databases-for-enterprisedb}} deployment before any read-only replicas are provisioned, the _Replication_ panel has a **Create Read Replica** button.
+On the _Settings_ tab of a {{site.data.keyword.databases-for-enterprisedb}} deployment before any read-only replicas are provisioned, the _Replication_ pane has a **Create Read Replica** button.
 
-![Replication panel before a replica](images/replica-before.png)
+![Replication pane before a replica](images/replica-before.png)
 
-If a deployment is a leader and has a read-only replica that is already attached to it, then the _Replication_ panel has a list of replica deployments and a link to each one. Click the cog to the right of the read-only replica's deployment name to manage it.
+If a deployment is a leader and has a read-only replica that is already attached to it, then the _Replication_ pane has a list of replica deployments and a link to each one. Click the cog to the right of the read-only replica's deployment name to manage it.
 
 ![List of replicas that are attached to a leader](images/replica-after.png)
 
 ## Provisioning a Read-only Replica
 
-You can provision a read-only replica from the leader's _Settings_ panel by clicking **Create Read-Only Replica**. The source instance is automatically filled in. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public/private endpoints are automatically configured to match the settings of the leader deployment.
+You can provision a read-only replica from the leader's _Settings_ pane by clicking **Create Read-Only Replica**. The source instance is automatically entered. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public/private endpoints are automatically configured to match the settings of the leader deployment.
 
 If you use [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), Bring Your Own Key (BYOK) is supported only when provisioning from the CLI and API. Otherwise, the read-only replica is encrypted with a generated key. 
 {: .tip}
@@ -94,23 +94,23 @@ curl -X POST \
   }'
 ```
 
-For both the CLI and API commands, you have to specify both the RAM and disk amounts, keeping in mind the minimum size is 3 GB RAM and 60 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
+For both the CLI and API commands, you must specify both the RAM and disk amounts, keeping in mind the minimum size is 3 GB RAM and 60 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
 
 ## The Read-only Replica
 
-On the _Settings_ tab of a read-only replica, the _Replication_ panel contains its name and region, and the name and region of its leader. It also has buttons to resync the read-only replica and to promote it.
+On the _Settings_ tab of a read-only replica, the _Replication_ pane contains its name and region, and the name and region of its leader. It also has buttons to resync the read-only replica and to promote it.
 
-![Replication Panel of a read-only replica](images/replica-roreplica.png)
+![Replication pane of a read-only replica](images/replica-roreplica.png)
 
 ### Checking Replication Status
 
-Replication status is not automatically monitored, you have to monitor replication.
+Replication status is not automatically monitored, you must monitor replication.
 
-You can check the replication status of a read-only replica with `psql`, but only from its leader. [Connect to the leader deployment with `psql`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql) using the [admin credentials](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management#the-admin-user). Once you are connected run: `SELECT * from pg_stat_replication;`.
+You can check the replication status of a read-only replica with `psql`, but only from its leader. [Connect to the leader deployment with `psql`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql) by using the [admin credentials](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management#the-admin-user). Once you are connected run: `SELECT * from pg_stat_replication;`.
 
 ### Read-only Replica Users and Privileges
 
-- Any user on the leader, even ones present before read-only replica provision, can login to and execute reads on a read-only replica with the same privileges to objects that they have on the leader. 
+- Any user on the leader, even ones present before read-only replica provision, can log in to and execute reads on a read-only replica with the same privileges to objects that they have on the leader. 
 
 - If you have more than one read-only replica that is attached to a leader, a user that is created on the leader is also created on all of the other read-only replicas.
 
@@ -120,7 +120,7 @@ You can check the replication status of a read-only replica with `psql`, but onl
 
 You can also create users with access to the read-only replica and no access to the leader from the read-only replica. If you have more than one read-only replica that is attached to a leader, a user that is created on any one of the read-only replicas is also created on all of the other read-only replicas.
 
-Read-only replica users created on a read-only replica are able connect to the replicas and execute reads. Read-only replica users are not able to connect and execute operations on the leader. They also do not persist when a read-only replica is promoted to a stand-alone deployment.
+Read-only replica users who are created on a read-only replica are able connect to the replicas and execute reads. Read-only replica users are not able to connect and execute operations on the leader. They also do not persist when a read-only replica is promoted to a stand-alone deployment.
 
 Read-only replica created users are assigned privileges by the leader, and are assigned the `ibm-cloud-base-user-ro` role, and are members of the `ibm-cloud-base-user` group. They have access to all of the objects that are created by other members of this group, including any users on the leader that were created through _Service Credentials_, the CLI, or the API. Consistent with privileges of the `ibm-cloud-base-user`, a read-only replica created user does not have access to objects created by the admin user, or other users created through `psql`. For more information, see the [{{site.data.keyword.databases-for-enterprisedb}} Roles and Privileges](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management) page.
 
@@ -169,7 +169,7 @@ curl -X POST \
  -d '{"promotion": {}}' \ 
 ```
 
-To promote and skip the initial backup after the promotion, also set `skip_initial_backup` in the json body.
+To promote and skip the initial backup after the promotion, also set `skip_initial_backup` in the JSON body.
 ```
 curl -X POST \
   https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/remotes/promotion \

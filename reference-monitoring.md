@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, sysdig, monitoring, metrics, iops, disk usage, memory usage, connection usage
+keywords: postgresql, sysdig, monitoring, metrics, iops, disk usage, memory usage, connection usage, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -226,8 +226,8 @@ The following attributes are available for segmenting all of the metrics listed.
 |-----------|----------------|-----------------------|
 | `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated, or local. |
 | `Location` | `ibm_location` | The location of the monitored resource - might be a region, data center, or global. |
-| `Resource` | `ibm_resource` | The resource being measured by the service - typically an identifying name or GUID. |
-| `Resource Type` | `ibm_resource_type` | The type of the resource being measured by the service. |
+| `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID. |
+| `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
 {: caption="Table 14. Global Attributes Metadata" caption-side="top"}
 

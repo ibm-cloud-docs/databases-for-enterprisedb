@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, oracle
+keywords: postgresql, databases, oracle, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 

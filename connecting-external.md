@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql drivers, python, java, javascript, certificate
+keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -122,7 +122,7 @@ public class PGConnect {
 
 
 
-This example uses the information from your connection string and the Python driver [`Psycopg2`](https://wiki.postgresql.org/wiki/Psycopg2_Tutorial) to connect to your database. This is just a simple connection example, without error handling or retry logic and may not be suitable for production.
+This example uses the information from your connection string and the Python driver [`Psycopg2`](https://wiki.postgresql.org/wiki/Psycopg2_Tutorial) to connect to your database. This is just a simple connection example, without error handling or retry logic and might not be suitable for production.
 {: python}
 
 ```python
@@ -199,9 +199,9 @@ All connections to {{site.data.keyword.databases-for-enterprisedb}} are TLS 1.2 
 
 ### Using the self-signed certificate
 
-1. Copy the certificate information from the _Connections_ panel or the Base64 field of the connection information. 
+1. Copy the certificate information from the _Connections_ pane or the Base64 field of the connection information. 
 2. If needed, decode the Base64 string into text. 
-3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
+3. Save the certificate to a file. (You can use the Name that is provided or your own file name).
 4. Provide the path to the certificate to the driver or client.
 
 ### CLI plug-in support for the self-signed certificate
@@ -222,5 +222,3 @@ Go|`pq`|[Link](https://godoc.org/github.com/lib/pq)
 Node|`node-postgres`|[Link](https://node-postgres.com/)
 JDBC| EDB Postgres JDBC Connector|[JDBC Guide](https://www.enterprisedb.com/edb-docs/d/jdbc-connector/user-guides/jdbc-guide/42.2.8.1/using_the_advanced_server_jdbc_connector_with_java_applications.html)
 {: caption="Table 2. PostgreSQL drivers" caption-side="top"}
-
-

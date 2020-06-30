@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O
+keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -31,7 +31,7 @@ General Autoscaling parameters
 - How often to scale, measured either in seconds, minutes, or hours.
 - A hard limit on scaling, your deployment stops scaling at the limit.
 
-![Example Autoscaling panel](images/autoscaling-panel.png)
+![Example Autoscaling pane](images/autoscaling-panel.png)
 
 Memory - Memory autoscaling is based on Disk I/O utilization in order to provide more memory for disk caching as your read/write load increases. The benefit is that additional memory might alleviate pressure on disk I/O by supporting more caching. Autoscaling configurations based on memory usage are currently not available. 
 
@@ -43,7 +43,7 @@ The resource numbers refer to each database node in a deployment. For example, t
 
 - Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
 
-- Disk can not be scaled down.
+- Disk cannot be scaled down.
 
 - A few scaling operations can be more long running than others. Drastically increasing RAM or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
@@ -54,15 +54,15 @@ The resource numbers refer to each database node in a deployment. For example, t
   - Maximum Disk = 4 TB per member
   - Maximum RAM = 112 GB per member
 
-- Autoscaling does not scale down deployments where disk or memory usage has shrunk. The RAM provisioned to your deployment remains for your future needs, or until you scale down your deployment manually. The disk provisioned to your deployment remains because disk can not be scaled down.
+- Autoscaling does not scale down deployments where disk or memory usage shrunk. The RAM provisioned to your deployment remains for your future needs, or until you scale down your deployment manually. The disk provisioned to your deployment remains because disk cannot be scaled down.
 
-- If you just need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling) your deployment.
+- If you need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling) your deployment.
 
 ## Configuring Autoscaling in the UI
 
-The Autoscaling panel is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save Changes** for your configuration to be saved and your changes to take effect.
+The Autoscaling pane is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save Changes** for your configuration to be saved and your changes to take effect.
 
-To disable autoscaling, clear the boxes for the parameters that you no longer want to use. If you clear all the boxes, autoscaling is disabled. Click **Save Changes** to save the configuration.
+To disable autoscaling, clear the boxes for the parameters that you no longer want to use. If you clear all the boxes, autoscaling is unavailable. Click **Save Changes** to save the configuration.
 
 ## Configuring Autoscaling in the CLI
 
@@ -104,4 +104,4 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{i
       }
     }'
 ```
-To disable autoscaling, send the PATCH request with the currently enabled scalers set to `false`. If all of them are set to `false`, then autoscaling is disabled on your deployment.
+To disable autoscaling, send the PATCH request with the currently enabled scalers set to `false`. If all of them are set to `false`, then autoscaling is unavailable on your deployment.

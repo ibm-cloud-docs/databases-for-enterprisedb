@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2018, 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases
+keywords: postgresql, databases, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -24,7 +24,7 @@ Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{
 
 ## Connecting a Kubernetes Service application
 
-There are two steps to connecting a Cloud databases deployment to a Kubernetes Service application. First, your deployment needs a to be bound to your cluster and its connection strings stored in a secret. The second step is configuring your application to use the connection strings.
+There are two steps to connecting a Cloud databases deployment to a Kubernetes Service application. First, your deployment needs a to be bound to your cluster and its connection strings that are stored in a secret. The second step is configuring your application to use the connection strings.
 
 The sample app in the [Connecting a Kubernetes Service Tutorial](/docs/databases-for-enterprisedb?topic=cloud-databases-tutorial-k8s-app) provides a sample application that uses Node.js and demonstrates how to bind the sample application to a {{site.data.keyword.databases-for}} deployment.
 {: .tip}
@@ -33,7 +33,7 @@ Before connecting your Kubernetes Service application to a deployment, make sure
 
 ### Binding your deployment
 
-**Public Endpoints** -  If you are using the default public service endpoint to connect to your deployment, you can run the `cluster service bind` command with your cluster name, the resource group and your deployment name.
+**Public Endpoints** -  If you are using the default public service endpoint to connect to your deployment, you can run the `cluster service bind` command with your cluster name, the resource group, and your deployment name.
 ```shell
 ibmcloud ks cluster service bind <your_cluster_name> <resource_group> <your_database_deployment>
 ```
@@ -47,7 +47,7 @@ The private service endpoint is selected with `--service-endpoint private`. Afte
 ibmcloud ks cluster service bind <your_cluster_name> <resource_group> <your_database_deployment> --key <your-private-key>
 ```
 
-**Verify** - Verify that the Kubernetes secret was created in your cluster namespace. Running the following command, you get the API key for accessing the instance of your deployment that's provisioned in your account.
+**Verify** - Verify that the Kubernetes secret was created in your cluster namespace. Running the following command, you get the API key for accessing the instance of your deployment provisioned in your account.
 ```shell
 kubectl get secrets --namespace=default
 ```
@@ -98,11 +98,11 @@ To create the file, open a new file and add the text:
 
 - Change the route value to something unique. The route that you choose determines the subdomain of your application's URL: `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
 - Change the name value. The value that you choose is the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
-- Update the services value to match  Cloud Foundry alias of your {{site.data.keyword.databases-for-enterprisedb}} deployment.
+- Update the services value to match Cloud Foundry alias of your {{site.data.keyword.databases-for-enterprisedb}} deployment.
 
 If you have an existing application that you are just adding a Cloud Databases deployment to, then you probably already have a `manifest.yml`. In that case, you just need to be sure to add the alias of your deployment under `services`.
 
-You can verify that the services are connected by navigating to the _Connections_ panel. If the deployment and the application are connected, the connection shows up in both services.
+You can verify that the services are connected by navigating to the _Connections_ pane. If the deployment and the application are connected, the connection shows up in both services.
 
 More information on the manifest file is available in the [Cloud Foundry documentation](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 

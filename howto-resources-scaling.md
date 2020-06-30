@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, scaling, memory, disk IOPS, CPU
+keywords: postgresql, databases, scaling, memory, disk IOPS, CPU, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -24,7 +24,7 @@ You can manually adjust the amount of resources available to your {{site.data.ke
 
 ## Resource Breakdown
 
-{{site.data.keyword.databases-for-enterprisedb}} deployments have three data members in a cluster, and resources are allocated to all members equally. For example, the minimum storage of a {{site.data.keyword.databases-for-enterprisedb}} deployment is 20480 MB per member, which equates to an initial size of 61440 MB. The minimum RAM for a {{site.data.keyword.databases-for-enterprisedb}} deployment is 1028 MB per member, which equates to an initial allocation of 3084 MB. The minimum dedicated cores per deployment is 3 per member, for an initial allocation of 9. 
+{{site.data.keyword.databases-for-enterprisedb}} deployments have three data members in a cluster, and resources are allocated to all members equally. For example, the minimum storage of a {{site.data.keyword.databases-for-enterprisedb}} deployment is 20480 MB per member, which equates to an initial size of 61440 MB. The minimum RAM for a {{site.data.keyword.databases-for-enterprisedb}} deployment is 1028 MB per member, which equates to an initial allocation of 3084 MB. The minimum dedicated cores per deployment are 3 per member, for an initial allocation of 9. 
 
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
@@ -121,7 +121,7 @@ ibmcloud cdb deployment-groups-set example-deployment member --memory 6144
 
 ## Scaling in the API
 
-The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically. 
+The _Foundation Endpoint_ that is shown on the _Overview_ pane of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically. 
 
 To view the current and scalable resources on a deployment, use
 ```

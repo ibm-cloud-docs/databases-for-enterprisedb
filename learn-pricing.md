@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, pricing, resources, scaling
+keywords: postgresql, databases, pricing, resources, scaling, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -27,7 +27,7 @@ A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as
 **Disk storage per data member** - gigabytes of disk that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member, or the size of your data.  
 **RAM per data member** - gigabytes of RAM that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.  
 **Backup storage** - amount of storage used for backups by a {{site.data.keyword.databases-for-enterprisedb}} deployment.  
-**Virtual processor core** - number of virtual processor cores allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.
+**Virtual processor core** - number of virtual processor cores that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.
 
 ![Standard pricing](images/standard-pricing.png)
 
@@ -35,8 +35,8 @@ Resources | Breakdown | Price
 -------|-------|-------
 20 GB-Month disk | 3 members x 20 GB x $0.58 | $34.80
 20 GB-Month backup| 3 members x 20 GB x $0.03| $1.80
-1 GB-Month RAM | 3 members x 1 GB  x $11.50 | $34.50
-3 Virtual Processor Cores | 3 members x 3 cores x $100 | $900
+1 GB-Month RAM | 3 members x 1 GB x $11.50 | $34.50
+3 Virtual processor Cores | 3 members x 3 cores x $100 | $900
  
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
@@ -48,13 +48,13 @@ All prices here are in US dollars. To see pricing in your local currency, you ca
 
 ## Using the Pricing Calculator
 
-For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-enterprisedb}} catalog page](https://cloud.ibm.com/catalog/databases-for-enterprisedb). Input your total consumption across three data members into the calculator. This is roughly triple the size of your data because your data is replicated to all three members. For example, 20 GB of disk and 1 GB of RAM across two data members would be priced at 60 GB of disk and 3 GB of RAM respectively. 
+For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-enterprisedb}} catalog page](https://cloud.ibm.com/catalog/databases-for-enterprisedb). Input your total consumption across three data members into the calculator. This is roughly tripled the size of your data because your data is replicated to all three members. For example, 20 GB of disk and 1 GB of RAM across two data members would be priced at 60 GB of disk and 3 GB of RAM respectively. 
 
 ![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-estimate.png)
 
 ## Backups Pricing
 
-Users also receive their total disk space purchased, per database, in free backup storage. For example, in a given month, if you have a {{site.data.keyword.databases-for-enterprisedb}} deployment that has 20 GB of disk per member, and has three data members, you receive 60 GB of backup storage free for that month. If your backup storage utilization is greater than 60 GB for the month in this scenario, each gigabyte is charged at an overage $0.03/month. Most deployments will not ever go over the allotted credit.
+Users also receive their total disk space purchased, per database, in free backup storage. For example, in a given month, if you have a {{site.data.keyword.databases-for-enterprisedb}} deployment that has 20 GB of disk per member, and has three data members, you receive 60 GB of backup storage free for that month. If your backup storage utilization is greater than 60 GB for the month in this scenario, each gigabyte is charged at an overage $0.03/month. Most deployments will not exceed the allotted credit.
 
 ## Dedicated Cores Pricing
 

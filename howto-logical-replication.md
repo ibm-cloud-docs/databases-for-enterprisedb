@@ -2,9 +2,9 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases
+keywords: postgresql, databases, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -39,7 +39,7 @@ There are inherent limitations and some restrictions to logical replication outl
 To configure your {{site.data.keyword.databases-for-enterprisedb}} deployment and to make sure that your data is replicated across correctly,
 
 1. You need to create a database in your deployment with same name as the database you intend to replicate.
-2. Logical Replication works at the table level, so every table you select to publish, you need to create in the subscriber before starting the logical replication process. (You can use [`pg_dump`](https://www.postgresql.org/docs/current/app-pgdump.html) to help.) The table on the subscriber does not need to be identical to its publisher counterpart. However, the table on the subscriber must contain at least every  column present in the table on the publisher. Additional columns present in the subscriber must not have NOT NULL or other constraints. If they do, replication fails.
+2. Logical Replication works at the table level, so every table you select to publish, you need to create in the subscriber before starting the logical replication process. (You can use [`pg_dump`](https://www.postgresql.org/docs/current/app-pgdump.html) to help.) The table on the subscriber does not need to be identical to its publisher counterpart. However, the table on the subscriber must contain at least every column present in the table on the publisher. Additional columns present in the subscriber must not have NOT NULL or other constraints. If they do, replication fails.
 
 **Note** Native PostgreSQL subscription commands require superuser privileges, which are not available on {{site.data.keyword.databases-for-enterprisedb}} deployments. Instead, your deployment includes a set of functions that can be used to set and manage logical replication for the subscription. 
 
@@ -123,7 +123,7 @@ To configure your external PostgreSQL as a publisher,
     hostssl    replication            replicator         0.0.0.0/0      md5
     hostssl    all                    replicator         0.0.0.0/0      md5
     ```
-    The "replicator" field is the user you set up with the [PostgreSQL privilege `REPLICATION`](https://www.postgresql.org/docs/current/sql-createrole.html#replication).
+    The "replicator" field is the user that you set up with the [PostgreSQL privilege `REPLICATION`](https://www.postgresql.org/docs/current/sql-createrole.html#replication).
 
 - Edit your local `postgresql.conf` with the required [logical replication configuration](https://www.postgresql.org/docs/current/logical-replication-config.html). Set `wal_level` to 'logical', and set `listen_addresses='*'` to accept connections from any host.  
     ```text
@@ -133,7 +133,7 @@ To configure your external PostgreSQL as a publisher,
 
 - Restart your PostgreSQL server.
 
-Now you can define a publisher on the database and add the tables you want to replicate to the subscriber.
+Now you can define a publisher on the database and add the tables that you want to replicate to the subscriber.
 
 - Log in to database you want to publish from with your replication user.
     ```bash

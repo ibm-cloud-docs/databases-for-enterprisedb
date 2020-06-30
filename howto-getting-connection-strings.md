@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2017, 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases
+keywords: postgresql, databases, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -20,9 +20,9 @@ subcollection: databases-for-enterprisedb
 # Getting Connection Strings
 {: #connection-strings}
 
-In order to connect to {{site.data.keyword.databases-for-enterprisedb_full}}, you need some users and connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. 
+In order to connect to {{site.data.keyword.databases-for-enterprisedb_full}}, you need some users and connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ pane. 
 
-![Connections panel on the Dashboard Overview](images/connections_panel.png)
+![Connections pane on the Dashboard Overview](images/connections_panel.png)
 
 A {{site.data.keyword.databases-for-enterprisedb}} deployment is provisioned with an admin user, and after [setting the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password), you can use its connection strings to connect to your deployment.
 {: .tip}
@@ -33,34 +33,34 @@ You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?t
 ibmcloud cdb deployment-connections example-deployment -u <newusername> [--endpoint-type <endpoint type>]
 ```
 
-Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named  "example-deployment", use the following command.
+Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named "example-deployment", use the following command.
 ```
 ibmcloud cdb deployment-connections example-deployment -u <newusername> --all [--endpoint-type <endpoint type>]
 ```
 
-If you don't specify a user, the `deployment-connections` commands return information for the admin user by default. If you don't specify an endpoint type, the connection string returns the public endpoint by default. If your deployment only has a private endpoint, you have to specify `--endpoint-type private` or the commands return an error. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
+If you don't specify a user, the `deployment-connections` commands return information for the admin user by default. If you don't specify an endpoint type, the connection string returns the public endpoint by default. If your deployment has only a private endpoint, you must specify `--endpoint-type private` or the commands return an error. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
 
 **API** 
-To retrieve user's connection strings from the API, use the [`/users/{userid}/connections`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) endpoint. You have to specify in the path which user and which type of endpoint (public or private) should be used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
+To retrieve user's connection strings from the API, use the [`/users/{userid}/connections`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) endpoint. You must specify in the path which user and which type of endpoint (public or private) should be used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
 ```
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users/{userid}/connections/{endpoint_type}'
 ```
 
 ## Additional Users and Connection Strings
 
-Access to your {{site.data.keyword.databases-for-enterprisedb}} deployment is not limited to the admin user. You can create users by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+Access to your {{site.data.keyword.databases-for-enterprisedb}} deployment is not limited to the admin user. You can create users by using the _Service Credentials_ pane, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
 
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
 
-When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to login, create databases, and create other users. For more information, see the [Managing Users, Roles, and Privileges](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management) page.
+When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to log in, create databases, and create other users. For more information, see the [Managing Users, Roles, and Privileges](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management) page.
 
 ### Creating Users in _Service Credentials_
 
 1. Navigate to the service dashboard for your service.
-2. Click _Service Credentials_ to open the _Service Credentials_ panel.
+2. Click _Service Credentials_ to open the _Service Credentials_ pane.
 3. Click **New Credential**.
 4. Choose a descriptive name for your new credential. 
-5. (Optional) Specify if the new credentials should use a public or private endpoint. Use either `{ "service-endpoints": "public" }` / `{ "service-endpoints": "private" }` in the _Add Inline Configuration Parameters_ field to generate connection strings using the specified endpoint. Use of the endpoint is not enforced, it just controls which hostnames are in the connection strings. Public endpoints are generated by default.
+5. (Optional) Specify whether the new credentials should use a public or private endpoint. Use either `{ "service-endpoints": "public" }` / `{ "service-endpoints": "private" }` in the _Add Inline Configuration Parameters_ field to generate connection strings that use the specified endpoint. Use of the endpoint is not enforced, it just controls which hostnames are in the connection strings. Public endpoints are generated by default.
 6. Click **Add** to provision the new credentials. A username and password, and an associated database user in the {{site.data.keyword.databases-for-enterprisedb}} database are auto-generated.
 
 The new credentials appear in the table, and the connection strings are available as JSON in a click-to-copy field under _View Credentials_.
@@ -72,11 +72,11 @@ If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and 
 ibmcloud cdb user-create example-deployment <newusername> <newpassword>
 ```
 
-Once the task has finished, you can retrieve the new user's connection strings with the `ibmcloud cdb deployment-connections` command.
+Once the task finishes, you can retrieve the new user's connection strings with the `ibmcloud cdb deployment-connections` command.
 
 ### Creating Users from the API
 
-The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
+The _Foundation Endpoint_ that is shown on the _Overview_ pane of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
 ```
 curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users' \
 -H "Authorization: Bearer $APIKEY" \
@@ -84,13 +84,13 @@ curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{i
 -d '{"username":"jane_smith", "password":"newsupersecurepassword"}'
 ```
 
-Once the task has finished, you can retrieve the new user's connection strings, from the `/users/{userid}/connections` endpoint.
+Once the task finishes, you can retrieve the new user's connection strings, from the `/users/{userid}/connections` endpoint.
 
 ### Adding users to _Service Credentials_
 
 Creating a new user from the CLI doesn't automatically populate that user's connection strings into _Service Credentials_. If you want to add them there, you can create a new credential with the existing user information.
 
-Enter the user name and password in the JSON field _Add Inline Configuration Parameters_, or specify a file where the JSON information is stored. For example, putting `{"existing_credentials":{"username":"Robert","password":"supersecure"}}` in the field generates _Service Credentials_ with the username "Robert" and password "supersecure" filled into connection strings.
+Enter the username and password in the JSON field _Add Inline Configuration Parameters_, or specify a file where the JSON information is stored. For example, putting `{"existing_credentials":{"username":"Robert","password":"supersecure"}}` in the field generates _Service Credentials_ with the username "Robert" and password "supersecure" filled into connection strings.
 
 Generating credentials from an existing user does not check for or create that user.
 {: tip}
@@ -115,7 +115,7 @@ Field Name|Index|Description
 `Certificate`|Base64|A base64 encoded version of the certificate.
 {: caption="Table 1. `postgresql`/`URI` connection information" caption-side="top"}
 
-* `0...` indicates that there might be one or more of these entries in an array.
+* `0...` Indicates that there might be one or more of these entries in an array.
 
 ### The CLI Section
 
@@ -124,7 +124,7 @@ The "CLI" section contains information that is suited for connecting with `psql`
 Field Name|Index|Description
 ----------|-----|-----------
 `Bin`||The recommended binary to create a connection; in this case it is `psql`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
+`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
 `Environment`||A list of key/values you set as environment variables.
 `Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
 `Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
@@ -132,5 +132,5 @@ Field Name|Index|Description
 `Type`||The type of package that uses this connection information; in this case `cli`. 
 {: caption="Table 2. `psql`/`cli` connection information" caption-side="top"}
 
-* `0...` indicates that there might be one or more of these entries in an array.
+* `0...` Indicates that there might be one or more of these entries in an array.
 

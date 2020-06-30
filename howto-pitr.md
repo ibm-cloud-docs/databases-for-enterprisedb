@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
-keywords: postgresql, databases, point in time recovery, backups, restore
+keywords: postgresql, databases, point in time recovery, backups, restore, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -43,18 +43,18 @@ To discover the earliest recovery point through the API, use the [`/deployments/
 
 Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
 
-By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. Especially in the case of PITR, that might not be the current size of your deployment. If you need to adjust the resources allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload, if the deployment is not given enough resources the restore will fail.
+By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. Especially in the case of PITR, that might not be the current size of your deployment. If you need to adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload, if the deployment is not given enough resources the restore will fail.
 
-It is very important that you do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you may not be able to recover the backup either.
+It is important that you do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you might not be able to recover the backup either.
 {: .tip}
 
 ### In the UI
 
-To initiate a PITR, enter the time that you want to restore back to in UTC. If you just want to restore to the most recent available time, select that option. Clicking **Restore** brings up the options for your recovery. Enter a name, select the version, region, and allocated resources for the new deployment. Click **Recover** to start the process.
+To initiate a PITR, enter the time that you want to restore back to in Coordinated Universal Time (UTC). If you want to restore to the most recent available time, select that option. Clicking **Restore** brings up the options for your recovery. Enter a name, select the version, region, and allocated resources for the new deployment. Click **Recover** to start the process.
 
 ![Recovery Options Dialog](images/pitr-dialog.png)
 
-If you use Key Protect and have a key, you have to use the CLI to recover and a command is provided for your convenience.
+If you use Key Protect and have a key, you must use the CLI to recover and a command is provided for your convenience.
 
 ### In the CLI
 
@@ -94,7 +94,7 @@ curl -X POST \
     "point_in_time_recovery_deployment_id":"<DEPLOYMENT_ID>"
   }'
 ```
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, except for restoring a `eu-de` backup to another region.
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, except for restoring a `eu-de` back up to another region.
 
 For PITR, use the `point_in_time_recovery_time` and `point_in_time_recovery_deployment_id` parameters. The `point_in_time_recovery_deployment_id` is the source deployment's ID and `point_in_time_recovery_time` is the timestamp in UTC you want to restore to. If you want to restore to the latest available point-in-time use `"point_in_time_recovery_time":" "`.
 
@@ -102,7 +102,7 @@ If you need to adjust resources or use a Key Protect key, add the optional param
 
 ## Verifying PITR
 
-In order to verify the correct recovery time, you have to check the database logs. Checking the database logs requires the [Logging Integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging) to be set up on your deployment.
+In order to verify the correct recovery time, you must check the database logs. Checking the database logs requires the [Logging Integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging) to be set up on your deployment.
 
 When you perform a recovery, your data is restored from the most recent incremental backup and any outstanding transactions from the WAL log are used to catch your database up to the time you recovered to. After the recovery is finished, and the transactions are run, the logs display a message. You can check that your logs have the message,
 ```
