@@ -22,9 +22,9 @@ subcollection: databases-for-enterprisedb
 # Connecting an external application
 {: #external-app}
 
-Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-enterprisedb_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-enterprisedb_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ pane of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-The connection strings can be used by any of the credentials you have created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to create users specifically for your applications to connect with. Documentation on generating credentials is on the [Creating Users and Getting Connection Strings](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings) page.
+The connection strings can be used by any of the credentials you created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to create users specifically for your applications to connect with. Documentation on generating credentials is on the [Creating Users and Getting Connection Strings](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings) page.
 
 ## Connecting with a language's driver
 
@@ -44,7 +44,7 @@ Field Name|Index|Description
 `Certificate`|Base64|A base64 encoded version of the certificate.
 {: caption="Table 1. `postgres`/`URI` connection information" caption-side="top"}
 
-* `0...` indicates that there might be one or more of these entries in an array.
+* `0...` Indicates that there might be one or more of these entries in an array.
 
 
 

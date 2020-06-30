@@ -20,9 +20,12 @@ subcollection: databases-for-enterprisedb
 # Sysdig Monitoring Integration
 {: #sysdig-monitoring}
 
-Monitoring for {{site.data.keyword.databases-for-enterprisedb_full}} deployments is provided through integration with the Sysdig Monitoring service. Your deployments forward selected information so you can monitor deployment health and resource usage. To see your {{site.data.keyword.databases-for-enterprisedb}} dashboards in Sysdig, you have to [Enable Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you have to provision Sysdig and enable platform metrics in each region.
+Monitoring for {{site.data.keyword.databases-for-enterprisedb_full}} deployments is provided through integration with the Sysdig Monitoring service. Your deployments forward selected information so you can monitor deployment health and resource usage. To see your {{site.data.keyword.databases-for-enterprisedb}} dashboards in Sysdig, you must [Enable Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you must provision Sysdig and enable platform metrics in each region.
 
 To access Sysdig from your deployment, use the _Monitoring_ link from the right menu. (If you do not already have a Sysdig service in the same region as your deployment it says _Add monitoring_.)
+
+The default dashboards are not shown until database instances begin emitting metrics.
+{: .tip}
 
 ![The Monitoring link in a deployment](images/monitoring-ui-link.png)
 
@@ -58,7 +61,7 @@ If you have deployments that are in a Single-zone Region (SZR) - `osl01`, `che01
 ### IO utilization in percent 5 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_5m}
 
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available.
+How much disk I/O was used over 5 minutes as a percentage of total disk I/O available.
 
 | Metadata | Description |
 |----------|-------------|
@@ -84,7 +87,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 ### IO utilization in percent 30 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_30m}
 
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available.
+How much disk I/O was used over 30 minutes as a percentage of total disk I/O available.
 
 | Metadata | Description |
 |----------|-------------|
@@ -97,7 +100,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 ### IO utilization in percent 60 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_60m}
 
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available.
+How much disk I/O was used over 60 minutes as a percentage of total disk I/O available.
 
 | Metadata | Description |
 |----------|-------------|
@@ -107,7 +110,7 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance` |
 {: caption="Table 5. IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-### IOPS read & write total count for an instance
+### IOPS read and write total count for an instance
 {: #ibm_databases-for-enterprisedb_disk_iops_read_write_total}
 
 How many input/output operations per second your deployment is performing.
@@ -118,7 +121,7 @@ How many input/output operations per second your deployment is performing.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 6. IOPS read & write total count for an instance metric metadata" caption-side="top"}
+{: caption="Table 6. IOPS read and write total count for an instance metric metadata" caption-side="top"}
 
 ### Max allowed memory for an instance
 {: #ibm_databases-for-enterprisedb_memory_limit_bytes}
@@ -146,10 +149,10 @@ How far behind a PostgreSQL read-only replica is, in bytes.
 | `Segment By` | `Service instance` |
 {: caption="Table 8. Read replica replication lag metric metadata" caption-side="top"}
 
-### The total number of PostgreSQL connections being used
+### The total number of PostgreSQL connections in use
 {: #ibm_databases-for-enterprisedb_total_connections}
 
-The total number of PostgreSQL connections being used.
+The total number of PostgreSQL connections in use.
 
 | Metadata | Description |
 |----------|-------------|
@@ -157,7 +160,7 @@ The total number of PostgreSQL connections being used.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 9. The total number of PostgreSQL connections being used metric metadata" caption-side="top"}
+{: caption="Table 9. The total number of PostgreSQL connections in use metric metadata" caption-side="top"}
 
 ### Total disk space for an instance
 {: #ibm_databases-for-enterprisedb_disk_total_bytes}
@@ -175,7 +178,7 @@ Represents the total amount of disk available to your deployment.
 ### Used CPU for an instance
 {: #ibm_databases-for-enterprisedb_cpu_used_percent}
 
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU.
+How much CPU is used as a percentage of total CPU available.
 
 | Metadata | Description |
 |----------|-------------|
@@ -222,8 +225,8 @@ The following attributes are available for segmenting all of the metrics listed.
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
 | `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated, or local. |
-| `Location` | `ibm_location` | The location of the monitored resource - this may be a region, data center, or global. |
-| `Resource` | `ibm_resource` | The resource being measured by the service - typically a identifying name or GUID. |
+| `Location` | `ibm_location` | The location of the monitored resource - might be a region, data center, or global. |
+| `Resource` | `ibm_resource` | The resource being measured by the service - typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource being measured by the service. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
 {: caption="Table 14. Global Attributes Metadata" caption-side="top"}
@@ -231,10 +234,10 @@ The following attributes are available for segmenting all of the metrics listed.
 ### Additional Attributes
 {: #additional-attributes}
 
-The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
+The following attributes are available for segmenting one or more attributes as described in the previous references.  See the individual metrics for segmentation options.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with. |
+| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
 {: caption="Table 15. Additional Attributes Metadata" caption-side="top"}
 
