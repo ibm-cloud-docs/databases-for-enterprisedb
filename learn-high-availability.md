@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2019, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-07-06"
 
 keywords: postgresql, databases, connection limits, edb, enterprisedb
 
@@ -21,7 +21,7 @@ subcollection: databases-for-enterprisedb
 
 {{site.data.keyword.databases-for-enterprisedb_full}} is a managed cloud database service that is fully integrated into the {{site.data.keyword.cloud_notm}} ecosystem. The database, storage, and supporting infrastructure all run in {{site.data.keyword.cloud_notm}}.
 
-{{site.data.keyword.databases-for-enterprisedb}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with two data members, a leader and a replica. Both members contain a copy of your data by using asynchronous replication, with a distributed consensus mechanism to maintain cluster state and handle failovers. If the leader becomes unreachable, the cluster initiates a failover and the replica is promoted to leader. The replica rejoins the cluster and your cluster continues to operate normally. 
+{{site.data.keyword.databases-for-enterprisedb}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with three data members, a leader and two replicas. All members contain a copy of your data by using asynchronous replication, with a distributed consensus mechanism to maintain cluster state and handle failovers. If the leader becomes unreachable, the cluster initiates a failover and a replica is selected and promoted to leader. The replica rejoins the cluster and your cluster continues to operate normally. 
 
 You can extend high-availability to more regions and spread to more replicas by adding [read-only replicas](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas). 
 
@@ -36,7 +36,7 @@ Your applications must be designed to handle temporary interruptions to the data
 Several minutes of database unavailability or connection interruption are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
 
 ## Connection Limits
-{. #connection-limits-ha}
+{: #connection-limits-ha}
 
 {{site.data.keyword.databases-for-enterprisedb}} sets the maximum number of connections to your PostgreSQL database to **115**. 15 connections are reserved for the superuser to maintain the state and integrity of your database, and 100 connections are available for you and your applications. After the connection limit has been reached, any attempts at starting a new connection results in an error. To prevent overwhelming your deployment with connections, use connection pooling, or scale your deployment and increase its connection limit. For more information, see the [Managing {{site.data.keyword.databases-for-enterprisedb}} Connections](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-managing-connections) page.
 
