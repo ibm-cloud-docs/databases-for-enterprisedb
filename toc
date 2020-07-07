@@ -6,7 +6,7 @@ Databases For EnterpriseDB
 
 	{: .navgroup id="learn"}
 	getting-started.md
-	[What is EnterpriseDB](https://www.ibm.com/cloud/databases-for-postgresql)
+	[What is EnterpriseDB](https://www.ibm.com/cloud/databases-for-enterprisedb)
 	learn-dashboard-overview.md
 	learn-high-availability.md
 	learn-performance.md
