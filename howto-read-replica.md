@@ -36,7 +36,7 @@ A read-only replica is set up to replicate all of your data from the leader depl
 
 - There is a limit of 5 read-only replicas per leader.
 
-- The read-only replica does not participate in master/follower elections for the leader cluster and failover to the read-only replica is not automated. Promotion of the read-only replica to a full deployment is a manual, user-initiated task.
+- The read-only replica does not participate in primary/follower elections for the leader cluster and failover to the read-only replica is not automated. Promotion of the read-only replica to a full deployment is a manual, user-initiated task.
 
 - The minimum size of a read-only replica is 3 GB RAM and 60 GB of disk. This is true even if your leader deployment is smaller.
 
@@ -58,7 +58,7 @@ If a deployment is a leader and has a read-only replica that is already attached
 
 ## Provisioning a Read-only Replica
 
-You can provision a read-only replica from the leader's _Settings_ pane by clicking **Create Read-Only Replica**. The source instance is automatically entered. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public/private endpoints are automatically configured to match the settings of the leader deployment.
+You can provision a read-only replica from the leader's _Settings_ pane by clicking **Create Read-Only Replica**. The source instance is automatically entered. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public or private endpoints are automatically configured to match the settings of the leader deployment.
 
 If you use [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), Bring Your Own Key (BYOK) is supported only when provisioning from the CLI and API. Otherwise, the read-only replica is encrypted with a generated key. 
 {: .tip}
@@ -110,7 +110,7 @@ You can check the replication status of a read-only replica with `psql`, but onl
 
 ### Read-only Replica Users and Privileges
 
-- Any user on the leader, even ones present before read-only replica provision, can log in to and execute reads on a read-only replica with the same privileges to objects that they have on the leader. 
+- Any user on the leader, even ones present before read-only replica provision, can log in to and run reads on a read-only replica with the same privileges to objects that they have on the leader. 
 
 - If you have more than one read-only replica that is attached to a leader, a user that is created on the leader is also created on all of the other read-only replicas.
 
@@ -120,7 +120,7 @@ You can check the replication status of a read-only replica with `psql`, but onl
 
 You can also create users with access to the read-only replica and no access to the leader from the read-only replica. If you have more than one read-only replica that is attached to a leader, a user that is created on any one of the read-only replicas is also created on all of the other read-only replicas.
 
-Read-only replica users who are created on a read-only replica are able connect to the replicas and execute reads. Read-only replica users are not able to connect and execute operations on the leader. They also do not persist when a read-only replica is promoted to a stand-alone deployment.
+Read-only replica users who are created on a read-only replica are able connect to the replicas and run reads. Read-only replica users are not able to connect and run operations on the leader. They also do not persist when a read-only replica is promoted to a stand-alone deployment.
 
 Read-only replica created users are assigned privileges by the leader, and are assigned the `ibm-cloud-base-user-ro` role, and are members of the `ibm-cloud-base-user` group. They have access to all of the objects that are created by other members of this group, including any users on the leader that were created through _Service Credentials_, the CLI, or the API. Consistent with privileges of the `ibm-cloud-base-user`, a read-only replica created user does not have access to objects created by the admin user, or other users created through `psql`. For more information, see the [{{site.data.keyword.databases-for-enterprisedb}} Roles and Privileges](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management) page.
 
@@ -128,7 +128,7 @@ Read-only replica created users are assigned privileges by the leader, and are a
 
 If you need to resync a read-only replica, click the **Resync Read-Only Replica** button. Resyncing is a disruptive operation and performing a resync tears down and rebuilds the data in the read-only replica. The read-only replica is not able to perform any other operations or run any queries while a resync is running. Queries are not rerouted to the leader, so any connections to the read-only replica fail until it is finished resyncing. 
 
-The amount of time it takes to resync a read-only replica varies, but the process can be very long running.
+The amount of time it takes to resync a read-only replica varies, but the process can be long running.
 {: .tip}
 
 To start a resync through the CLI, use the [`cdb read-replica-resync`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#read-replica-resync) command.
@@ -149,9 +149,9 @@ A read-only replica is able to be promoted to an independent cluster that can ac
 
 To promote a read-only replica from the UI, click the **Promote Read-Only Replica** button.
 
-Upon promotion, the read-only replica terminates its connection to the leader and becomes a stand-alone {{site.data.keyword.databases-for-enterprisedb}} deployment. The deployment can start accepting and executing read and write operations, backups are enabled, and it is issued its own admin user. A new data member is added so the deployment becomes a cluster with two data members. This increases the cost as it is billed at the same per member consumption rate, but the deployment has two members instead of one.
+Upon promotion, the read-only replica terminates its connection to the leader and becomes a stand-alone {{site.data.keyword.databases-for-enterprisedb}} deployment. The deployment can start accepting and running read and write operations, backups are enabled, and it is issued its own admin user. A new data member is added so the deployment becomes a cluster with two data members. This increases the cost as it is billed at the same per member consumption rate, but the deployment has two members instead of one.
 
-When you promote a read-only replica, you can skip the initial backup that would normally be taken upon promotion. Skipping the initial backup means that your replica becomes available more quickly, but there is no immediate backup available. You can start an on-demand backup once the promotion process is complete.
+When you promote a read-only replica, you can skip the initial backup that would normally be taken upon promotion. Skipping the initial backup means that your replica becomes available more quickly, but no immediate backup is available. You can start an on-demand backup once the promotion process is complete.
 
 Once a read-only replica is promoted to an independent deployment, it is not possible to revert it back to a read-only replica or have it rejoin a leader.
 
@@ -178,4 +178,3 @@ curl -X POST \
  -d '{"promotion": {"skip_initial_backup": true}}' \ 
  ```
 
- 
