@@ -178,7 +178,4 @@ curl -X POST \
  -d '{"promotion": {"skip_initial_backup": true}}' \ 
  ```
 
-
-### Upgrading while Promoting
-
-If you need to upgrade to a new major version of the database, you can do so when promoting a read-only replica to a stand-alone deployment. Full documentation on your upgrading options, is on the [Upgrading to a New Major Version](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-upgrading) page.
+ 
