@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-07-24"
 
 keywords: postgresql, databases, scaling, memory, disk IOPS, CPU, edb, enterprisedb
 
@@ -48,7 +48,7 @@ The amount of memory allocated to the database's shared buffer pool is **not** a
 
 ### Dedicated Cores
 
-You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify.
+You can increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a reserve of CPU shares. Your deployment is then guaranteed the minimum number of CPUs you specify.
 
 ## Scaling Considerations
 
