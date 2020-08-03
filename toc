@@ -35,7 +35,7 @@ Databases For EnterpriseDB
 
 	/cloud-databases/cloud-databases-dashboard-backups
 	howto-pitr.md
-	/cloud-databases/cloud-databases-whitelisting
+	/cloud-databases/cloud-databases-allowlisting
 
 	{: .topicgroup}
 	Replication
