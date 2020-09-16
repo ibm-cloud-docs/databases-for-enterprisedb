@@ -88,7 +88,7 @@ If you are just using PostgreSQL for the first time, it is a good idea to take a
 
 You can connect to and manage your databases and data with PostgreSQL's command-line tool [`psql`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql).
 
-Looking for more tools on managing your deployment? You can connect to your deployment with [IBM Cloud CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli) and the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference). Or use the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api).
+Looking for more tools on managing your deployment? You can connect to your deployment with [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli) and the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference). Or use the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api).
 
 If you are planning to use {{site.data.keyword.databases-for-enterprisedb}} for your applications, check out some of our other documentation pages.
 - [Connecting an external application](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-external-app)

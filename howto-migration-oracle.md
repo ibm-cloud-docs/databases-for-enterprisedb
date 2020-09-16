@@ -23,7 +23,7 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 
 
 ## Prerequisites
-EMP is managed by an external party, [EDB](https://www.enterprisedb.com/). Use of this portal is at your own risk and subject to the EDB terms and conditions. For more details, review the [IBM Open Source and Third party software policy](https://www.ibm.com/support/pages/ibm-open-source-and-third-party-software-policy). For detailed usage information, review the [EDB Migration Portal User Guide](https://www.enterprisedb.com/edb-docs/p/edb-postgres-migration-portal). 
+EMP is managed by an external party, [EDB](https://www.enterprisedb.com/). Use of this portal is at your own risk and subject to the EDB terms and conditions. For more details, review the [IBM Open Source and Third-party software policy](https://www.ibm.com/support/pages/ibm-open-source-and-third-party-software-policy). For detailed usage information, review the [EDB Migration Portal User Guide](https://www.enterprisedb.com/edb-docs/p/edb-postgres-migration-portal). 
 - Create an EDB account [here](https://www.enterprisedb.com/) 
 - Request EDB repo access [here](https://info.enterprisedb.com/rs/069-ALB-339/images/Repository%20Access%2004-09-2019.pdf?_ga=2.254315016.140796928.1589217151-186337169.1584631506)
 - Provision an {{site.data.keyword.databases-for-enterprisedb_full}} instance
@@ -46,7 +46,7 @@ You can run schema extraction, schema migration, and data migration by using Mig
 1. Log in to the EnterpriseDB migration portal [here](https://migration.enterprisedb.com/)
 2. Create a project and load the DDL Extractor-generated file for assessment 
 ![migration-portal-setup](images/migration-portal-setup.png)
-3. Fix any issue report by the EMP and make sure your are getting 100% coverage successfully
+3. Fix any issue report by the EMP and make sure you are getting 100% coverage successfully
 
 ### Export converted schema from migration portal to EnterpriseDB formation
 1. Export and deploy the converted schema from migration portal to your provisioned {{site.data.keyword.databases-for-enterprisedb}} formation 

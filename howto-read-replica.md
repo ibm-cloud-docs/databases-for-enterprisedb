@@ -80,7 +80,7 @@ ibmcloud resource service-instance-create <replica_name> databases-for-enterpris
 The same parameter is used to provision a read-only replica through the Resource Controller API.
 ```
 curl -X POST \
-  https://resource-controller.bluemix.net/v2/resource_instances \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
   -H 'Content-Type: application/json' \
     -d '{
