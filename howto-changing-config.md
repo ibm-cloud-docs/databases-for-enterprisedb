@@ -65,7 +65,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 [`max_connections`](https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-MAX-CONNECTIONS)
   - Default - 115
   - Restarts database? - **YES**
-  - Notes - [You might need to scale before you increase max connections.](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability#connection-limits)
+  - Notes - [You might need to scale before you increase max connections.](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability#connection-limits-ha)
 
 [`max_prepared_transactions`](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-PREPARED-TRANSACTIONS)
   - Default - 0
@@ -81,7 +81,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 [`effective_io_concurrency`](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-EFFECTIVE-IO-CONCURRENCY)
   - Default - `12`
   - Restarts database - No
-  - Notes - It is recommended to leave this setting at the default. Only increase it you profiled SQL queries and observed inefficient bitmap heap scans. As [IOPS are tied to disk size](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability#disk-iops), increasing this setting on default or smaller sized disks is also not recommended.
+  - Notes - It is recommended to leave this setting at the default. Only increase it you profiled SQL queries and observed inefficient bitmap heap scans. As [IOPS are tied to disk size](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-performance#disk-iops), increasing this setting on default or smaller sized disks is also not recommended.
 
 [`deadlock_timeout`](https://www.postgresql.org/docs/current/runtime-config-locks.html)
   - Default - 10000
@@ -104,7 +104,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
   - Notes - Statements that take longer than the specified number of milliseconds are logged.
 
 
-The next three settings `wal_level`, `max_replication_slots`, and `max_wal_senders` enable use of the [`wal2json` logical decoding plug-in](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-wal2json). Anyone not using this plug-in should leave these settings at the default.
+The next three settings `wal_level`, `max_replication_slots`, and `max_wal_senders` enable use of the [`wal2json` logical decoding plug-in](/docs/databases-for-postgresql?topic=databases-for-postgresql-wal2json). Anyone not using this plug-in should leave these settings at the default.
 
 [`wal_level`](https://www.postgresql.org/docs/current/runtime-config-wal.html)
   - Default - `hot_standby`
