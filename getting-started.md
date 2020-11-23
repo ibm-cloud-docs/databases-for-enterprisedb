@@ -42,7 +42,7 @@ The _Dashboard_ pane has a _Welcome_ screen. From the _Quick Links_, click _Add 
 
 On your deployment's _Manage_ page, there is a pane with all the relevant connection information.
 
-![Connections pane](images/getting-started-connections-panel.png)
+![Endpoints pane](images/getting-started-endpoints-panel.png)
 
 Back in pgAdmin, provide pgAdmin with the information it needs to connect to your deployment. 
 
@@ -56,7 +56,7 @@ First, complete the _Connection_ information,
 ![Completed Connection information](images/getting-started-connection-info.png)
 
 Then, configure the _SSL_ settings.
-- Copy the certificate information from the _Connections_ pane.
+- Copy the certificate information from the _Endpoints_ pane.
 - Save the certificate to a file. (You can use the name that is provided in the download, or your own file name.)
 - Set the _SSL mode_ field to _Verify-Full_.
 - In the _Root certificate_ field, select the file where you saved your deployment's certificate.
