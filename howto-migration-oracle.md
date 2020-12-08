@@ -16,19 +16,18 @@ subcollection: databases-for-enterprisedb
 {:pre: .pre}
 {:tip: .tip}
 
-# {{site.data.keyword.databases-for-enterprisedb}} Migration using EMP
+# {{site.data.keyword.databases-for-enterprisedb}} Migration by using EMP
 {: #oracle-migrating}
 
-Details how to set up and run a migration from a local Oracle Database to an {{site.data.keyword.databases-for-enterprisedb_full}} formation by using the {{site.data.keyword.databases-for}} EnterpriseDB Migration Portal (EMP). 
+Details how to set up and run a migration from a local Oracle database to an {{site.data.keyword.databases-for-enterprisedb_full}} formation by using the {{site.data.keyword.databases-for}} EnterpriseDB Migration Portal (EMP). 
 
 ## Prerequisites and notes
 
-- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window}.
+- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window
 - And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb). Give your deployment a memorable name that appears in your account's Resource List.
-
 - The EnterpriseDB Migration Portal (EMP) is only for schema assessment and migration.
 - EMP is available on public endpoint only.
-- EMP projects are only visible to the user that created the project. Individual users each have their own set of projects in the EMP which are visible only to themselves.
+- EMP projects are only visible to the user that created the project. Individual users each have their own set of projects in the EMP that are visible only to themselves.
 
 
 ## Accessing the EnterpriseDB Migration portal (EMP)
@@ -39,7 +38,7 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 
     ![EMP Endpoint](images/emp-endpoint.png)
 
-  1. Copy the Endpoint URL into a new browser window to launch the EMP. 
+  1. Copy the Endpoint URL into a new browser window to invoke the EMP. 
   2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
          
   
@@ -54,7 +53,7 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 
 ### Validate the extracted schema 
 1. Log in to the EnterpriseDB migration portal (EMP)
-2. Create a project by clicking the `New` button, and load the DDL Extractor-generated file for assessment 
+2. Create a project by clicking `New`, and load the DDL Extractor-generated file for assessment 
     
     ![migration-portal-setup](images/emp-new-project.png)
 
@@ -64,7 +63,7 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 ### Migrate your exported converted schema into your EnterpriseDB formation
 Export and deploy the converted schema from migration portal to your provisioned {{site.data.keyword.databases-for-enterprisedb}} formation.
 
-1. Select the `Migrate to...` button to begin the migratiton process.
+1. Select the `Migrate to...` button to begin the migration process.
 
     ![Begin migration](images/emp-migrate-to.png)
 
@@ -82,21 +81,21 @@ Export and deploy the converted schema from migration portal to your provisioned
 
 5. Click next to use an existing cluster (or click `Go to IBM Cloud` to create a new cluster).
 
-    ![Create or use existing cluser](images/emp-cluster.png)
+    ![Create or use existing cluster](images/emp-cluster.png)
 
-6. Connect to an existing cluster. Enter the target deployment's details (hostname and port are available on the deployment's endpoints PostgresSQL tab) and click `Test Connection` to validate the connection. To deploy, click "next" once a successful connection is confirmed. 
+6. Connect to an existing cluster. Enter the target deployment's details (hostname and port are available on the deployment's endpoints PostgresSQL tab) and click `Test Connection` to validate the connection. To deploy, click "next" after a successful connection is confirmed. 
 
-    ![Connection details for an existing cluser](images/emp-connect-existing.png)
+    ![Connection details for an existing cluster](images/emp-connect-existing.png)
 You can use the admin user (after changing its password), or you can create a new db user on the database and use those credentials.
-{ .tip}
+{: .tip}
 
 6. Upon successful migration completion, download and review the summary log file, and click "done" to exit from the process. 
 
-    ![Connection details for an existing cluser](images/emp-done.png)
+    ![Connection details for an existing cluster](images/emp-done.png)
 
 
 ### Verify schema migration to EnterpriseDB formation
-1. List the available databases using the CLI command: `psql -d ibmclouddb -c "\l"`
+1. List the available databases by using the CLI command: `psql -d ibmclouddb -c "\l"`
     ```text
     bash-4.2# psql -d ibmclouddb -c "\l"
                                              List of databases
@@ -114,7 +113,7 @@ You can use the admin user (after changing its password), or you can create a ne
     ``` 
 
 
-## Data migration using the EnterpriseDB Migration Toolkit (MTK)
+## Data migration by using the EnterpriseDB Migration Toolkit (MTK)
 {: #data-mtk}
 
 MTK is managed by an external party, [EDB](https://www.enterprisedb.com/). Use of this toolkit is at your own risk and subject to the EDB terms and conditions. For more details, review the [IBM Open Source and Third-party software policy](https://www.ibm.com/support/pages/ibm-open-source-and-third-party-software-policy). 
