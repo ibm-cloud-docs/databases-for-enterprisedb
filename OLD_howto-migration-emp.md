@@ -1,6 +1,6 @@
 ---
 copyright:
-  years: 2019, 2020
+  years: 2020
 lastupdated: "2020-12-08"
 
 keywords: postgresql, databases, EMP, edb, oracle, enterprisedb
