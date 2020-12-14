@@ -22,11 +22,13 @@ subcollection: databases-for-enterprisedb
 Details how to set up and run a migration from a local Oracle database to an {{site.data.keyword.databases-for-enterprisedb_full}} formation by using the {{site.data.keyword.databases-for}} EnterpriseDB Migration Portal (EMP). 
 
 ## Prerequisites and notes
-
-- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .new_window}
+### Prerequisites 
+- You need an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .new_window}
 - And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb). Give your deployment a memorable name that appears in your account's Resource List.
-- The EnterpriseDB Migration Portal (EMP) is only for schema assessment and migration.
+### Notes
+- The {{site.data.keyword.databases-for-enterprisedb}} Migration Portal (EMP) is only for schema assessment and migration.
 - EMP projects are only visible to the user that created the project. Individual users each have their own set of projects in the EMP that are visible only to themselves.
+- While EMP is available on public or private endpoints, it can exist only on one endpoint for the same formation. For example, if you provisioned {{site.data.keyword.databases-for-enterprisedb}} with only public enabled, then EMP exists on a public endpoint. Likewise, if you provisioned {{site.data.keyword.databases-for-enterprisedb}} with only private enabled then EMP exists only on a private endpoint. However, if you provisioned {{site.data.keyword.databases-for-enterprisedb}} on _both public and private_ at the same time, then EMP is available _only on the public endpoint_.
 
  
 ## Accessing the EnterpriseDB Migration portal (EMP)
@@ -37,11 +39,11 @@ Details how to set up and run a migration from a local Oracle database to an {{s
 
     ![EMP Endpoint](images/emp-endpoint.png)
 
-  1. Copy the Endpoint URL into a new browser window to invoke the EMP. 
+  1. Copy the Endpoint URL into a new browser window to start the EMP. 
   2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
          
   
-## {{site.data.keyword.databases-for-enterprisedb}} Schema migration by using EMP
+## {{site.data.keyword.databases-for-enterprisedb}} schema migration by using EMP
 {: #emp-migrating}
 
 ### Extract the schema 
@@ -53,7 +55,7 @@ Details how to set up and run a migration from a local Oracle database to an {{s
 ### Validate the extracted schema 
 1. Log in to the EnterpriseDB migration portal (EMP)
 2. Create a project by clicking `New`. 
-3. Enter a project name, and load the DDL Extractor-generated file for assessment. (Note that EMP accepts only single string project names without spaces.) 
+3. Enter a project name, and load the DDL Extractor-generated file for assessment. (Note: EMP accepts only single string project names without spaces.) 
     
     ![migration-portal-setup](images/emp-new-project.png)
 
@@ -120,7 +122,7 @@ MTK is managed by an external party, [EDB](https://www.enterprisedb.com/). Use o
 {: .note}
 
 ### Install EnterpriseDB Migration Toolkit
-1. Follow the steps on how to install the EnterpriseDB Migration Toolkit [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit). (Skip the IDENT Authentication section in the install guide.)
+1. Follow the steps on how to install the EnterpriseDB Migration Toolkit [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit). (Skip the IDENT Authentication section in the installation guide.)
 2. Migration Toolkit script is located in the Oracle container at: `/usr/edb/migrationtoolkit/bin/runMTK.sh`
    
 Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle instance you must install the Oracle jdbc.
