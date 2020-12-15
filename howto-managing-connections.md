@@ -100,7 +100,7 @@ Alternatively, you can use a third-party tool such as [PgBouncer](https://pgboun
 
 Next, change the value of `max_connections` on your deployment. To make permanent changes to the [{{site.data.keyword.databases-for-enterprisedb}} configuration](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-changing-configuration#changing-configuration), you want to use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment. 
 
-For example, to raise `max_connections` to 215, it might be a good idea to scale your deployment to at least 2 GB of RAM per data member, for a total of 6 GB of RAM for your deployment. Once the scaling operation has finishes, then set the connection limit. In the CLI,
+For example, to raise `max_connections` to 215, it might be a good idea to scale your deployment to at least 2 GB of RAM per data member, for a total of 6 GB of RAM for your deployment. Once the scaling operation has finished, then set the connection limit. In the CLI,
 ```
 ibmcloud cdb deployment-groups-set example-deployment member --memory 6144
 

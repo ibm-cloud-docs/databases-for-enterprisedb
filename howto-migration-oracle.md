@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-12-09"
 
-keywords: postgresql, databases, oracle, edb, enterprisedb
+keywords: postgresql, databases, EMP, edb, oracle, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -16,45 +16,88 @@ subcollection: databases-for-enterprisedb
 {:pre: .pre}
 {:tip: .tip}
 
-# Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration
+# {{site.data.keyword.databases-for-enterprisedb}} Migration by using EMP
 {: #oracle-migrating}
 
-Details how to set up and run a migration from a local Oracle Database to an {{site.data.keyword.databases-for-enterprisedb_full}} formation by using the EnterpriseDB Migration Toolkit (MTK) with and without the EnterpriseDB Migration portal (EMP). 
+Details how to set up and run a migration from a local Oracle database to an {{site.data.keyword.databases-for-enterprisedb_full}} formation by using the {{site.data.keyword.databases-for}} EnterpriseDB Migration Portal (EMP). 
 
+## Prerequisites and notes
+### Prerequisites 
+- You need an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .new_window}
+- And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb). Give your deployment a memorable name that appears in your account's Resource List.
+### Notes
+- The {{site.data.keyword.databases-for-enterprisedb}} Migration Portal (EMP) is only for schema assessment and migration.
+- EMP projects are only visible to the user that created the project. Individual users each have their own set of projects in the EMP that are visible only to themselves.
+- While EMP is available on public or private endpoints, it can exist only on one endpoint for the same formation. For example, if you provisioned {{site.data.keyword.databases-for-enterprisedb}} with only public enabled, then EMP exists on a public endpoint. Likewise, if you provisioned {{site.data.keyword.databases-for-enterprisedb}} with only private enabled then EMP exists only on a private endpoint. However, if you provisioned {{site.data.keyword.databases-for-enterprisedb}} on _both public and private_ at the same time, then EMP is available _only on the public endpoint_.
 
-## Prerequisites
-EMP is managed by an external party, [EDB](https://www.enterprisedb.com/). Use of this portal is at your own risk and subject to the EDB terms and conditions. For more details, review the [IBM Open Source and Third-party software policy](https://www.ibm.com/support/pages/ibm-open-source-and-third-party-software-policy). For detailed usage information, review the [EDB Migration Portal User Guide](https://www.enterprisedb.com/edb-docs/p/edb-postgres-migration-portal). 
-- Create an EDB account [here](https://www.enterprisedb.com/) 
-- Request EDB repo access [here](https://info.enterprisedb.com/rs/069-ALB-339/images/Repository%20Access%2004-09-2019.pdf?_ga=2.254315016.140796928.1589217151-186337169.1584631506)
-- Provision an {{site.data.keyword.databases-for-enterprisedb_full}} instance
+ 
+## Accessing the EnterpriseDB Migration portal (EMP)
+{: #accessing-emp}
 
-## Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration by using MTK only
-You can run schema extraction, schema migration, and data migration by using Migration Toolkit (MTK) only. To do that you need to:
-1. Install and setup MTK locally following the steps noted under the heading: [`Install EnterpriseDB Migration toolkit`](###install-enterprisedb-migrationtoolkit)
-2. Follow the MTK command options for `Import Options` and `Schema Creation` to extract and migrate Oracle schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html)
-3. MTK also supports offline migration for both schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html#offline-migration-options)
+- EMP is provisioned along with your {{site.data.keyword.databases-for-enterprisedb}} deployment. 
+- EMP access is provided in the EMP tab in the `Endpoints` section of the overview tab in the {{site.data.keyword.databases-for-enterprisedb}} dashboard. 
 
-## Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration by using EMP and MTK
+    ![EMP Endpoint](images/emp-endpoint.png)
 
-### Extract the Oracle schema by using the EnteriseDB DDL Extractor
-1. Log in to the EnterpriseDB migration portal (EMP) [here](https://migration.enterprisedb.com/)
+  1. Copy the Endpoint URL into a new browser window to start the EMP. 
+  2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
+         
+  
+## {{site.data.keyword.databases-for-enterprisedb}} schema migration by using EMP
+{: #emp-migrating}
+
+### Extract the schema 
+1. Log in to the EnterpriseDB migration portal (EMP).
 2. Click `Portal Wiki`
 3. Follow the steps in `DDL Extractor guide` section
-4. After a successful attempt, a file like `_gen_ot_ddls_200511173723.sql` is created in the specified path
+4. After a successful attempt, a file like `_gen_ot_ddls_2005111737123.sql` is created in the specified path
 
-### Validate the extracted schema with migration portal
-1. Log in to the EnterpriseDB migration portal [here](https://migration.enterprisedb.com/)
-2. Create a project and load the DDL Extractor-generated file for assessment 
-![migration-portal-setup](images/migration-portal-setup.png)
-3. Fix any issue report by the EMP and make sure you are getting 100% coverage successfully
+### Validate the extracted schema 
+1. Log in to the EnterpriseDB migration portal (EMP)
+2. Create a project by clicking `New`. 
+3. Enter a project name, and load the DDL Extractor-generated file for assessment. (Note: EMP accepts only single string project names without spaces.) 
+    
+    ![migration-portal-setup](images/emp-new-project.png)
 
-### Export converted schema from migration portal to EnterpriseDB formation
-1. Export and deploy the converted schema from migration portal to your provisioned {{site.data.keyword.databases-for-enterprisedb}} formation 
-![exporting-schema](images/exporting-schema.png)
+4. Click `Create & Assess`.
+5. Fix any issue report by the EMP and make sure you are getting 100% coverage successfully
+
+### Migrate your exported converted schema into your EnterpriseDB formation
+Export and deploy the converted schema from migration portal to your provisioned {{site.data.keyword.databases-for-enterprisedb}} formation.
+
+1. Select the `Migrate to...` button to begin the migration process.
+
+    ![Begin migration](images/emp-migrate-to.png)
+
+2. Choose the `EDB Postgres Advanced Server on Cloud` option to migrate your schemas on EDB Postgres Advanced Server on Cloud, and click "next". 
+
+    ![Select Cloud destination](images/emp-select-cloud.png)
+
+3. Select the schemas and click "next".
+
+    ![Select schemas](images/emp-select-schemas.png)
+
+4. Select the schemas and click "next".
+
+    ![Select platform](images/emp-select-platform.png)
+
+5. Click next to use an existing cluster (or click `Go to IBM Cloud` to create a new cluster).
+
+    ![Create or use existing cluster](images/emp-cluster.png)
+
+6. Connect to an existing cluster. Enter the target deployment's details (hostname and port are available on the deployment's endpoints PostgresSQL tab) and click `Test Connection` to validate the connection. To deploy, click "next" after a successful connection is confirmed. 
+
+    ![Connection details for an existing cluster](images/emp-connect-existing.png)
+You can use the admin user (after changing its password), or you can create a new db user on the database and use those credentials.
+{: .tip}
+
+6. Upon successful migration completion, download and review the summary log file, and click "done" to exit from the process. 
+
+    ![Connection details for an existing cluster](images/emp-done.png)
 
 
 ### Verify schema migration to EnterpriseDB formation
-1. List the available databases
+1. List the available databases by using the CLI command: `psql -d ibmclouddb -c "\l"`
     ```text
     bash-4.2# psql -d ibmclouddb -c "\l"
                                              List of databases
@@ -72,12 +115,18 @@ You can run schema extraction, schema migration, and data migration by using Mig
     ``` 
 
 
+## Data migration by using the EnterpriseDB Migration Toolkit (MTK)
+{: #data-mtk}
+
+MTK is managed by an external party, [EDB](https://www.enterprisedb.com/). Use of this toolkit is at your own risk and subject to the EDB terms and conditions. For more details, review the [IBM Open Source and Third-party software policy](https://www.ibm.com/support/pages/ibm-open-source-and-third-party-software-policy). 
+{: .note}
+
 ### Install EnterpriseDB Migration Toolkit
-1. Follow the steps on how to install EnterpriseDB Migration Toolkit (skip IDENT Authentication section)
-    [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit)
+1. Follow the steps on how to install the EnterpriseDB Migration Toolkit [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit). (Skip the IDENT Authentication section in the installation guide.)
 2. Migration Toolkit script is located in the Oracle container at: `/usr/edb/migrationtoolkit/bin/runMTK.sh`
    
-Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle instance you must install the Oracle jdbc
+Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle instance you must install the Oracle jdbc.
+
 
 ### Run MTK to migrate data from Oracle to edb-migration formation
 1. Edit `toolkit.properties` file to set up source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [More about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/building_toolkit.properties_file.html)
@@ -96,7 +145,7 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
     ```text
         /usr/edb/migrationtoolkit/bin/runMTK.sh -dataOnly -targetSchema ot -truncLoad OT
     ```
-4. A successful migration output sample
+4. A successful migration output sample:
     ```text
         Enabling FK constraints & triggers on ot.warehouses...
         Enabling indexes on ot.warehouses after data load...
@@ -118,3 +167,12 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
         
         *************************************************************
     ```
+
+
+## Oracle to {{site.data.keyword.databases-for-enterprisedb}} Migration by using MTK only
+You can run schema extraction, schema migration, and data migration by using Migration Toolkit (MTK) only. To do that you need to:
+
+1. Install and setup MTK locally following the steps noted under the heading: [`Install EnterpriseDB Migration toolkit`](###install-enterprisedb-migrationtoolkit)
+2. Follow the MTK command options for `Import Options` and `Schema Creation` to extract and migrate Oracle schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html)
+3. MTK also supports offline migration for both schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html#offline-migration-options)
+
