@@ -44,6 +44,7 @@ If you have deployments that are in a Single-zone Region (SZR) - `osl01`, `che01
 
 | Metric Name |
 |-----------|
+| [Deadlocks count](#ibm_databases_for_enterprisedb_deadlocks_count) |
 | [IO utilization in percent 5 minute average](#ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 15 minute average](#ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_15m) | 
 | [IO utilization in percent 30 minute average](#ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_30m) | 
@@ -51,13 +52,33 @@ If you have deployments that are in a Single-zone Region (SZR) - `osl01`, `che01
 | [IOPS read & write total count for an instance.](#ibm_databases-for-enterprisedb_disk_iops_read_write_total) | 
 | [Max allowed memory for an instance.](#ibm_databases-for-enterprisedb_memory_limit_bytes) | 
 | [Read replica replication lag.](#ibm_databases-for-enterprisedb_read_replica_replication_lag_bytes) | 
-| [The total number of PostgreSQL connections being used.](#ibm_databases-for-enterprisedb_total_connections) | 
+| [Temporary files size in bytes](#ibm_databases_for_enterprisedb_temp_bytes_count) |
+| [Total number of PostgreSQL connections being used.](#ibm_databases-for-enterprisedb_total_connections) | 
 | [Total disk space for an instance.](#ibm_databases-for-enterprisedb_disk_total_bytes) | 
+| [Transaction commit count](#ibm_databases_for_enterprisedb_transaction_commit_count) |
+| [Transaction rollback count](#ibm_databases_for_enterprisedb_transaction_rollback_count) |
+| [Tuples deleted count](#ibm_databases_for_enterprisedb_tuples_deleted_count) |
+| [Tuples fetched count](#ibm_databases_for_enterprisedb_tuples_fetched_count) |
+| [Tuples inserted count](#ibm_databases_for_enterprisedb_tuples_inserted_count) |
+| [Tuples updated count](#ibm_databases_for_enterprisedb_tuples_updated_count) |
 | [Used CPU for an instance.](#ibm_databases-for-enterprisedb_cpu_used_percent) | 
 | [Used disk space for an instance.](#ibm_databases-for-enterprisedb_disk_used_bytes) | 
 | [Used memory for an instance.](#ibm_databases-for-enterprisedb_memory_used_bytes) | 
+| [WAL logs size in bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
 {: caption="Table 1. Available Metrics" caption-side="top"}
 
+### Deadlocks count
+{: #ibm_databases_for_enterprisedb_deadlocks_count}
+
+Deadlocks count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_deadlocks_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 6: Deadlocks count metric metadata" caption-side="top"}
 ### IO utilization in percent 5 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_5m}
 
@@ -149,6 +170,19 @@ How far behind a PostgreSQL read-only replica is, in bytes.
 | `Segment By` | `Service instance` |
 {: caption="Table 8. Read replica replication lag metric metadata" caption-side="top"}
 
+### Temporary files size in bytes
+{: #ibm_databases_for_enterprisedb_temp_bytes_count}
+
+Temporary files size in bytes
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_temp_bytes_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 71: Temporary files size in bytes metric metadata" caption-side="top"}
+
 ### The total number of PostgreSQL connections in use
 {: #ibm_databases-for-enterprisedb_total_connections}
 
@@ -174,6 +208,87 @@ Represents the total amount of disk available to your deployment.
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
 {: caption="Table 10. Total disk space for an instance metric metadata" caption-side="top"}
+
+### Transaction commit count
+{: #ibm_databases_for_enterprisedb_transaction_commit_count}
+
+Transaction commit count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_commit_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 83: Transaction commit count metric metadata" caption-side="top"}
+
+### Transaction rollback count
+{: #ibm_databases_for_enterprisedb_transaction_rollback_count}
+
+Transaction rollback count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_rollback_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 84: Transaction rollback count metric metadata" caption-side="top"}
+
+
+### Tuples deleted count
+{: #ibm_databases_for_enterprisedb_tuples_deleted_count}
+
+Tuples deleted count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_deleted_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 86: Tuples deleted count metric metadata" caption-side="top"}
+
+### Tuples fetched count
+{: #ibm_databases_for_enterprisedb_tuples_fetched_count}
+
+Tuples fetched count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_fetched_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 88: Tuples fetched count metric metadata" caption-side="top"}
+
+
+### Tuples inserted count
+{: #ibm_databases_for_enterprisedb_tuples_inserted_count}
+
+Tuples inserted count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_inserted_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 91: Tuples inserted count metric metadata" caption-side="top"}
+
+### Tuples updated count
+{: #ibm_databases_for_enterprisedb_tuples_updated_count}
+
+Tuples updated count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_updated_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance` |
+{: caption="Table 92: Tuples updated count metric metadata" caption-side="top"}
+
 
 ### Used CPU for an instance
 {: #ibm_databases-for-enterprisedb_cpu_used_percent}
@@ -213,6 +328,19 @@ How much memory your deployment is using.
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
 {: caption="Table 13. Used memory for an instance metric metadata" caption-side="top"}
+
+### WAL logs size in bytes
+{: #ibm_databases_for_enterprisedb_wal_used_bytes}
+
+WAL logs size in bytes
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_wal_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance` |
+{: caption="Table 136: WAL logs size in bytes metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: #attributes}
