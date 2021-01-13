@@ -27,6 +27,7 @@ Databases For EnterpriseDB
 		connecting-external.md
 		connecting-ibmcloud-app.md
 		connecting-psql.md
+		/cloud-databases/cloud-databases-vpes
 
 	howto-user-management.md
 
