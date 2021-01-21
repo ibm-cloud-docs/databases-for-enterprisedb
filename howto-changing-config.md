@@ -89,6 +89,26 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
   - Options - Minimum value of 100
   - Notes - The number of milliseconds to wait before checking for deadlock and the duration where lock waits are logged. Logs available through the [logging integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging). Setting this number too low negatively impacts performance.
 
+[`log_connections`](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-CONNECTIONS)
+  - Default - `off`
+  - Restarts database - No
+  - Options - Values of `on` or `off` 
+  - Notes - Setting this value to `on` will make the logs very verbose. It will also show the connections of the monitoring tooling as it extracts metrics every 60 seconds. When set to `off`, there is no change in behavior to the default setting and no connections are logged. Logs are available through the [logging integration](/docs/databases-for-postgresql?topic=cloud-databases-logging). If `on` is set, the logs will show lines similar to this example:
+    ```
+    2021-01-18 15:39:43 UTC [[unknown]] [00000] [1200]: [1-1] user=[unknown],db=[unknown],client=127.0.0.1 LOG:  connection received: host=127.0.0.1 port=43380
+    ```
+   
+  
+[`log_disconnections`](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-DISCONNECTIONS)
+  - Default - `off`
+  - Restarts database - No
+  - Options - Values of `on` or `off` 
+  - Notes - Setting this value to `on` will make the logs very verbose. It will also show the disconnections of the monitoring tooling as it extracts metrics every 60 seconds. When set to `off`, there is no change in behavior to the default setting and no disconnections are logged. Logs are available through the [logging integration](/docs/databases-for-postgresql?topic=cloud-databases-logging). If `on` is set, the logs will show lines similar to this example:
+    ```
+    2021-01-18 15:39:47 UTC [psql] [00000] [1200]: [3-1] user=admin,db=ibmclouddb,client=127.0.0.1 LOG:  disconnection: session time: 0:00:03.415 user=admin database=ibmclouddb host=127.0.0.1 port=43380
+    ``` 
+   
+
 ### WAL Settings
 
 [`archive_timeout`](https://www.postgresql.org/docs/current/runtime-config-wal.html)

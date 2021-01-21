@@ -122,14 +122,14 @@ MTK is managed by an external party, [EDB](https://www.enterprisedb.com/). Use o
 {: .note}
 
 ### Install EnterpriseDB Migration Toolkit
-1. Follow the steps on how to install the EnterpriseDB Migration Toolkit [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit). (Skip the IDENT Authentication section in the installation guide.)
+1. Follow the steps on how to install the EnterpriseDB Migration Toolkit [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.2/installing_mtk.html#using-an-rpm-package-to-install-migration-toolkit). (Skip the IDENT Authentication section in the installation guide.)
 2. Migration Toolkit script is located in the Oracle container at: `/usr/edb/migrationtoolkit/bin/runMTK.sh`
    
 Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle instance you must install the Oracle jdbc.
 
 
 ### Run MTK to migrate data from Oracle to edb-migration formation
-1. Edit `toolkit.properties` file to set up source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [More about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/building_toolkit.properties_file.html)
+1. Edit `toolkit.properties` file to set up source and target connections. The file is available at `/usr/edb/migrationtoolkit/etc/toolkit.properties`. [More about toolkit.properties](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.2/building_toolkit.properties_file.html)
 2. Following the setup steps, the `toolkit.properties` file now resembles:
     ```text
         SRC_DB_URL=jdbc:oracle:thin:@localhost:1521:ORCL
@@ -140,7 +140,7 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
         TARGET_DB_USER=enterprisedb
         TARGET_DB_PASSWORD=password
 	```
-3. Start MTK to begin the data migration process from `OT` Oracle schema to `ot` EnterpriseDB schema under `ot_migration` database. [For more about MTK args](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.0/mtk_command_options.html)
+3. Start MTK to begin the data migration process from `OT` Oracle schema to `ot` EnterpriseDB schema under `ot_migration` database. [For more about MTK args](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.2/mtk_command_options.html)
 
     ```text
         /usr/edb/migrationtoolkit/bin/runMTK.sh -dataOnly -targetSchema ot -truncLoad OT
@@ -173,6 +173,6 @@ Note: MTK by default includes the `edb jdbc driver`, but to connect to an Oracle
 You can run schema extraction, schema migration, and data migration by using Migration Toolkit (MTK) only. To do that you need to:
 
 1. Install and setup MTK locally following the steps noted under the heading: [`Install EnterpriseDB Migration toolkit`](###install-enterprisedb-migrationtoolkit)
-2. Follow the MTK command options for `Import Options` and `Schema Creation` to extract and migrate Oracle schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html)
-3. MTK also supports offline migration for both schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/52.0.3/mtk_command_options.html#offline-migration-options)
+2. Follow the MTK command options for `Import Options` and `Schema Creation` to extract and migrate Oracle schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.2/mtk_command_options.html)
+3. MTK also supports offline migration for both schema and data [here](https://www.enterprisedb.com/edb-docs/d/edb-postgres-migration-toolkit/user-guides/user-guide/53.0.2/mtk_command_options.html#offline-migration-options)
 
