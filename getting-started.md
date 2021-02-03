@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-06-30"
+  years: 2018, 2021
+lastupdated: "2021-02-02"
 
 keywords: pgAdmin, postgresql gui, edb, enterprisedb
 
@@ -29,6 +29,8 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 - And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb). Give your deployment a memorable name that appears in your account's Resource List.
 - [Set the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password) for your deployment.
 - An installation of [pgAdmin4](https://www.pgadmin.org/download/).
+
+Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) documentation for general guidance on setting up a basic {{site.data.keyword.databases-for-enterprisedb_full}} deployment.
 
 ## Connecting with pgAdmin
 
