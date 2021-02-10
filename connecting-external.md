@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-02-10"
 
 keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb
 
