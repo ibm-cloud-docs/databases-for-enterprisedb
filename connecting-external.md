@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-06-30"
+  years: 2017, 2021
+lastupdated: "2021-06-30"
 
 keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb
 
@@ -13,7 +13,6 @@ subcollection: databases-for-enterprisedb
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -49,16 +48,19 @@ Field Name|Index|Description
 
 
 Many PostgreSQL drivers are able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example,
-{: generic}
+
 ```
 postgres://ibm_cloud_30399dec_4835_4967_a23d_30587a08d9a8:$PASSWORD@981ac415-5a35-4ac7-b6bb-fb609326dc42.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32704/ibmclouddb?sslmode=verify-full
 ```
-{: generic}
-
-
 
 This example uses the information from your connection string and the Java driver [`jdbc`](https://jdbc.postgresql.org/documentation/head/index.html) to connect to your database.
 {: java}
+
+This example uses the information from your connection string and the Python driver [`Psycopg2`](https://wiki.postgresql.org/wiki/Psycopg2_Tutorial) to connect to your database. This is just a simple connection example, without error handling or retry logic and might not be suitable for production.
+{: python}
+
+This example uses the information from your connection string and the Node driver [`node-postgres`](https://node-postgres.com/) to connect to your database.
+{: javascript}
 
 ```java
 import java.sql.Connection;
@@ -120,11 +122,6 @@ public class PGConnect {
 ```
 {: java}
 
-
-
-This example uses the information from your connection string and the Python driver [`Psycopg2`](https://wiki.postgresql.org/wiki/Psycopg2_Tutorial) to connect to your database. This is just a simple connection example, without error handling or retry logic and might not be suitable for production.
-{: python}
-
 ```python
 import psycopg2
 
@@ -149,10 +146,6 @@ for row in rows:
     print("  ",row[0])
 ```
 {: python}
-
-
-This example uses the information from your connection string and the Node driver [`node-postgres`](https://node-postgres.com/) to connect to your database.
-{: javascript}
 
 ```javascript
 const pg = require("pg");
@@ -205,6 +198,7 @@ All connections to {{site.data.keyword.databases-for-enterprisedb}} are TLS 1.2 
 4. Provide the path to the certificate to the driver or client.
 
 ![CLI Endpoints panel](images/cli-endpoints-pane.png)
+
 ### CLI plug-in support for the self-signed certificate
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver.
