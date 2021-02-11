@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2018, 2020
-lastupdated: "2020-06-305"
+  years: 2017, 2020
+lastupdated: "2020-06-30"
 
 keywords: postgresql, databases, edb, enterprisedb
 
