@@ -71,20 +71,20 @@ Your admin user has the `pg_signal_backend` role. If you find connections that n
 
 The admin user does have the power to reset or close the connections for any user on the deployment except superusers. Be careful not to terminate replication connections from the `ibm-replication` user, as it interferes with the high-availability of your deployment.
 
-### Killing All Connections
+### End Connections
 
-If your deployment reaches the connection limit or you are having trouble connecting to your deployment and suspect that a high number of connections is a problem, you can kill all of the connections to your deployment. 
+If your deployment reaches the connection limit or you are having trouble connecting to your deployment and suspect that a high number of connections is a problem, you can disconnect (or end) all of the connections to your deployment. 
 
-In the UI, on the _Settings_ tab, there is a button to kill all connections to your deployment. Use caution, as it disrupts anything that is connected to your deployment.
+In the UI, on the _Settings_ tab, there is a button to `End Connections` to your deployment. Use caution, as it disrupts anything that is connected to your deployment.
 
-![Kill All Connections UI](images/settings-kill-connections.png)
+![End Connections UI](images/settings-end-connections.png)
 
-The CLI command to kill connections to the deployment is 
+The CLI command to end connections to the deployment is 
 ```
 ibmcloud cdb deployment-kill-connections <deployment name or CRN>
 ```
 
-You can also use the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#kill-connections-to-a-postgresql-deployment) to perform the kill all connections operation.
+You can also use the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#kill-connections-to-a-postgresql-deployment) to perform the end all connections operation.
 
 ## Connection Pooling
 

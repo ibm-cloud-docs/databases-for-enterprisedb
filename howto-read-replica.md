@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2019, 2020
-lastupdated: "2020-06-30"
+  years: 2019, 2021
+lastupdated: "2021-02-04"
 
 keywords: postgresql, databases, read-only replica, resync, promote, cross-region replication, edb, enterprisedb
 
@@ -48,7 +48,7 @@ A read-only replica is set up to replicate all of your data from the leader depl
 
 ## The Leader
 
-On the _Settings_ tab of a {{site.data.keyword.databases-for-enterprisedb}} deployment before any read-only replicas are provisioned, the _Replication_ pane has a **Create Read Replica** button.
+On the _Read Replicas_ tab of a {{site.data.keyword.databases-for-enterpisedb}} deployment before any read-only replicas are provisioned, the center pane notes that no read replicas exist and provides a **Create** button.
 
 ![Replication pane before a replica](images/replica-before.png)
 
@@ -58,7 +58,7 @@ If a deployment is a leader and has a read-only replica that is already attached
 
 ## Provisioning a Read-only Replica
 
-You can provision a read-only replica from the leader's _Settings_ pane by clicking **Create Read-Only Replica**. The source instance is automatically entered. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public or private endpoints are automatically configured to match the settings of the leader deployment.
+You can provision a read-only replica from the leader's _Read Replicas_ tab by clicking **Create Read-Only Replica**. The source instance is automatically entered. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public or private endpoints are automatically configured to match the settings of the leader deployment.
 
 If you use [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), Bring Your Own Key (BYOK) is supported only when provisioning from the CLI and API. Otherwise, the read-only replica is encrypted with a generated key. 
 {: .tip}
@@ -98,7 +98,7 @@ For both the CLI and API commands, you must specify both the RAM and disk amount
 
 ## The Read-only Replica
 
-On the _Settings_ tab of a read-only replica, the _Replication_ pane contains its name and region, and the name and region of its leader. It also has buttons to resync the read-only replica and to promote it.
+On the _Read Replicas_ tab of a read-only replica, the _Replication_ pane contains its name and region, and the name and region of its leader. It also has buttons to resync the read-only replica and to promote it.
 
 ![Replication pane of a read-only replica](images/replica-roreplica.png)
 
