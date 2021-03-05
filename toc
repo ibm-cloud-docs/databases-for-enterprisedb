@@ -72,8 +72,8 @@ Databases For EnterpriseDB
 		
 	{: .topicgroup}
 	Connecting over Private Networks
-		howto-vpes.md
-		reference-service-endpoints.md
+		/cloud-databases/cloud-databases-vpes
+		/cloud-databases/cloud-databases-service-endpoints
 
 	reference-monitoring.md
 	/cloud-databases/cloud-databases-activity-tracker
