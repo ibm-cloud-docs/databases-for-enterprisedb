@@ -69,6 +69,12 @@ Databases For EnterpriseDB
 	/databases-cli-plugin/databases-cli-plugin-cdb-reference
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
 	/cloud-databases/cloud-databases-versioning-policy
+		
+	{: .topicgroup}
+	Connecting over Private Networks
+		howto-vpes.md
+		reference-service-endpoints.md
+
 	reference-monitoring.md
 	/cloud-databases/cloud-databases-activity-tracker
 	/cloud-databases/cloud-databases-logging
