@@ -1,14 +1,14 @@
 {
     "troubleshoot-connect": [
         "How do I connect to my EnterpriseDB deployment?",
-        "cannot connect to my Postgres instance",
+        "cannot connect to my EnterpriseDB instance",
         "can't connect to EnterpriseDB database",
         "error connecting to EnterpriseDB deployment ",
-        "issue connecting to PostgeSQL Via Command line",
+        "issue connecting to EnterpriseDB Via Command line",
         "problem connecting to my EnterpriseDB production db",
         "errors connecting external application to EnterpriseDB database ",
         "application recieving timeouts when connecting to EnterpriseDB Database",
-        "external application logging Intermittent connection timeouts to ICD postgres Deployment",
+        "external application logging Intermittent connection timeouts to ICD EnterpriseDB Deployment",
         "error when connecting External app to Databases for EnterpriseDB",
         "EnterpriseDB Database will not connect to my external application ",
         "VMware vSphere VMs unable to connect to EnterpriseDB",
