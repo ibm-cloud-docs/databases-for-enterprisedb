@@ -36,9 +36,9 @@ Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases
 
 pgAdmin runs as a server and you connect to it through a browser. When the server is started, it runs on localhost, at default `http://127.0.0.1:53113/browser/`.
 
-When you first open pgAdmin, you get a prompt for setting a Primary Password. This password is different from your deployment's password; it is used specifically for pgAdmin to store passwords to your {{site.data.keyword.databases-for-enterprisedb}} servers or deployments.
+When you first open pgAdmin, you get a prompt for setting a `primary password`. This password is different from your deployment's password; it is used specifically for pgAdmin to store passwords to your {{site.data.keyword.databases-for-enterprisedb}} servers or deployments.
 
-The _Dashboard_ pane has a _Welcome_ screen. From the _Quick Links_, click _Add New Server_.
+The _Dashboard_ page has a _Welcome_ screen. From the _Quick Links_, click _Add New Server_.
 
 ![The pgAdmin Welcome](images/getting-started-pgAdmin-welcome.png)
 
@@ -69,11 +69,11 @@ Back on the _General_ tab, give your deployment a name and add any comments that
 
 ![General Tab](images/getting-started-pgAdmin-general.png)
 
-If the _Connect now?_ field is checked, pgAdmin attempts to connect to your deployment when you click the **Save** button.
+If the _Connect now?_ field is checked, pgAdmin attempts to connect to your deployment when you click **Save**.
 
 ## Using pgAdmin
 
-Once pgAdmin connects, your deployment appears in the _Servers_ list and you get a _Dashboard_ with information and statistics. 
+When pgAdmin connects, your deployment appears in the _Servers_ list and you get a _Dashboard_ with information and statistics. 
 
 ![pgAdmin Dashboard](images/getting-started-pgAdmin-Dashboard.png)
 
