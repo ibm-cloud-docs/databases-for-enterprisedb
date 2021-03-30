@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2020
-lastupdated: "2020-06-30"
+  years: 2020, 2021
+lastupdated: "2021-03-30"
 
 keywords: deployment, crn, task, gui, api endpoint, edb, enterprisedb
 
@@ -27,7 +27,7 @@ The type of database that is offered by the service, and the database version th
 ### ID
 The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which uniquely identifies the database deployment. The CRN is used to refer to the database in the API and can be used with the CLI.The _Overview_ pane shows details of your service.
 ### Recent Tasks
-Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [Activity Tracker integration](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker).
+Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.at_full}} integration](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker).
 
 ### Endpoints
 The _Endpoints_ pane within the _Overview_ pane contains connection strings for your deployment. Each tab contains connection information tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, as well as the TLS self-signed certificate, TLS/SSL parameters, and the default database of your deployment.
@@ -52,9 +52,9 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 
 ## Observability
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
-- [Activity Tracker](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker)
-- [Logging](/docs/databases-for-enterprisedb?topic=cloud-databases-logging)
-- [Monitoring](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-sysdig-monitoring)
+- [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker)
+- [{{site.data.keyword.loganalysisfull}}](/docs/databases-for-enterprisedb?topic=cloud-databases-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-sysdig-monitoring)
 ## Settings
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
 - view encryption details. Encryption at rest is enabled for all {{site.data.keyword.databases-for-enterprisedb}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
