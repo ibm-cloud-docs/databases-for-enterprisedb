@@ -53,8 +53,8 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 ## Observability
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment. 
 - [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker)
-- [{{site.data.keyword.loganalysisfull}}](/docs/databases-for-enterprisedb?topic=cloud-databases-logging)
-- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-sysdig-monitoring)
+- [{{site.data.keyword.la_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring)
 ## Settings
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
 - view encryption details. Encryption at rest is enabled for all {{site.data.keyword.databases-for-enterprisedb}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
