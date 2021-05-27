@@ -574,4 +574,3 @@ The following attributes are available for segmenting one or more attributes as 
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value depending on the name provided by the user. |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. |
 {: caption="Table 15. Additional Attributes Metadata" caption-side="top"}
-
