@@ -16,7 +16,12 @@ Databases For EnterpriseDB
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	/cloud-databases/cloud-databases-provisioning
+	{: .topicgroup}
+	IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite
+		/cloud-databases/cloud-databases-satellite-get-started
+		/cloud-databases/cloud-databases-satellite-aws
+		/cloud-databases/cloud-databases-satellite-on-prem
+		
 	howto-admin-password.md
 	howto-getting-connection-strings.md
 	/cloud-databases/cloud-databases-deprovisioning
