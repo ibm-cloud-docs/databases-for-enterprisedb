@@ -39,8 +39,8 @@ Details how to set up and run a migration from a local Oracle database to an {{s
 
     ![EMP Endpoint](images/emp-endpoint.png)
 
-  1. Copy the Endpoint URL into a new browser window to start the EMP. 
-  2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
+   1. Copy the Endpoint URL into a new browser window to start the EMP. 
+   2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
          
   
 ## {{site.data.keyword.databases-for-enterprisedb}} schema migration by using EMP

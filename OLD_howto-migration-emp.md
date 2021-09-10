@@ -23,7 +23,7 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 
 ## Prerequisites and notes
 
-- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window}.
+- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: new_window}.
 - And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb). Give your deployment a memorable name that appears in your account's Resource List.
 
 - The EnterpriseDB Migration Portal (EMP) is only for schema assessment and migration.
@@ -39,8 +39,8 @@ Details how to set up and run a migration from a local Oracle Database to an {{s
 
     ![EMP Endpoint](images/emp-endpoint.png)
 
-  1. Copy the Endpoint URL into a new browser window to launch the EMP. 
-  2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
+   1. Copy the Endpoint URL into a new browser window to launch the EMP. 
+   2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
          
   
 ## {{site.data.keyword.databases-for-enterprisedb}} Migration by using EMP
