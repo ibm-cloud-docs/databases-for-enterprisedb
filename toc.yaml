@@ -30,9 +30,10 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - howto-admin-password.md
-      - howto-getting-connection-strings.md
+      - /cloud-databases/cloud-databases-provisioning
       - /cloud-databases/cloud-databases-deprovisioning
+      - howto-getting-connection-strings.md
+      - howto-admin-password.md
       - /cloud-databases/cloud-databases-ha-dr
       - topicgroup: 
           label: Connecting to Databases for EnterpriseDB
