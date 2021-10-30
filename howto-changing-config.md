@@ -22,7 +22,7 @@ subcollection: databases-for-enterprisedb
 {{site.data.keyword.databases-for-enterprisedb_full}} is configurable to change some of the PosgreSQL settings so you can tune your {{site.data.keyword.databases-for-enterprisedb}} databases to your use-case. To make permanent changes to the database configuration, use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment.
 
 The configuration is defined in a schema. To make a change, you send a JSON object with the settings and their new values to the API or the CLI. For example, to set the `max_connections` setting to 150, you would supply 
-```
+```shell
 {"configuration":{"max_connections":150}}
 ```
 to either the CLI or to the API.
@@ -30,12 +30,12 @@ to either the CLI or to the API.
 ## Using the CLI
 
 You can check the current configuration of your deployment with 
-```
+```shell
 ibmcloud cdb deployment-configuration-schema <deployment name or CRN>
 ```
 
 To change your configuration through the {{site.data.keyword.databases-for}} cli-plugin, use `deployment-configuration` command. 
-```
+```shell
 ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSON_STRING]
 ```
 
@@ -55,48 +55,48 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 ### Memory Settings
 
 [`shared_buffers`](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-SHARED-BUFFERS)
-   - Default - `32000` (number of 8 KiB buffers, or about 262 MB) 
-   - Restarts database? - **Yes**
-   - Options - The maximum number of buffers is 1048576. 
-   - Notes - The setting specifies the number of 8 KiB shared memory buffers. For example, 1 GB of `shared_buffers` space is 1048576 KiB, and (1048576 KiB / 8 KiB) is 131072 buffers. The recommended memory allocation for `shared_buffers` is 25% of the deployment's RAM. Setting `shared_buffers` any higher can result in memory issues that cause the database to crash. Setting `shared_buffers` equal, close to equal, or higher than the amount of allocated memory prevents the database from starting. The maximum amount of total space for `shared_buffers` is 8 GB or 1048576 buffers based on recommendations from the PostgreSQL community. Your deployment can use more RAM for caching and performance, even without allocating it to `shared_buffers`. You do not have to configure the database to use all of the allocated RAM in order for your deployment to use it.
+- Default - `32000` (number of 8 KiB buffers, or about 262 MB) 
+- Restarts database? - **Yes**
+- Options - The maximum number of buffers is 1048576. 
+- Notes - The setting specifies the number of 8 KiB shared memory buffers. For example, 1 GB of `shared_buffers` space is 1048576 KiB, and (1048576 KiB / 8 KiB) is 131072 buffers. The recommended memory allocation for `shared_buffers` is 25% of the deployment's RAM. Setting `shared_buffers` any higher can result in memory issues that cause the database to crash. Setting `shared_buffers` equal, close to equal, or higher than the amount of allocated memory prevents the database from starting. The maximum amount of total space for `shared_buffers` is 8 GB or 1048576 buffers based on recommendations from the PostgreSQL community. Your deployment can use more RAM for caching and performance, even without allocating it to `shared_buffers`. You do not have to configure the database to use all of the allocated RAM in order for your deployment to use it.
 
 ### General Settings
 
 [`max_connections`](https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-MAX-CONNECTIONS)
-   - Default - 115
-   - Restarts database? - **YES**
-   - Notes - [You might need to scale before you increase max connections.](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability#connection-limits-ha)
+- Default - 115
+- Restarts database? - **YES**
+- Notes - [You might need to scale before you increase max connections.](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability#connection-limits-ha)
 
 [`max_prepared_transactions`](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAX-PREPARED-TRANSACTIONS)
-   - Default - 0
-   - Restarts database? - **YES**
-   - Notes - The default value of `0` disables use of [prepared transactions](https://www.postgresql.org/docs/current/sql-prepare-transaction.html) and is recommended to remain at the default unless you need to use prepared transactions.
+- Default - 0
+- Restarts database? - **YES**
+- Notes - The default value of `0` disables use of [prepared transactions](https://www.postgresql.org/docs/current/sql-prepare-transaction.html) and is recommended to remain at the default unless you need to use prepared transactions.
 
 [`synchronous_commit`](https://www.postgresql.org/docs/current/wal-async-commit.html)
-   - Default - `local`
-   - Restarts database? - No
-   - Options - `local` or `off`
-   - Notes - Setting `synchronous_commit` to `off` increases transaction commit rate at the expense of a loss of committed transactions if an unclean shutdown occurs.
+- Default - `local`
+- Restarts database? - No
+- Options - `local` or `off`
+- Notes - Setting `synchronous_commit` to `off` increases transaction commit rate at the expense of a loss of committed transactions if an unclean shutdown occurs.
 
 [`effective_io_concurrency`](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-EFFECTIVE-IO-CONCURRENCY)
-   - Default - `12`
-   - Restarts database - No
-   - Notes - It is recommended to leave this setting at the default. Increase this setting only if you profiled SQL queries and observed inefficient bitmap heap scans. As [IOPS are tied to disk size](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-performance#disk-iops), increasing this setting on default or smaller sized disks is also not recommended.
+- Default - `12`
+- Restarts database - No
+- Notes - It is recommended to leave this setting at the default. Increase this setting only if you profiled SQL queries and observed inefficient bitmap heap scans. As [IOPS are tied to disk size](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-performance#disk-iops), increasing this setting on default or smaller sized disks is also not recommended.
 
 [`deadlock_timeout`](https://www.postgresql.org/docs/current/runtime-config-locks.html)
-   - Default - 10000
-   - Restarts database - No
-   - Options - Minimum value of 100
-   - Notes - The number of milliseconds to wait before checking for deadlock and the duration where lock waits are logged. Logs available through the [logging integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging). Setting this number too low negatively impacts performance.
+- Default - 10000
+- Restarts database - No
+- Options - Minimum value of 100
+- Notes - The number of milliseconds to wait before checking for deadlock and the duration where lock waits are logged. Logs available through the [logging integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging). Setting this number too low negatively impacts performance.
 
 [`log_connections`](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-CONNECTIONS)
-   - Default - `off`
-   - Restarts database - No
-   - Options - Values of `on` or `off` 
-   - Notes - Setting this value to `on` makes the logs very verbose. It also shows the connections of the monitoring tool as it extracts metrics every 60 seconds. When this is set to `on`, it is recommended to set the application_name in the connection URI to keep an overview in the logs, as the IP addresses shown are the Kubernetes internal IPs. Details about adjusting the connection URI are found in the [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). When set to `off`, there is no change in behavior to the default setting and no connections are logged. Logs are available through the [logging integration](/docs/databases-for-postgresql?topic=cloud-databases-logging). If `on` is set, the logs show lines similar to this example, where the application name is set as `test-app`:
-    ```
-    2021-03-01 10:27:56 UTC [[unknown]] [00000] [708]: [2-1] user=admin,db=ibmclouddb,client=127.0.0.1 LOG:  connection authorized: user=admin database=ibmclouddb application_name=test-app SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
-    ```
+- Default - `off`
+- Restarts database - No
+- Options - Values of `on` or `off` 
+- Notes - Setting this value to `on` makes the logs very verbose. It also shows the connections of the monitoring tool as it extracts metrics every 60 seconds. When this is set to `on`, it is recommended to set the application_name in the connection URI to keep an overview in the logs, as the IP addresses shown are the Kubernetes internal IPs. Details about adjusting the connection URI are found in the [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). When set to `off`, there is no change in behavior to the default setting and no connections are logged. Logs are available through the [logging integration](/docs/databases-for-postgresql?topic=cloud-databases-logging). If `on` is set, the logs show lines similar to this example, where the application name is set as `test-app`:
+```shell
+2021-03-01 10:27:56 UTC [[unknown]] [00000] [708]: [2-1] user=admin,db=ibmclouddb,client=127.0.0.1 LOG:  connection authorized: user=admin database=ibmclouddb application_name=test-app SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+```
 
 [`log_disconnections`](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-DISCONNECTIONS)
    - Default - `off`

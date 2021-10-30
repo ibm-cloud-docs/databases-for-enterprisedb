@@ -56,11 +56,11 @@ Field Name|Index|Description
 
 The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating a command line client connection. For example, to connect to a deployment named "example-postgres", use the following command.
 
-```
+```shell
 ibmcloud cdb deployment-connections example-postgres --start
 ```
 Or
-```
+```shell
 ibmcloud cdb cxn example-postgres -s
 ```
 
@@ -68,9 +68,10 @@ The command prompts for the admin password and then runs the `psql` command line
 
 If you have not installed the cloud databases plug-in, connect to your {{site.data.keyword.databases-for-enterprisedb}} databases by using `psql` and giving it the "composed" connection string. It provides environment variables `PGPASSWORD` and `PGSSLROOTCERT`. Set `PGPASSWORD` to the admin's password and `PGSSLROOTCERT` to the path or file name for the self-signed certificate. 
 
-```
+```shell
 PGPASSWORD=$PASSWORD PGSSLROOTCERT=0b22f14b-7ba2-11e8-b8e9-568642342d40 psql 'host=4a8148fa-3806-4f9c-b3fc-6467f11b13bd.8f7bfd7f3faa4218aec56e069eb46187.databases.appdomain.cloud port=32325 dbname=ibmclouddb user=admin sslmode=verify-full'
 ```
+
 ## Using the self-signed certificate
 
 1. Copy the certificate information from the _Endpoints_ pane or the Base64 field of the connection information. 

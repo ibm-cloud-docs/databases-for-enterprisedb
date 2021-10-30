@@ -41,7 +41,7 @@ Field Name|Index|Description
 `Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
 `Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
 `Certificate`|Base64|A base64 encoded version of the certificate.
-{: caption="Table 1. `postgres`/`URI` connection information" caption-side="top"}
+{: caption="Table 1. postgres/URI connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.
 
@@ -49,18 +49,12 @@ Field Name|Index|Description
 
 Many PostgreSQL drivers are able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example,
 
-```
+```shell
 postgres://ibm_cloud_30399dec_4835_4967_a23d_30587a08d9a8:$PASSWORD@981ac415-5a35-4ac7-b6bb-fb609326dc42.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32704/ibmclouddb?sslmode=verify-full
 ```
 
-This example uses the information from your connection string and the Java driver [`jdbc`](https://jdbc.postgresql.org/documentation/head/index.html) to connect to your database.
+This following example uses the information from your connection string and the Java driver [jdbc](https://jdbc.postgresql.org/documentation/head/index.html) to connect to your database.
 {: java}
-
-This example uses the information from your connection string and the Python driver [`Psycopg2`](https://wiki.postgresql.org/wiki/Psycopg2_Tutorial) to connect to your database. This is just a simple connection example, without error handling or retry logic and might not be suitable for production.
-{: python}
-
-This example uses the information from your connection string and the Node driver [`node-postgres`](https://node-postgres.com/) to connect to your database.
-{: javascript}
 
 ```java
 import java.sql.Connection;
@@ -122,6 +116,9 @@ public class PGConnect {
 ```
 {: java}
 
+This next example uses the information from your connection string and the Python driver [`Psycopg2`](https://wiki.postgresql.org/wiki/Psycopg2_Tutorial) to connect to your database. This is just a simple connection example, without error handling or retry logic and might not be suitable for production.
+{: python}
+
 ```python
 import psycopg2
 
@@ -146,6 +143,9 @@ for row in rows:
     print("  ",row[0])
 ```
 {: python}
+
+This final example uses the information from your connection string and the Node driver [node-postgres](https://node-postgres.com/) to connect to your database.
+{: javascript}
 
 ```javascript
 const pg = require("pg");
@@ -184,7 +184,6 @@ let client = new pg.Client({ connectionString: connectionString,
 });
 ```
 {: javascript}
-
 
 ## Driver TLS and self-signed certificate support
 

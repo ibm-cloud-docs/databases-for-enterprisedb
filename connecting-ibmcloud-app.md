@@ -39,11 +39,11 @@ ibmcloud ks cluster service bind <your_cluster_name> <resource_group> <your_data
 ```
 OR
 **Private Endpoints** - If you want to use a private endpoint (if one is enabled on your deployment), then first you need to create a service key for your database so Kubernetes can use it when binding to the database. 
-```
+```shell
 ibmcloud resource service-key-create <your-private-key> --instance-name <your_database_deployment> --service-endpoint private  
 ```
 The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint with the `cluster service bind` command.
-```
+```shell
 ibmcloud ks cluster service bind <your_cluster_name> <resource_group> <your_database_deployment> --key <your-private-key>
 ```
 
@@ -85,7 +85,7 @@ The alias appears in the list of _Cloud Foundry Apps_ in your _Resource List_. M
 Cloud Foundry uses a manifest file - `manifest.yml` to associate an application with another {{site.data.keyword.cloud_notm}} service.
 
 To create the file, open a new file and add the text:
-  ```
+  ```shell
   ---
   applications:
   - name:    example-application
