@@ -32,6 +32,7 @@ toc:
       topics:
       - /cloud-databases/cloud-databases-provisioning
       - /cloud-databases/cloud-databases-deprovisioning
+      - /cloud-databases/cloud-databases-migrate-data-center
       - howto-getting-connection-strings.md
       - howto-admin-password.md
       - /cloud-databases/cloud-databases-ha-dr
