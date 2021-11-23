@@ -1,6 +1,6 @@
 ---
 
-Copyright:
+copyright:
   years: 2018, 2019, 2020
 lastupdated: "2020-09-26"
 
@@ -10,7 +10,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
