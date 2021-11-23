@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-11-23"
 
 keywords: admin password, credentials, edb, enterprisedb
 
@@ -9,7 +9,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -23,9 +23,10 @@ The {{site.data.keyword.databases-for-enterprisedb}} service is provisioned with
 
 You must set the admin password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management pane for your service. Open the _Settings_ tab, and use the _Change Database Admin Password_ pane to set a new admin password.
 
-![The Admin Password pane in _Settings_](images/settings-admin-password.png)
+![The Admin Password pane in Settings](images/settings-admin-password.png){: caption="Figure 1. The Admin Password pane in Settings" caption-side="bottom"}
 
 ## Setting the admin password via the command line
+{: #setting-adminpw-cli}
 
 Use the `cdb user-password` command from the [{{site.data.keyword.databases-for-enterprisedb}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the admin password with the command line.
 
@@ -35,6 +36,7 @@ ibmcloud cdb user-password example-deployment admin <newpassword>
 ```
 
 ## Setting the admin password via the API
+{: #setting-adminpw-api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ pane of your service provides the base URL to access this deployment through the API. Use it with the `/deployments/{id}/users/{username}` endpoint to set the admin password.
 

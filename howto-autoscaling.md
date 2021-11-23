@@ -1,8 +1,7 @@
 ---
-
-Copyright:
+copyright:
   years: 2020, 2021
-lastupdated: "2021-063-30"
+lastupdated: "2021-11-23"
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
@@ -10,7 +9,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -31,7 +30,7 @@ General Autoscaling parameters
 - How often to scale, measured either in seconds, minutes, or hours.
 - A hard limit on scaling, your deployment stops scaling at the limit.
 
-![Example Autoscaling pane](images/autoscaling-update.png)
+![Example Autoscaling pane](images/autoscaling-update.png){: caption="Figure 1. Example Autoscaling pane" caption-side="bottom"}
 
 Memory - Memory autoscaling is based on Disk I/O utilization in order to provide more memory for disk caching as your read/write load increases. The benefit is that additional memory might alleviate pressure on disk I/O by supporting more caching. Autoscaling configurations based on memory usage are currently not available. 
 
@@ -40,6 +39,7 @@ Disk - Disk autoscaling can scale when either disk usage reaches a certain thres
 The resource numbers refer to each database node in a deployment. For example, there are three data members in a {{site.data.keyword.databases-for-enterprisedb}} deployment and if the deployment is scaled with 20 GB of disk and 1 GB of RAM, that means each member gets 20 GB of disk and 1 GB of RAM. The total resources added to your deployment is 60 GB of disk and 3 GB of RAM.
 
 ## Autoscaling Considerations
+{: #autoscaling-consider}
 
 - Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
 
@@ -59,12 +59,14 @@ The resource numbers refer to each database node in a deployment. For example, t
 - If you need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling) your deployment.
 
 ## Configuring Autoscaling in the UI
+{: #config-autoscaling-ui}
 
 The Autoscaling pane is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save Changes** for your configuration to be saved and your changes to take effect.
 
 To disable autoscaling, clear the boxes for the parameters that you no longer want to use. If you clear all the boxes, autoscaling is unavailable. Click **Save Changes** to save the configuration.
 
 ## Configuring Autoscaling in the CLI
+{: #config-autoscaling-cli}
 
 You can get the autoscaling parameters for your deployment through the CLI by using the [`cdb deployment-autoscaling`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#-ibmcloud-cdb-deployment-autoscaling-) command.
 ```shell
@@ -77,6 +79,7 @@ ibmcloud cdb deployment-autoscaling-set <deployment name or CRN> member '{"autos
 ```
 
 ## Configuring Autoscaling in the API
+{: #config-autoscaling-api}
 
 You can get the autoscaling parameters for your deployment through the API by sending a `GET` request to the [`/deployments/{id}/groups/{group_id}/autoscaling`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-the-autoscaling-configuration-from-a-deploymen) endpoint. 
 ```shell

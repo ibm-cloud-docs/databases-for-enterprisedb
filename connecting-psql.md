@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2019, 2020
-lastupdated: "2020-06-30"
+  years: 2017, 2020
+lastupdated: "2021-11-23"
 
 keywords: postgresql, databases, psql, edb-psql, edb, enterprisedb
 
@@ -9,7 +9,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -28,12 +28,14 @@ You must set the admin password before you use it to connect to the database. Fo
 {: .tip}
 
 ## Installing `psql`
+{: #installing-psql}
 
 Install the command line client for {{site.data.keyword.databases-for-enterprisedb}}, `psql`. To use `psql`, the {{site.data.keyword.databases-for-enterprisedb}} client tools need to be installed on the local system. They can be installed with the full PostgreSQL package that is provided from [postgresql.org](https://www.postgresql.org/download/), or as a [package from your operating system's package manager](https://www.compose.com/articles/postgresql-tips-installing-the-postgresql-client/). 
 
 For more information about `psql`, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/static/app-psql.html).
 
 ## `psql` Connection Strings
+{: #psql-connection-strings}
 
 Connection strings are displayed in the _Endpoints_ pane of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
@@ -48,11 +50,12 @@ Field Name|Index|Description
 `Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
 `Certificate`|Name|The allocated name for the self-signed certificate.
 `Type`||The type of package that uses this connection information; in this case `cli`. 
-{: caption="Table 1. `psql`/`cli` connection information" caption-side="top"}
+{: caption="Table 1. psql/cli connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.
 
 ## Connecting
+{: #connecting}
 
 The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating a command line client connection. For example, to connect to a deployment named "example-postgres", use the following command.
 
@@ -73,6 +76,7 @@ PGPASSWORD=$PASSWORD PGSSLROOTCERT=0b22f14b-7ba2-11e8-b8e9-568642342d40 psql 'ho
 ```
 
 ## Using the self-signed certificate
+{: #using-sscert}
 
 1. Copy the certificate information from the _Endpoints_ pane or the Base64 field of the connection information. 
 2. If needed, decode the Base64 string into text. 
