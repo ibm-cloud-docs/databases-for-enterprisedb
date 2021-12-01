@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-23"
+lastupdated: "2021-11-30"
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
@@ -41,7 +41,7 @@ The resource numbers refer to each database node in a deployment. For example, t
 ## Autoscaling Considerations
 {: #autoscaling-consider}
 
-- Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
+- Scaling your deployment up might cause your databases to restart. If your scaled deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
 
 - Disk cannot be scaled down.
 

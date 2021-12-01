@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-11-30"
 
 keywords: postgresql, databases, scaling, memory, disk IOPS, CPU, edb, enterprisedb
 
@@ -53,7 +53,8 @@ You can increase the CPU allocation to the deployment. With dedicated cores, you
 ## Scaling Considerations
 
 - With a minimum of 3 members, allocation minimums begin with 1 Gb RAM, 20 GB Disk, and 3 dedicated cores per member.  
-- Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
+
+- Scaling your deployment up might cause your databases to restart. If your scaled deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
 
 - Scaling down RAM or CPU does not trigger database restarts.
 
