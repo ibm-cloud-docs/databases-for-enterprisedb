@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-13"
 
 keywords: admin, superuser, roles, service credentials, postgresql, edb, enterprisedb
 
@@ -100,13 +100,9 @@ Note that these users are not integrated with IAM controls, even if added to _Se
 ## The `emp_admin` user
 {: #user-management-emp_admin}
 
-![The emp_admin user](/images/admin_role.png){: caption="The emp_admin user" caption-side="bottom"}
-
-The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb_full}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB pods. You can connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information. You should not drop this user.
+The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb_full}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. You can connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information. You should not drop this user.
 
 ## The `aq_administrator_role` user
 {: #user-management-aq_administrator}
-
-![The aq_administrator_role user](/images/admin_role.png){: caption="The aq_administrator_role user" caption-side="bottom"}
 
 The `aq_administrator_role` user is a system-defined privilege that can allow a user to interact with queues. This user is provided by default from EnterpriseDB and is not managed by {{site.data.keyword.databases-for-enterprisedb_full}}. You should not drop this user. For more information, see [CREATE QUEUE](https://www.enterprisedb.com/docs/epas/latest/epas_compat_sql/30_create_queue/) in the EnterpriseDB documentation.
