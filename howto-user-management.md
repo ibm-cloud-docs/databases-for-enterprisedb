@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-14"
 
 keywords: admin, superuser, roles, service credentials, postgresql, edb, enterprisedb
 
@@ -100,7 +100,7 @@ Note that these users are not integrated with IAM controls, even if added to _Se
 ## The `emp_admin` user
 {: #user-management-emp_admin}
 
-The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb_full}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. You can connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information. You should not drop this user.
+The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb_full}} user that is used by the EDB Migration Portal to communicate directly with an EnterpriseDB database. You can connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information. You should not drop this user.
 
 ## The `aq_administrator_role` user
 {: #user-management-aq_administrator}
