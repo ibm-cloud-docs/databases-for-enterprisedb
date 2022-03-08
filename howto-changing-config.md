@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-03-07"
+lastupdated: "2022-03-08"
 
 keywords: postgresql, databases, edb, enterprisedb
 
@@ -81,7 +81,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 - Default - `local`
 - Restarts database? - No
 - Options - `local`, `on`, or `off`
-- Notes - Setting `synchronous_commit` to off increases transaction commit rate at the expense of a loss of committed transactions if an unclean shutdown occurs. With `synchronous_commit` set to on, a transaction is committed only when written to the leader and at least one replica. Therefore, the on setting is only available on formations that still have at least three members. Before implementing this change, please read through the [High-Availability page](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-high-availability).
+- Notes - Setting `synchronous_commit` to off increases transaction commit rate at the expense of a loss of committed transactions if an unclean shutdown occurs. With `synchronous_commit` set to on, a transaction is committed only when written to the leader and at least one replica. Therefore, the on setting is only available on formations that still have at least three members. Before implementing this change, please read through the [High-Availability page](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability).
 
 [`effective_io_concurrency`](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-EFFECTIVE-IO-CONCURRENCY)
 - Default - `12`
