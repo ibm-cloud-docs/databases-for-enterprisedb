@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2022-03-09"
 
 keywords: postgresql, databases, edb, enterprisedb
 
@@ -24,6 +24,7 @@ subcollection: databases-for-enterprisedb
 {{site.data.keyword.databases-for-enterprisedb_full}} supports [logical replication](https://www.postgresql.org/docs/current/logical-replication.html) from an external PostgreSQL instance to your deployment. You can set up your external PostgreSQL as a publisher, your {{site.data.keyword.databases-for-enterprisedb}} deployment as a subscriber, and replicate your data across from an external database into your deployment.
 
 ## Configuring the Publisher
+{: #pub-config}
 
 The external PostgreSQL instance is the publisher, and needs to be configured in order for your {{site.data.keyword.databases-for-enterprisedb}} deployment to connect and be able to pull the data in correctly.
 
@@ -35,6 +36,7 @@ There are inherent limitations and some restrictions to logical replication outl
 {: .tip}
 
 ## Configuring the Subscriber
+{: #sub-config}
 
 To configure your {{site.data.keyword.databases-for-enterprisedb}} deployment and to make sure that your data is replicated across correctly,
 
@@ -47,6 +49,7 @@ Only the admin user that is provided by {{site.data.keyword.databases-for-enterp
 {: .tip}
 
 ### Subscriber Functions
+{: #sub-functions}
 
 **`create_subscription`**
 ```bash
@@ -115,6 +118,7 @@ Usage:
 ```
 
 ## Setting up Logical Replication on the Publisher
+{: #setup-logical-repl-pub}
 
 To configure your external PostgreSQL as a publisher,
 
@@ -149,6 +153,7 @@ Now you can define a publisher on the database and add the tables that you want 
     ```
 
 ## Setting up Logical Replication on the Subscriber
+{: #setup-logical-repl-sub}
 
 To configure your {{site.data.keyword.databases-for-enterprisedb}} deployment as a subscriber,
 - Log in to the database created for replication with `admin` user.
@@ -161,6 +166,7 @@ To configure your {{site.data.keyword.databases-for-enterprisedb}} deployment as
     ```
 
 ## Monitoring Replication
+{: #monitor-repl}
 
 You can monitor the status of logical replication from both the publisher and the subscriber by running the following query on either.
 ```bash
