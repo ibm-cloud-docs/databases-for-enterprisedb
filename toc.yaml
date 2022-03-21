@@ -5,7 +5,7 @@
 toc:
   properties:
     subcollection: databases-for-enterprisedb
-    service-name: databases-for-enterprisedb-group
+    service-name: databases-for-enterprisedb
     version: 2
     category: database
     audience: service
