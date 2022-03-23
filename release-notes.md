@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-23"
 
 keywords: databases-for-enterprisedb release notes
 
@@ -25,3 +25,10 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 06 July 2020
+{: #databases-for-enterprisedb-06jul2020}
+{: release-note}
+
+General Availability of {{site.data.keyword.databases-for-enterprisedb_full}}
+:  {{site.data.keyword.databases-for-enterprisedb_full}} added to the [IBM Cloud Databases](https://www.ibm.com/cloud/databases) family. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-enterprisedb).
