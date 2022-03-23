@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-23"
 
-keywords: databases, connection limits, edb, enterprisedb
+keywords: postgresql, databases, connection limits, edb, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -26,21 +26,14 @@ subcollection: databases-for-enterprisedb
 
 With three members, {{site.data.keyword.databases-for-enterprisedb}} provides more protection against zonal outages and improves the safety of synchronous transactions. 
 
+By default, streaming replication is asynchronous. If the primary server crashes then some transactions that were committed may not have been replicated to the standby server, causing data loss. The amount of data loss is proportional to the replication delay at the time of failover. {{site.data.keyword.databases-for-enterprisedb}} synchronous replication offers the ability to confirm that all changes made by a transaction have been transferred to a synchronous member, ensuring consistency across a cluster by confirming that writes are written to a secondary before returning to the connecting client with a success. For variables regarding synchronous replication, see [`synchronous_commit`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-changing-configuration#general-settings) on the Changing Configuration page. 
+
+Employing synchronous commits can potentially slow down database performance by a measurable degree. Typically, a performant and effective way to employ this feature is by using it only on specific databases or users within EnterpriseDB that must have the highest degree of data durability available.
+{: .note}
+
 {{site.data.keyword.databases-for-enterprisedb}} will, at times, do controlled switchovers under normal operation. These switchovers are no-data-loss events that result in resets of active connections. There is a period of up to 15 seconds where reconnections can fail. At times, unplanned failovers might occur due to unforeseen events on the operating environment. These can take up to 45 seconds, but can be less. In both cases, potential exists for the downtime to be longer.
 
 You can extend high-availability to more regions and spread to more replicas by adding [read-only replicas](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas). 
-
-## Synchronous replication
-{: #sync-repl}
-
-By default, streaming replication is asynchronous. If the primary server crashes then some transactions that were committed may not have been replicated to the standby server, causing data loss. {{site.data.keyword.databases-for}} ensures data loss is kept to a minimum substantial data loss; however, synchronous replication offers the ability to confirm that all changes made by a transaction have been transferred to a synchronous member, ensuring consistency across a cluster. This consistency come from confirming that writes are written to a secondary before returning to the connecting client with a success. For variables regarding synchronous replication, see [`synchronous_commit`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-changing-configuration#general-settings) on the Changing Configuration page. 
-
-Synchronous replication brings replica availability into the primary write path. If there is no replica to acknowledge the write, the write will hang until such time as a replica is available. This requires at least three members to function reliably, as synchronous replication is not supported on two-member deployments. You _must_ horizontally scale to at least three members before synchronous replication can be enabled.
-
-While unlikely, it is possible that more than one replica may become unavailable simultaneously. If this happens, the primary database will not be able to complete any writes until a replica comes back online, effectively blocking all write traffic to your database. When deciding to use synchronous replication, you should weigh the relative costs and benefits of higher data durability versus potential availability issues.
-
-Employing synchronous replication will negatively impact the performance of the database. Typically, a performant and effective way to employ this feature is by using it only on specific databases or users that must have the highest degree of data durability available.
-{: .note}
 
 ## Application-level High-Availability
 {: #app-level-high-availability}
