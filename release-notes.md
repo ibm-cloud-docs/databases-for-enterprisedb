@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2022-03-23"
+  years: 2018, 2022
+lastupdated: "2022-03-29"
 
 keywords: databases-for-enterprisedb release notes
 
@@ -25,6 +25,14 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+
+## 29 March 2022
+{: #databases-for-enterprisedb-29mar2022}
+{: release-note}
+
+{{site.data.keyword.databases-for-enterprisedb_full}} supports synchronous replication
+:  {{site.data.keyword.databases-for-enterprisedb_full}} now supports synchronous replication. See documentation [here](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-high-availability#sync-repl).
 
 ## 06 July 2020
 {: #databases-for-enterprisedb-06jul2020}
