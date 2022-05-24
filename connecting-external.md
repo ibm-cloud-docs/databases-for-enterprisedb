@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2021
-lastupdated: "2022-03-09"
+  years: 2017, 2022
+lastupdated: "2022-05-24"
 
 keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb
 
@@ -9,7 +9,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -26,15 +26,15 @@ Your applications and drivers use connection strings to make a connection to {{s
 The connection strings can be used by any of the credentials you created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to create users specifically for your applications to connect with. Documentation on generating credentials is on the [Creating Users and Getting Connection Strings](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings) page.
 
 ## Connecting with a language's driver
-{: #connect-lang-driver}
+{: #lang-driver}
 
 All the information a driver needs to make a connection to your deployment is in the "postgres" section of your connection strings. The table contains a breakdown for reference.
 
 Field Name|Index|Description
 ----------|-----|-----------
-`Type`||Type of connection - for {{site.data.keyword.databases-for-enterprisedb}}, it is "URI"
-`Scheme`||Scheme for a URI - for {{site.data.keyword.databases-for-enterprisedb}}, it is "postgresql"
-`Path`||Path for a URI - for {{site.data.keyword.databases-for-enterprisedb}}, it is the database name. The default is `ibmclouddb`.
+`Type`||Type of connection - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is "URI"
+`Scheme`||Scheme for a URI - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is "postgresql"
+`Path`||Path for a URI - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is the database name. The default is `ibmclouddb`.
 `Authentication`|`Username`|The username that you use to connect.
 `Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
 `Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
@@ -148,7 +148,7 @@ const fs = require("fs");
 let connectionString = "postgres://<username>:<password>@<host>:<port>/<database>?sslmode=verify-full";
 let caCert = fs.readFileSync('/path/to/cert');
 
-// set up a client with your {{site.data.keyword.databases-for-enterprisedb}} connection string
+// set up a client with your Databases for EnterpriseDB connection string
 let client = new pg.Client({ connectionString: connectionString,
     // set up the TLS options
     ssl: {
@@ -179,12 +179,12 @@ let client = new pg.Client({ connectionString: connectionString,
 ```
 
 ## Driver TLS and self-signed certificate support
-{: #tls-sscert-support}
+{: #drivertls-cert-support}
 
-All connections to {{site.data.keyword.databases-for-enterprisedb}} are TLS 1.2 enabled, so the driver you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection. 
+All connections to {{site.data.keyword.databases-for-enterprisedb_full}} are TLS 1.2 enabled, so the driver you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection. 
 
 ### Using the self-signed certificate
-{: #using-sscert}
+{: #using-ssc}
 
 1. Copy the certificate information from the _Endpoints_ pane or the Base64 field of the connection information. 
 2. If needed, decode the Base64 string into text. 
@@ -194,14 +194,14 @@ All connections to {{site.data.keyword.databases-for-enterprisedb}} are TLS 1.2 
 ![CLI Endpoints panel](images/cli-endpoints-pane.png){: caption="Figure 1. CLI Endpoints panel" caption-side="bottom"}
 
 ### CLI plug-in support for the self-signed certificate
-{: #cli-plugin-support-sslcert}
+{: #cli-plugin-support}
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver.
 
 ## Other Drivers
 {: #other-drivers}
 
-PostgreSQL has a vast array of language drivers that can also be used to connect to a {{site.data.keyword.databases-for-enterprisedb}} deployment. The table covers a few of the most common.
+PostgreSQL has a vast array of language drivers that can also be used to connect to a {{site.data.keyword.databases-for-enterprisedb_full}} deployment. The table covers a few of the most common.
 
 Language|Driver|Examples
 ----------|----------|-----------
