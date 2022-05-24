@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2022-05-24"
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
@@ -47,7 +47,7 @@ The resource numbers refer to each database node in a deployment. For example, t
 
 - A few scaling operations can be more long running than others. Drastically increasing RAM or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
-- Autoscaling operations are logged in [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker).
+- Autoscaling operations are logged in [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker-integration).
 
 - Limits
    - can't set anything to scale in an interval less than 60 seconds.
