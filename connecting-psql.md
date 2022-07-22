@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2020
-lastupdated: "2021-11-23"
+  years: 2017, 2022
+lastupdated: "2022-07-22"
 
 keywords: postgresql, databases, psql, edb-psql, edb, enterprisedb
 
@@ -41,15 +41,15 @@ Connection strings are displayed in the _Endpoints_ pane of your deployment's _O
 
 The information that you need to make a connection with `psql` is in the "cli" section of your connection strings. The table contains a breakdown for reference.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Bin`||The recommended binary to create a connection; in this case it is `psql`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command line parameters.
-`Environment`||A list of keys or values you set as environment variables.
-`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
-`Certificate`|Name|The allocated name for the self-signed certificate.
-`Type`||The type of package that uses this connection information; in this case `cli`. 
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Bin` | | The recommended binary to create a connection; in this case it is `psql`. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses  |`Arguments` as command line parameters.
+| `Environment` | | A list of keys or values you set as environment variables. |
+| `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
+| `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | Name | The allocated name for the self-signed certificate. |
+| `Type` | | The type of package that uses this connection information; in this case `cli`.  |
 {: caption="Table 1. psql/cli connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.
@@ -59,11 +59,11 @@ Field Name|Index|Description
 
 The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating a command line client connection. For example, to connect to a deployment named "example-postgres", use the following command.
 
-```shell
+```sh
 ibmcloud cdb deployment-connections example-postgres --start
 ```
 Or
-```shell
+```sh
 ibmcloud cdb cxn example-postgres -s
 ```
 
@@ -71,7 +71,7 @@ The command prompts for the admin password and then runs the `psql` command line
 
 If you have not installed the cloud databases plug-in, connect to your {{site.data.keyword.databases-for-enterprisedb}} databases by using `psql` and giving it the "composed" connection string. It provides environment variables `PGPASSWORD` and `PGSSLROOTCERT`. Set `PGPASSWORD` to the admin's password and `PGSSLROOTCERT` to the path or file name for the self-signed certificate. 
 
-```shell
+```sh
 PGPASSWORD=$PASSWORD PGSSLROOTCERT=0b22f14b-7ba2-11e8-b8e9-568642342d40 psql 'host=4a8148fa-3806-4f9c-b3fc-6467f11b13bd.8f7bfd7f3faa4218aec56e069eb46187.databases.appdomain.cloud port=32325 dbname=ibmclouddb user=admin sslmode=verify-full'
 ```
 
