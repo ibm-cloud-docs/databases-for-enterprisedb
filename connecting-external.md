@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-07-21"
 
 keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb
 
@@ -30,25 +30,25 @@ The connection strings can be used by any of the credentials you created on your
 
 All the information a driver needs to make a connection to your deployment is in the "postgres" section of your connection strings. The table contains a breakdown for reference.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is "URI"
-`Scheme`||Scheme for a URI - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is "postgresql"
-`Path`||Path for a URI - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is the database name. The default is `ibmclouddb`.
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to
-`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|Base64|A base64 encoded version of the certificate.
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Type` | | Type of connection - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is "URI" |
+| `Scheme` | | Scheme for a URI - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is "postgresql" |
+| `Path` | | Path for a URI - for {{site.data.keyword.databases-for-enterprisedb_full}}, it is the database name. The default is `ibmclouddb`. |
+| `Authentication` | `Username`|The username that you use to connect. |
+| `Authentication` | `Password`|A password for the user - might be shown as `$PASSWORD` |
+| `Authentication` | `Method`|How authentication takes place; "direct" authentication is handled by the driver. |
+| `Hosts` | `0...` | A hostname and port to connect to |
+| `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
+| `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
+| `Certificate` | Base64 | A base64 encoded version of the certificate. |
 {: caption="Table 1. postgres/URI connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.
 
 Many PostgreSQL drivers are able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example,
 
-```shell
+```sh
 postgres://ibm_cloud_30399dec_4835_4967_a23d_30587a08d9a8:$PASSWORD@981ac415-5a35-4ac7-b6bb-fb609326dc42.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32704/ibmclouddb?sslmode=verify-full
 ```
 
@@ -203,13 +203,13 @@ You can display the decoded certificate for your deployment with the CLI plug-in
 
 PostgreSQL has a vast array of language drivers that can also be used to connect to a {{site.data.keyword.databases-for-enterprisedb_full}} deployment. The table covers a few of the most common.
 
-Language|Driver|Examples
-----------|----------|-----------
-PHP|`pgsql`|[Link](http://php.net/manual/en/pgsql.examples-basic.php)
-Ruby|`ruby-pg`|[Link](https://github.com/ged/ruby-pg)
-Ruby on Rails|Rails|[Rails Guide](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-postgresql-database)
-C#|`ODBC`|[Link](https://wiki.postgresql.org/wiki/Using_Microsoft_.NET_with_the_PostgreSQL_Database_Server_via_ODBC)
-Go|`pq`|[Link](https://godoc.org/github.com/lib/pq)
-Node|`node-postgres`|[Link](https://node-postgres.com/)
-JDBC| EDB Postgres JDBC Connector|[JDBC Guide](https://www.enterprisedb.com/edb-docs/d/jdbc-connector/user-guides/jdbc-guide/42.2.8.1/using_the_advanced_server_jdbc_connector_with_java_applications.html)
+| Language|Driver|Examples |
+| ----------|----------|----------- |
+| PHP|`pgsql`|[Link](http://php.net/manual/en/pgsql.examples-basic.php){: .external} |
+| Ruby|`ruby-pg`|[Link](https://github.com/ged/ruby-pg){: .external} |
+| Ruby on Rails|Rails|[Rails Guide](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-postgresql-database){: .external} |
+| C#|`ODBC`|[Link](https://wiki.postgresql.org/wiki/Using_Microsoft_.NET_with_the_PostgreSQL_Database_Server_via_ODBC){: .external} |
+| Go|`pq`|[Link](https://godoc.org/github.com/lib/pq){: .external} |
+| Node|`node-postgres`|[Link](https://node-postgres.com/){: .external} |
+| JDBC| EDB Postgres JDBC Connector|[JDBC Guide](https://www.enterprisedb.com/edb-docs/d/jdbc-connector/user-guides/jdbc-guide/42.2.8.1/ using_the_advanced_server_jdbc_connector_with_java_applications.html){: .external} |
 {: caption="Table 2. PostgreSQL drivers" caption-side="top"}
