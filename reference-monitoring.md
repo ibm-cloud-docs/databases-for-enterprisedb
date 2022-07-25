@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-09-02"
+  years: 2020, 2022
+lastupdated: "2022-07-25"
 
 keywords: postgresql, monitoring, metrics, iops, disk usage, memory usage, connection usage, edb, enterprisedb
 
@@ -27,20 +27,21 @@ To access {{site.data.keyword.monitoringfull_notm}} from your deployment, use th
 The default dashboards are not shown until database instances begin emitting metrics.
 {: .tip}
 
-![The Monitoring link in a deployment](images/monitoring-ui-link.png)
+![The Monitoring link in a deployment](images/monitoring-ui-link.png){: caption="Figure 1. The Monitoring link in a deployment" caption-side="bottom"}
 
 To access your deployment's monitoring dashboard from {{site.data.keyword.monitoringfull_notm}}, it's in the sidebar, under _IBM_.
 
-![Cloud databases dashboard in monitoring](images/monitoring-ibm-list.png)
+![Cloud databases dashboard in monitoring](images/monitoring-ibm-list.png){: caption="Figure 2. Cloud databases dashboard in monitoring" caption-side="bottom"}
 
 ## Monitoring Availability
+{: #monitoring-availability}
 
 {{site.data.keyword.monitoringfull_notm}} monitoring is available for deployments in every region. Deployments in Multi-zone Regions (MZRs) - `eu-gb`, `eu-de`, `us-east`, `us-south`, `jp-tok`, `au-syd` - have their metrics in the corresponding region.
 
 If you have deployments that are in a Single-zone Region (SZR) - `che01`, or `seo01` - then your logs are forwarded to a {{site.data.keyword.monitoringfull_notm}} instance in another region. You need to provision monitoring instances in the region where your metrics are forwarded to. Metrics for deployments in `seo01` and `che01` go to `jp-tok`. 
 
 ## Available Metrics
-{: metrics-by-plan}
+{: #metrics-by-plan}
 
 | Metric Name |
 |-----------|
@@ -95,7 +96,8 @@ Blocks hit rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 5: Blocks hit rate metric metadata" caption-side="top"}
+{: caption="Table 2: Blocks hit rate metric metadata" caption-side="bottom"}
+
 ### Blocks read rate
 {: #ibm_databases_for_enterprisedb_blocks_read_rate}
 
@@ -107,7 +109,7 @@ Blocks read rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 7: Blocks read rate metric metadata" caption-side="top"}
+{: caption="Table 3: Blocks read rate metric metadata" caption-side="top"}
 
 ### Buffers backend rate
 {: #ibm_databases_for_enterprisedb_buffers_backend_rate}
@@ -120,7 +122,7 @@ Buffers backend rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 8: Buffers backend rate metric metadata" caption-side="top"}
+{: caption="Table 4: Buffers backend rate metric metadata" caption-side="top"}
 
 ### Buffers checkpoint rate
 {: #ibm_databases_for_enterprisedb_buffers_checkpoint_rate}
@@ -133,7 +135,7 @@ Buffers checkpoint rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 11: Buffers checkpoint rate metric metadata" caption-side="top"}
+{: caption="Table 5: Buffers checkpoint rate metric metadata" caption-side="top"}
 
 ### Cache hit ratio
 {: #ibm_databases_for_enterprisedb_cache_hit_ratio}
@@ -146,7 +148,8 @@ Cache hit ratio
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance` |
-{: caption="Table 13: Cache hit ratio metric metadata" caption-side="top"}
+{: caption="Table 6: Cache hit ratio metric metadata" caption-side="top"}
+
 ### Deadlocks count
 {: #ibm_databases_for_enterprisedb_deadlocks_count}
 
@@ -158,7 +161,8 @@ Deadlocks count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 6: Deadlocks count metric metadata" caption-side="top"}
+{: caption="Table 7: Deadlocks count metric metadata" caption-side="top"}
+
 ### Deadlocks rate
 {: #ibm_databases_for_enterprisedb_deadlocks_rate}
 
@@ -170,7 +174,7 @@ Deadlocks rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 19: Deadlocks rate metric metadata" caption-side="top"}
+{: caption="Table 8: Deadlocks rate metric metadata" caption-side="top"}
 
 ### Disk read latency mean
 {: #ibm_databases_for_enterprisedb_disk_read_latency_mean}
@@ -183,7 +187,7 @@ Disk read latency mean
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 20: Disk read latency mean metric metadata" caption-side="top"}
+{: caption="Table 9: Disk read latency mean metric metadata" caption-side="top"}
 
 ### Disk write latency mean
 {: #ibm_databases_for_enterprisedb_disk_write_latency_mean}
@@ -196,7 +200,8 @@ Disk write latency mean
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 28: Disk write latency mean metric metadata" caption-side="top"}
+{: caption="Table 10: Disk write latency mean metric metadata" caption-side="top"}
+
 ### IO utilization in percent 5 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_5m}
 
@@ -208,7 +213,7 @@ How much disk I/O was used over 5 minutes as a percentage of total disk I/O avai
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance` |
-{: caption="Table 2. IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+{: caption="Table 11. IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
 ### IO utilization in percent 15 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_15m}
@@ -221,7 +226,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance` |
-{: caption="Table 3. IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+{: caption="Table 12. IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
 ### IO utilization in percent 30 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_30m}
@@ -234,7 +239,7 @@ How much disk I/O was used over 30 minutes as a percentage of total disk I/O ava
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance` |
-{: caption="Table 4. IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+{: caption="Table 13. IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
 ### IO utilization in percent 60 minute average
 {: #ibm_databases-for-enterprisedb_disk_io_utilization_percent_average_60m}
@@ -247,7 +252,7 @@ How much disk I/O was used over 60 minutes as a percentage of total disk I/O ava
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance` |
-{: caption="Table 5. IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+{: caption="Table 14. IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
 ### IOPS read and write total count for an instance
 {: #ibm_databases-for-enterprisedb_disk_iops_read_write_total}
@@ -260,7 +265,7 @@ How many input/output operations per second your deployment is performing.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 6. IOPS read and write total count for an instance metric metadata" caption-side="top"}
+{: caption="Table 15. IOPS read and write total count for an instance metric metadata" caption-side="top"}
 
 ### Max allowed memory for an instance
 {: #ibm_databases-for-enterprisedb_memory_limit_bytes}
@@ -273,7 +278,7 @@ The maximum amount of memory available to your deployment.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
-{: caption="Table 7. Max allowed memory for an instance metric metadata" caption-side="top"}
+{: caption="Table 16. Max allowed memory for an instance metric metadata" caption-side="top"}
 
 ### Read replica replication lag
 {: #ibm_databases-for-enterprisedb_read_replica_replication_lag_bytes}
@@ -286,7 +291,8 @@ How far behind a PostgreSQL read-only replica is, in bytes.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 8. Read replica replication lag metric metadata" caption-side="top"}
+{: caption="Table 17. Read replica replication lag metric metadata" caption-side="top"}
+
 ### Successful archive rate
 {: #ibm_databases_for_enterprisedb_successful_archive_rate}
 
@@ -298,7 +304,8 @@ Successful archive rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 95: Successful archive rate metric metadata" caption-side="top"}
+{: caption="Table 18: Successful archive rate metric metadata" caption-side="top"}
+
 ### Temporary files size in bytes
 {: #ibm_databases_for_enterprisedb_temp_bytes_count}
 
@@ -310,7 +317,7 @@ Temporary files size in bytes
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 71: Temporary files size in bytes metric metadata" caption-side="top"}
+{: caption="Table 19: Temporary files size in bytes metric metadata" caption-side="top"}
 
 ### The total number of PostgreSQL connections in use
 {: #ibm_databases-for-enterprisedb_total_connections}
@@ -323,7 +330,7 @@ The total number of PostgreSQL connections in use.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance` |
-{: caption="Table 9. The total number of PostgreSQL connections in use metric metadata" caption-side="top"}
+{: caption="Table 20. The total number of PostgreSQL connections in use metric metadata" caption-side="top"}
 
 ### Total disk space for an instance
 {: #ibm_databases-for-enterprisedb_disk_total_bytes}
@@ -336,7 +343,7 @@ Represents the total amount of disk available to your deployment.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
-{: caption="Table 10. Total disk space for an instance metric metadata" caption-side="top"}
+{: caption="Table 21. Total disk space for an instance metric metadata" caption-side="top"}
 
 ### Transaction commit count
 {: #ibm_databases_for_enterprisedb_transaction_commit_count}
@@ -349,7 +356,8 @@ Transaction commit count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 83: Transaction commit count metric metadata" caption-side="top"}
+{: caption="Table 22: Transaction commit count metric metadata" caption-side="top"}
+
 ### Transaction commit rate
 {: #ibm_databases_for_enterprisedb_transaction_commit_rate}
 
@@ -361,7 +369,8 @@ Transaction commit rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 110: Transaction commit rate metric metadata" caption-side="top"}
+{: caption="Table 23: Transaction commit rate metric metadata" caption-side="top"}
+
 ### Transaction rollback count
 {: #ibm_databases_for_enterprisedb_transaction_rollback_count}
 
@@ -373,7 +382,8 @@ Transaction rollback count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 84: Transaction rollback count metric metadata" caption-side="top"}
+{: caption="Table 24: Transaction rollback count metric metadata" caption-side="top"}
+
 ### Transaction rollback rate
 {: #ibm_databases_for_enterprisedb_transaction_rollback_rate}
 
@@ -385,7 +395,8 @@ Transaction rollback rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 114: Transaction rollback rate metric metadata" caption-side="top"}
+{: caption="Table 25: Transaction rollback rate metric metadata" caption-side="top"}
+
 ### Tuples deleted count
 {: #ibm_databases_for_enterprisedb_tuples_deleted_count}
 
@@ -397,7 +408,8 @@ Tuples deleted count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 86: Tuples deleted count metric metadata" caption-side="top"}
+{: caption="Table 26: Tuples deleted count metric metadata" caption-side="top"}
+
 ### Tuples deleted rate
 {: #ibm_databases_for_enterprisedb_tuples_deleted_rate}
 
@@ -409,7 +421,8 @@ Tuples deleted rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 119: Tuples deleted rate metric metadata" caption-side="top"}
+{: caption="Table 27: Tuples deleted rate metric metadata" caption-side="top"}
+
 ### Tuples fetched count
 {: #ibm_databases_for_enterprisedb_tuples_fetched_count}
 
@@ -421,7 +434,8 @@ Tuples fetched count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 88: Tuples fetched count metric metadata" caption-side="top"}
+{: caption="Table 28: Tuples fetched count metric metadata" caption-side="top"}
+
 ### Tuples fetched rate
 {: #ibm_databases_for_enterprisedb_tuples_fetched_rate}
 
@@ -433,7 +447,8 @@ Tuples fetched rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 123: Tuples fetched rate metric metadata" caption-side="top"}
+{: caption="Table 29: Tuples fetched rate metric metadata" caption-side="top"}
+
 ### Tuples inserted count
 {: #ibm_databases_for_enterprisedb_tuples_inserted_count}
 
@@ -445,7 +460,8 @@ Tuples inserted count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 91: Tuples inserted count metric metadata" caption-side="top"}
+{: caption="Table 30: Tuples inserted count metric metadata" caption-side="top"}
+
 ### Tuples inserted rate
 {: #ibm_databases_for_enterprisedb_tuples_inserted_rate}
 
@@ -457,7 +473,8 @@ Tuples inserted rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 126: Tuples inserted rate metric metadata" caption-side="top"}
+{: caption="Table 31: Tuples inserted rate metric metadata" caption-side="top"}
+
 ### Tuples returned rate
 {: #ibm_databases_for_enterprisedb_tuples_returned_rate}
 
@@ -469,7 +486,8 @@ Tuples returned rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 128: Tuples returned rate metric metadata" caption-side="top"}
+{: caption="Table 32: Tuples returned rate metric metadata" caption-side="top"}
+
 ### Tuples updated count
 {: #ibm_databases_for_enterprisedb_tuples_updated_count}
 
@@ -481,7 +499,8 @@ Tuples updated count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance` |
-{: caption="Table 92: Tuples updated count metric metadata" caption-side="top"}
+{: caption="Table 33: Tuples updated count metric metadata" caption-side="top"}
+
 ### Tuples updated rate
 {: #ibm_databases_for_enterprisedb_tuples_updated_rate}
 
@@ -493,7 +512,8 @@ Tuples updated rate
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance` |
-{: caption="Table 133: Tuples updated rate metric metadata" caption-side="top"}
+{: caption="Table 34: Tuples updated rate metric metadata" caption-side="top"}
+
 ### Used CPU for an instance
 {: #ibm_databases-for-enterprisedb_cpu_used_percent}
 
@@ -505,7 +525,7 @@ How much CPU is used as a percentage of total CPU available.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance` |
-{: caption="Table 11. Used CPU for an instance metric metadata" caption-side="top"}
+{: caption="Table 35. Used CPU for an instance metric metadata" caption-side="top"}
 
 ### Used disk space for an instance
 {: #ibm_databases-for-enterprisedb_disk_used_bytes}
@@ -518,7 +538,7 @@ How much disk your deployment is using.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
-{: caption="Table 12. Used disk space for an instance metric metadata" caption-side="top"}
+{: caption="Table 36. Used disk space for an instance metric metadata" caption-side="top"}
 
 ### Used memory for an instance
 {: #ibm_databases-for-enterprisedb_memory_used_bytes}
@@ -531,7 +551,7 @@ How much memory your deployment is using.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
-{: caption="Table 13. Used memory for an instance metric metadata" caption-side="top"}
+{: caption="Table 37. Used memory for an instance metric metadata" caption-side="top"}
 
 ### WAL logs size in bytes
 {: #ibm_databases_for_enterprisedb_wal_used_bytes}
@@ -544,7 +564,7 @@ WAL logs size in bytes
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance` |
-{: caption="Table 136: WAL logs size in bytes metric metadata" caption-side="top"}
+{: caption="Table 38: WAL logs size in bytes metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: #attributes}
@@ -561,7 +581,7 @@ The following attributes are available for segmenting all of the metrics listed.
 | `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
-{: caption="Table 14. Global Attributes Metadata" caption-side="top"}
+{: caption="Table 39. Global Attributes Metadata" caption-side="top"}
 
 ### Additional Attributes
 {: #additional-attributes}
