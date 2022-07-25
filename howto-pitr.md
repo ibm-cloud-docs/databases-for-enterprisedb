@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-02-11"
+  years: 2019, 2022
+lastupdated: "2022-07-25"
 
 keywords: postgresql, databases, point in time recovery, backups, restore, edb, enterprisedb
 
@@ -23,15 +23,15 @@ subcollection: databases-for-enterprisedb
 
 The _Backups_ tab of your deployment's UI keeps all your PITR information under _Point-in-Time_.
 
-![PITR section of the Backups tab](images/pitr-backups-tab.png)
+![PITR section of the Backups tab](images/pitr-backups-tab.png){: caption="Figure 1. PITR section of the Backups tab" caption-side="bottom"}
 
 Included information is the earliest time for a PITR. To discover the earliest recovery point through the CLI, use the [`cdb postgresql earliest-pitr-timestamp`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#postgresql-earliest-pitr-timestamp) command.
-```
+```sh
 ibmcloud cdb postgresql earliest-pitr-timestamp <deployment name or CRN>
 ```
 
 To discover the earliest recovery point through the API, use the [`/deployments/{id}/point_in_time_recovery_data`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-earliest-point-in-time-recovery-timestamp) endpoint to find the earliest PITR time. 
-```
+```sh
 {
     "point_in_time_recovery_data": {
         "earliest_point_in_time_recovery_time": "2019-09-09T23:16:00Z"
@@ -40,6 +40,7 @@ To discover the earliest recovery point through the API, use the [`/deployments/
 ```
 
 ## Recovery
+{: #recovery}
 
 Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment. Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
@@ -51,19 +52,21 @@ It is important that you do not delete the source deployment while the backup is
 {: .tip}
 
 ### In the UI
+{: #ui}
 
 To initiate a PITR, enter the time that you want to restore back to in Coordinated Universal Time (UTC). If you want to restore to the most recent available time, select that option. Clicking **Restore** brings up the options for your recovery. Enter a name, select the version, region, and allocated resources for the new deployment. Click **Recover** to start the process.
 
-![Recovery Options Dialog](images/pitr-dialog.png)
+![Recovery Options Dialog](images/pitr-dialog.png){: caption="Figure 2. Recovery Options Dialog" caption-side="bottom"}
 
 If you use Key Protect and have a key, you must use the CLI to recover and a command is provided for your convenience.
 
 ### In the CLI
+{: #cli}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 For PITR, use the `point_in_time_recovery_time` and `point_in_time_recovery_deployment_id` parameters. The `point_in_time_recovery_deployment_id` is the source deployment's ID and `point_in_time_recovery_time` is the timestamp in UTC you want to restore to. If you want to restore to the latest available point-in-time use `"point_in_time_recovery_time":" "`.
-```
+```sh
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> <region> -p '{"point_in_time_recovery_deployment_id":"DEPLOYMENT_ID", "point_in_time_recovery_time":"TIMESTAMP"}'
 ```
 
@@ -71,18 +74,19 @@ A pre-formatted command for a specific backup or PITR is available in detailed v
 {: .tip}
 
 Optional parameters are available when restoring through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new deployment.
-```
+```sh
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> <--service-endpoints SERVICE_ENDPOINTS_TYPE> -p
 '{"point_in_time_recovery_deployment_id":"DEPLOYMENT_ID", "point_in_time_recovery_time":"TIMESTAMP","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
 
 ### In the API
+{: #api}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller API. You need to complete [the necessary steps to use the resource controller API](/docs/databases-for-enterprisedb?topic=cloud-databases-provisioning#provisioning-through-the-resource-controller-api) before you can use it to restore from a backup. 
 
 Once you have all the information, the create request is a `POST` to the [`/resource_instances`](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance) endpoint.
 
-```
+```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
@@ -103,11 +107,12 @@ For PITR, use the `point_in_time_recovery_time` and `point_in_time_recovery_depl
 If you need to adjust resources or use a Key Protect key, add the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and/or `members_cpu_allocation_count`, and their values to the body of the request.
 
 ## Verifying PITR
+{: #verify-pitr}
 
 In order to verify the correct recovery time, you must check the database logs. Checking the database logs requires the [Logging Integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging) to be set up on your deployment.
 
 When you perform a recovery, your data is restored from the most recent incremental backup and any outstanding transactions from the WAL log are used to catch your database up to the time you recovered to. After the recovery is finished, and the transactions are run, the logs display a message. You can check that your logs have the message,
-```
+```sh
 LOG:  last completed transaction was at log time 2019-09-03 19:40:48.997696+00
 ```
 
