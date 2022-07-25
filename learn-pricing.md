@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-07-24"
+  years: 2017, 2022
+lastupdated: "2022-07-25"
 
 keywords: postgresql, databases, pricing, resources, scaling, edb, enterprisedb
 
@@ -32,12 +32,12 @@ A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as
 
 ![Standard pricing](images/standard-pricing.png){: caption="Figure 1. Standard pricing" caption-side="bottom"}
 
-Resources | Breakdown | Price
--------|-------|-------
-20 GB-Month disk | 3 members x 20 GB x $0.58 | $34.80
-20 GB-Month backup| 3 members x 20 GB x $0.03| $1.80
-1 GB-Month RAM | 3 members x 1 GB x $11.50 | $34.50
-3 Virtual processor Cores | 3 members x 3 cores x $100 | $900
+| Resources | Breakdown | Price |
+| ------- | ------- | ------- |
+| 20 GB-Month disk | 3 members x 20 GB x $0.58 | $34.80 |
+| 20 GB-Month backup| 3 members x 20 GB x $0.03| $1.80 |
+| 1 GB-Month RAM | 3 members x 1 GB x $11.50 | $34.50 |
+| 3 Virtual processor Cores | 3 members x 3 cores x $100 | $900 |
 {: caption="Table 1. Pricing example for two data members" caption-side="top"}
 
 Total per month = $971.10/Month  
@@ -70,9 +70,9 @@ With dedicated cores, your resource group is given a single-tenant host with a g
 
 {{site.data.keyword.databases-for-enterprisedb}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the API/CLI provides more granularity and also allows a user to scale a database instance up to 4 TB of disk per member.
 
-Resource | Minimum | Maximum | Scaling Granularity (API/CLI)
-----------|-----|-----|-------
-Disk | 20 GB per member | 4 TB per member | 1024 MB per member
-RAM | 1 GB per member | 112 GB per member | 128 MB per member
-CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member
+| Resource | Minimum | Maximum | Scaling Granularity (API/CLI) |
+| ---------- | ----- | ----- | ------- |
+| Disk | 20 GB per member | 4 TB per member | 1024 MB per member |
+| RAM | 1 GB per member | 112 GB per member | 128 MB per member |
+| CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member |
 {: caption="Table 2. Per Member Scaling Limits" caption-side="top"}
