@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-29"
 
-keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb
+keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb connection string, enterprisedb connecting application
 
 subcollection: databases-for-enterprisedb
 
