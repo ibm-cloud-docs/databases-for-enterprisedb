@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-23"
+  years: 2018, 2022
+lastupdated: "2022-07-29"
 
-keywords: pgAdmin, postgresql gui, edb, enterprisedb
+keywords: pgAdmin, postgresql gui, edb, enterprisedb connection information, enterprisedb
 
 subcollection: databases-for-enterprisedb
 
@@ -21,15 +21,15 @@ subcollection: databases-for-enterprisedb
 # Getting Started
 {: #getting-started}
 
-This tutorial is a short introduction to using an {{site.data.keyword.databases-for-enterprisedb_full}} deployment. [pgAdmin](https://www.pgadmin.org/) is an open source administration platform for PostgreSQL, and provides many tools for managing your data and databases. [Download and install](https://www.pgadmin.org/download/) the version that is appropriate to your environment, and then follow the steps to connect it to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
+This tutorial is a short introduction to using an {{site.data.keyword.databases-for-enterprisedb_full}} deployment. [pgAdmin](https://www.pgadmin.org/){: external} is an open source administration platform for PostgreSQL, and provides many tools for managing your data and databases. [Download and install](https://www.pgadmin.org/download/){: external} the version that is appropriate to your environment, and then follow the steps to connect it to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
 
 ## Before you begin
 {: #before-begin}
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}.
-- And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb){: external}. Give your deployment a memorable name that appears in your account's Resource List.
 - [Set the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password) for your deployment.
-- An installation of [pgAdmin4](https://www.pgadmin.org/download/).
+- An installation of [pgAdmin4](https://www.pgadmin.org/download/){: external}.
 
 Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) documentation for general guidance on setting up a basic {{site.data.keyword.databases-for-enterprisedb_full}} deployment.
 
@@ -38,7 +38,7 @@ Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases
 
 pgAdmin runs as a server and you connect to it through a browser. When the server is started, it runs on localhost, at default `http://127.0.0.1:53113/browser/`.
 
-When you first open pgAdmin, you get a prompt for setting a `primary password`. This password is different from your deployment's password; it is used specifically for pgAdmin to store passwords to your {{site.data.keyword.databases-for-enterprisedb}} servers or deployments.
+When you first open pgAdmin, you get a prompt for setting a `primary password`. This password is different from your deployment's password and is used specifically for pgAdmin to store passwords to your {{site.data.keyword.databases-for-enterprisedb}} servers or deployments.
 
 The _Dashboard_ page has a _Welcome_ screen. From the _Quick Links_, click _Add New Server_.
 
@@ -82,7 +82,7 @@ When pgAdmin connects, your deployment appears in the _Servers_ list and you get
 
 In the list of databases in the _Browser_, you see both the `postgres` database, which you are connected to, and the `ibmclouddb` database, which is the default database for all {{site.data.keyword.databases-for-enterprisedb}} deployments. Click `ibmclouddb` to connect to it and expand the information about it.
 
-Now you can use pgAdmin to view, administer, and manage your data and databases in your {{site.data.keyword.databases-for-enterprisedb}} deployment. A complete guide can be found in the [pgAdmin documentation](https://www.pgadmin.org/docs/pgadmin4/latest/index.html).
+Now you can use pgAdmin to view, administer, and manage your data and databases in your {{site.data.keyword.databases-for-enterprisedb}} deployment. A complete guide can be found in the [pgAdmin documentation](https://www.pgadmin.org/docs/pgadmin4/latest/index.html){: external}.
 
 Administrative features that require a superuser are not available through pgAdmin because superuser access is not available to users of a {{site.data.keyword.databases-for-enterprisedb}} deployment.
 {: .tip}
@@ -90,7 +90,7 @@ Administrative features that require a superuser are not available through pgAdm
 ## Next Steps
 {: #getting-started-next-steps}
 
-If you are just using PostgreSQL for the first time, it is a good idea to take a tour through the [official PostgreSQL documentation](https://www.postgresql.org/docs/). 
+If you are just using PostgreSQL for the first time, it is a good idea to take a tour through the [official PostgreSQL documentation](https://www.postgresql.org/docs/){: external}. 
 
 You can connect to and manage your databases and data with PostgreSQL's command-line tool [`psql`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql).
 
