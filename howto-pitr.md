@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-10-25"
 
 keywords: postgresql, databases, point in time recovery, backups, restore, edb, enterprisedb
 
@@ -15,13 +15,15 @@ subcollection: databases-for-enterprisedb
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Point-in-time Recovery
 {: #pitr}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} offers Point-In-Time Recovery (PITR) for any time in the last 7 days. The deployment performs continuous incremental backups and can replay transactions to bring a new deployment that is restored from a backup to any point in that 7-day window you need.
 
-The _Backups_ tab of your deployment's UI keeps all your PITR information under _Point-in-Time_.
+The _Backups_ tab of your deployment's UI keeps all of your PITR information under _Point-in-Time_.
 
 ![PITR section of the Backups tab](images/pitr-backups-tab.png){: caption="Figure 1. PITR section of the Backups tab" caption-side="bottom"}
 
@@ -44,24 +46,26 @@ To discover the earliest recovery point through the API, use the [`/deployments/
 
 Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment. Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
-By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. Especially in the case of PITR, that might not be the current size of your deployment. If you need to adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload, if the deployment is not given enough resources the restore will fail.
+By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. Especially in the case of PITR, that might not be the current size of your deployment. If you need to adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload, if the deployment is not given enough resources the restore fails.
 
 While storage and memory are restored to the same as the source deployment, specific instance configurations are not automatically set for the new instance. In this case, rerunning the configuration after a restore might be needed. Any instance modifications should be noted before running the restore (parameters like shared_buffers, max_connections, deadlock_timeout, archive_timeout, and others) to ensure accurate setting for the instance after the restore is complete.
 
-It is important that you do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you might not be able to recover the backup either.
+Do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you might not be able to recover the backup either.
 {: .tip}
 
-### In the UI
+### Point-In-Time Recovery in the UI
 {: #ui}
+{: ui}
 
 To initiate a PITR, enter the time that you want to restore back to in Coordinated Universal Time (UTC). If you want to restore to the most recent available time, select that option. Clicking **Restore** brings up the options for your recovery. Enter a name, select the version, region, and allocated resources for the new deployment. Click **Recover** to start the process.
 
 ![Recovery Options Dialog](images/pitr-dialog.png){: caption="Figure 2. Recovery Options Dialog" caption-side="bottom"}
 
-If you use Key Protect and have a key, you must use the CLI to recover and a command is provided for your convenience.
+If you use Key Protect and have a key, you must use the CLI to recover, and a command is provided for your convenience.
 
-### In the CLI
+### Point-In-Time Recovery in the CLI
 {: #cli}
+{: cli}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
@@ -79,8 +83,9 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 '{"point_in_time_recovery_deployment_id":"DEPLOYMENT_ID", "point_in_time_recovery_time":"TIMESTAMP","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
 
-### In the API
+### Point-In-Time Recovery through the API
 {: #api}
+{: api}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller API. You need to complete [the necessary steps to use the resource controller API](/docs/databases-for-enterprisedb?topic=cloud-databases-provisioning#provisioning-through-the-resource-controller-api) before you can use it to restore from a backup. 
 
@@ -112,6 +117,7 @@ If you need to adjust resources or use a Key Protect key, add the optional param
 In order to verify the correct recovery time, you must check the database logs. Checking the database logs requires the [Logging Integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging) to be set up on your deployment.
 
 When you perform a recovery, your data is restored from the most recent incremental backup and any outstanding transactions from the WAL log are used to catch your database up to the time you recovered to. After the recovery is finished, and the transactions are run, the logs display a message. You can check that your logs have the message,
+
 ```sh
 LOG:  last completed transaction was at log time 2019-09-03 19:40:48.997696+00
 ```
