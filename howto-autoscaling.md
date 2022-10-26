@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2021
-lastupdated: "2022-05-24"
+  years: 2020, 2022
+lastupdated: "2022-10-26"
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
@@ -15,6 +15,7 @@ subcollection: databases-for-enterprisedb
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Autoscaling
@@ -60,6 +61,7 @@ The resource numbers refer to each database node in a deployment. For example, t
 
 ## Configuring Autoscaling in the UI
 {: #config-autoscaling-ui}
+{: ui}
 
 The Autoscaling pane is on the _Resources_ tab of your deployment's _Manage_ page. To enable scaling, enter your parameters. Then, check the boxes to enable the parameters you are using. Be sure to click **Save Changes** for your configuration to be saved and your changes to take effect.
 
@@ -67,6 +69,7 @@ To disable autoscaling, clear the boxes for the parameters that you no longer wa
 
 ## Configuring Autoscaling in the CLI
 {: #config-autoscaling-cli}
+{: cli}
 
 You can get the autoscaling parameters for your deployment through the CLI by using the [`cdb deployment-autoscaling`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#-ibmcloud-cdb-deployment-autoscaling-) command.
 ```shell
@@ -80,6 +83,7 @@ ibmcloud cdb deployment-autoscaling-set <deployment name or CRN> member '{"autos
 
 ## Configuring Autoscaling in the API
 {: #config-autoscaling-api}
+{: api}
 
 You can get the autoscaling parameters for your deployment through the API by sending a `GET` request to the [`/deployments/{id}/groups/{group_id}/autoscaling`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-the-autoscaling-configuration-from-a-deploymen) endpoint. 
 ```shell
