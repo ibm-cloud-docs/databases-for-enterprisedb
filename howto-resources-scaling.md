@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-10-26"
 
 keywords: postgresql, databases, scaling, memory, disk IOPS, CPU, edb, enterprisedb
 
@@ -16,6 +16,7 @@ subcollection: databases-for-enterprisedb
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Scaling Disk, RAM, and CPU
 {: #resources-scaling}
@@ -35,7 +36,7 @@ Billing is based on the _total_ amount of resources that are allocated to the se
 
 Your disk allocation must be enough to store all of your data. Your data is replicated to all data members so the total amount of disk you use is at least twice the size of your data set. 
 
-Disk allocation also affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Scale disk to increase the IOPS your deployment can handle.
+Disk allocation also affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Scale disk to increase the IOPS that your deployment can handle.
 
 You cannot scale down storage.
 {: .tip} 
@@ -73,6 +74,7 @@ You can increase the CPU allocation to the deployment. With dedicated cores, you
 
 ## Scaling in the UI
 {: #ui-scaling}
+{: ui}
 
 A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
@@ -85,6 +87,7 @@ The UI currently uses a coarser-grained resolution for scaling than the CLI or A
 
 ## Scaling in the CLI 
 {: #cli-scaling}
+{: cli}
 
 [{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) supports viewing and scaling the resources on your deployment. To scale any of the available resource groups, use `cdb deployment-groups-set` command. 
 
@@ -129,6 +132,7 @@ ibmcloud cdb deployment-groups-set example-deployment member --memory 6144
 
 ## Scaling in the API
 {: #api-scaling}
+{: api}
 
 The _Foundation Endpoint_ that is shown on the _Overview_ pane of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically. 
 
@@ -148,6 +152,4 @@ curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{
     }'
 ```
 
-More information is in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
-
- 
+For more information, see [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
