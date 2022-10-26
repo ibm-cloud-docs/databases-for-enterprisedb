@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-26"
 
 keywords: postgresql, databases, point in time recovery, backups, restore, edb, enterprisedb
 
