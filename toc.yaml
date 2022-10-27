@@ -33,7 +33,6 @@ toc:
       id: howto
       topics:
       - /cloud-databases/cloud-databases-provisioning
-      - /cloud-databases/cloud-databases-cbr
       - /cloud-databases/cloud-databases-deprovisioning
       - /cloud-databases/cloud-databases-migrate-data-center
       - howto-getting-connection-strings.md
@@ -88,6 +87,8 @@ toc:
           label: Enhancing security
           topics: 
           - /cloud-databases/cloud-databases-manage-security-compliance
+          - /cloud-databases/cloud-databases-cbr
+          - /cloud-databases/cloud-databases-cbr-tutorial
   - navgroup: 
       id: help
       topics:
