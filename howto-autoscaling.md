@@ -33,9 +33,9 @@ General Autoscaling parameters
 
 ![Example Autoscaling pane](images/autoscaling-update.png){: caption="Figure 1. Example Autoscaling pane" caption-side="bottom"}
 
-Memory - Memory autoscaling is based on Disk I/O utilization in order to provide more memory for disk caching as your read/write load increases. The benefit is that additional memory might alleviate pressure on disk I/O by supporting more caching. Autoscaling configurations based on memory usage are currently not available. 
+**Memory** - Memory autoscaling is based on Disk I/O utilization in order to provide more memory for disk caching as your read/write load increases. The benefit is that additional memory might alleviate pressure on disk I/O by supporting more caching. Autoscaling configurations based on memory usage are currently not available. 
 
-Disk - Disk autoscaling can scale when either disk usage reaches a certain threshold, Disk I/O utilization reach a certain threshold, or both. (The "or" in the UI operates as an `inclusive or`, `|`, `v`.) The amount of IOPS available to your deployment increases with disk size at a ratio of 10 IOPS for each GB.
+**Disk** - Disk autoscaling can scale when either disk usage reaches a certain threshold, Disk I/O utilization reach a certain threshold, or both. (The "or" in the UI operates as an `inclusive or`, `|`, `v`.) The amount of IOPS available to your deployment increases with disk size at a ratio of 10 IOPS for each GB.
 
 The resource numbers refer to each database node in a deployment. For example, there are three data members in a {{site.data.keyword.databases-for-enterprisedb}} deployment and if the deployment is scaled with 20 GB of disk and 1 GB of RAM, that means each member gets 20 GB of disk and 1 GB of RAM. The total resources added to your deployment is 60 GB of disk and 3 GB of RAM.
 
