@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-10-31"
 
 keywords: postgresql, databases, read-only replica, resync, promote, cross-region replication, edb, enterprisedb
 
@@ -16,6 +16,7 @@ subcollection: databases-for-enterprisedb
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Configuring Read-only Replicas
 {: #read-only-replicas}
@@ -58,20 +59,25 @@ If a deployment is a leader and has a read-only replica that is already attached
 
 ![List of replicas that are attached to a leader](images/replica-after.png){: caption="Figure 2. List of replicas that are attached to a leader" caption-side="bottom"}
 
-## Provisioning a Read-only Replica
+## Provisioning a Read-only Replica in the UI
 {: #read-only-replicas-provision}
+{: ui}
 
 You can provision a read-only replica from the leader's _Read Replicas_ tab by clicking **Create Read-Only Replica**. The source instance is automatically entered. The read-only replica's name is auto-generated in the _Service Name_ field, but you can rename it freely. You can choose the region to deploy it in, and its initial memory allocation. Disk size, version, and public or private endpoints are automatically configured to match the settings of the leader deployment.
 
 If you use [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), Bring Your Own Key (BYOK) is supported only when provisioning from the CLI and API. Otherwise, the read-only replica is encrypted with a generated key. 
 {: .tip}
 
-### Provisioning through the API or the CLI
+### Provisioning through the CLI
 {: #read-only-replicas-api-cli}
+{: cli}
 
-Provisioning a read-only replica through the CLI and the API works similarly to [provisioning a standard {{site.data.keyword.databases-for-enterprisedb}} deployment](/docs/databases-for-enterprisedb?topic=cloud-databases-provisioning). Provisioning is handled by the Resource Controller, and it uses a parameter `{"remote_leader_id": "crn:v1:..."}` to specify the leader of the replica you are provisioning.
+Provisioning a read-only replica through the CLI works similarly to [provisioning a standard {{site.data.keyword.databases-for-enterprisedb}} deployment](/docs/databases-for-enterprisedb?topic=cloud-databases-provisioning). Provisioning is handled by the Resource Controller, and it uses a parameter `{"remote_leader_id": "crn:v1:..."}` to specify the leader of the replica you are provisioning.
 
-For example, to provision a read-only replica through the CLI,
+If you use [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), Bring Your Own Key (BYOK) is supported only when provisioning from the CLI and API. Otherwise, the read-only replica is encrypted with a generated key. 
+{: .tip}
+
+To provision a read-only replica through the CLI, use a command like: 
 ```sh
 ibmcloud resource service-instance-create <replica_name> databases-for-enterprisedb standard <region> \
 -p \ '{
@@ -81,7 +87,18 @@ ibmcloud resource service-instance-create <replica_name> databases-for-enterpris
 }'
 ```
 
-The same parameter is used to provision a read-only replica through the Resource Controller API.
+You must specify both the RAM and disk amounts, keeping in mind the minimum size is 3 GB RAM and 60 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
+
+### Provisioning through the API
+{: #read-only-replicas-api-api}
+{: api}
+
+Provisioning a read-only replica through the CLI works similarly to [provisioning a standard {{site.data.keyword.databases-for-enterprisedb}} deployment](/docs/databases-for-enterprisedb?topic=cloud-databases-provisioning). Provisioning is handled by the Resource Controller, and it uses a parameter `{"remote_leader_id": "crn:v1:..."}` to specify the leader of the replica you are provisioning.
+
+If you use [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), Bring Your Own Key (BYOK) is supported only when provisioning from the CLI and API. Otherwise, the read-only replica is encrypted with a generated key. 
+{: .tip}
+
+To provision a read-only replica through the API, use a command like: 
 ```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
@@ -98,7 +115,7 @@ curl -X POST \
   }'
 ```
 
-For both the CLI and API commands, you must specify both the RAM and disk amounts, keeping in mind the minimum size is 3 GB RAM and 60 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
+You must specify both the RAM and disk amounts, keeping in mind the minimum size is 3 GB RAM and 60 GB disk. You can optionally specify whether the read-only replica uses public or private endpoints. You are not able to specify a version for the read-only replica. The version is automatically set to the same major version as the leader deployment.
 
 ## The Read-only Replica
 {: #read-only-replicas-tab}
@@ -131,18 +148,30 @@ Read-only replica users who are created on a read-only replica are able connect 
 
 Read-only replica created users are assigned privileges by the leader, and are assigned the `ibm-cloud-base-user-ro` role, and are members of the `ibm-cloud-base-user` group. They have access to all of the objects that are created by other members of this group, including any users on the leader that were created through _Service Credentials_, the CLI, or the API. Consistent with privileges of the `ibm-cloud-base-user`, a read-only replica created user does not have access to objects created by the admin user, or other users created through `psql`. For more information, see the [{{site.data.keyword.databases-for-enterprisedb}} Roles and Privileges](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management) page.
 
-## Resyncing a Read-only Replica
+## Resyncing a Read-only Replica in the UI
 {: #read-only-replicas-resync}
+{: ui}
 
 If you need to resync a read-only replica, click the **Resync Read-Only Replica** button. Resyncing is a disruptive operation and performing a resync tears down and rebuilds the data in the read-only replica. The read-only replica is not able to perform any other operations or run any queries while a resync is running. Queries are not rerouted to the leader, so any connections to the read-only replica fail until it is finished resyncing. 
 
 The amount of time it takes to resync a read-only replica varies, but the process can be long running.
 {: .tip}
 
+## Resyncing a Read-only Replica in the CLI
+{: #read-only-replicas-resync-cli}
+{: cli}
+
 To start a resync through the CLI, use the [`cdb read-replica-resync`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#read-replica-resync) command.
 ```sh
 ibmcloud cdb read-replica-resync <deployment name>
 ```
+
+The amount of time it takes to resync a read-only replica varies, but the process can be long running.
+{: .tip}
+
+## Resyncing a Read-only Replica in the API
+{: #read-only-replicas-resync-api}
+{: api}
 
 To start a resync through the API, send a POST to the [`/deployments/{id}/remotes/resync`](https://cloud.ibm.com/apidocs/cloud-databases-api#resync-read-only-replica) endpoint.
 ```sh
@@ -151,12 +180,23 @@ curl -X POST \
   -H 'Authorization: Bearer <>' 
 ```
 
-## Promoting a Read-only Replica
+## Promoting a Read-only Replica in the UI
 {: #read-only-replicas-promoting}
+{: ui}
 
 A read-only replica is able to be promoted to an independent cluster that can accept write operations as well as read operations. If something happens to the leader deployment, the read-only replica can be promoted to a stand-alone cluster and start accepting writes from your application. 
 
-To promote a read-only replica from the UI, click the **Promote Read-Only Replica** button.
+To promote a read-only replica from the UI, click **Promote Read-Only Replica**.
+
+Upon promotion, the read-only replica terminates its connection to the leader and becomes a stand-alone {{site.data.keyword.databases-for-enterprisedb}} deployment. The deployment can start accepting and running read and write operations, backups are enabled, and it is issued its own admin user. A new data member is added so the deployment becomes a cluster with two data members. This increases the cost as it is billed at the same per member consumption rate, but the deployment has two members instead of one.
+
+When you promote a read-only replica, you can skip the initial backup that would normally be taken upon promotion. Skipping the initial backup means that your replica becomes available more quickly, but no immediate backup is available. You can start an on-demand backup once the promotion process is complete.
+
+Once a read-only replica is promoted to an independent deployment, it is not possible to revert it back to a read-only replica or have it rejoin a leader.
+
+## Promoting a Read-only Replica in the CLI
+{: #read-only-replicas-promoting-cli}
+{: cli}
 
 Upon promotion, the read-only replica terminates its connection to the leader and becomes a stand-alone {{site.data.keyword.databases-for-enterprisedb}} deployment. The deployment can start accepting and running read and write operations, backups are enabled, and it is issued its own admin user. A new data member is added so the deployment becomes a cluster with two data members. This increases the cost as it is billed at the same per member consumption rate, but the deployment has two members instead of one.
 
@@ -168,6 +208,16 @@ To promote through the CLI, use the [`cdb read-replica-promote`](/docs/databases
 ```sh
 ibmcloud cdb read-replica-promote <deployment name>
 ```
+
+## Promoting a Read-only Replica in the API
+{: #read-only-replicas-promoting-api}
+{: api}
+
+Upon promotion, the read-only replica terminates its connection to the leader and becomes a stand-alone {{site.data.keyword.databases-for-enterprisedb}} deployment. The deployment can start accepting and running read and write operations, backups are enabled, and it is issued its own admin user. A new data member is added so the deployment becomes a cluster with two data members. This increases the cost as it is billed at the same per member consumption rate, but the deployment has two members instead of one.
+
+When you promote a read-only replica, you can skip the initial backup that would normally be taken upon promotion. Skipping the initial backup means that your replica becomes available more quickly, but no immediate backup is available. You can start an on-demand backup once the promotion process is complete.
+
+Once a read-only replica is promoted to an independent deployment, it is not possible to revert it back to a read-only replica or have it rejoin a leader.
 
 To promote through the API, send a POST to the [`/deployments/{id}/remotes/promotion`](https://cloud.ibm.com/apidocs/cloud-databases-api#modify-read-only-replication-on-a-deployment) endpoint.
 ```sh
