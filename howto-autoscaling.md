@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-12-12"
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
@@ -9,12 +9,6 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 
