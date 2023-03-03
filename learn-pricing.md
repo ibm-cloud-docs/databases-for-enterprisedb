@@ -23,8 +23,6 @@ Templates are provided for ease of use and provide balanced resource allocations
 
 For pricing estimation, use the **Add to Estimate** button on the [{{site.data.keyword.databases-for-enterprisedb}} catalog page](https://cloud.ibm.com/catalog/databases-for-enterprisedb). Input your total consumption across three data members into the calculator. This is roughly tripled the size of your data because your data is replicated to all three members. For example, 20 GB of disk and 1 GB of RAM across two data members would be priced at 60 GB of disk and 3 GB of RAM respectively. 
 
-![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-estimate.png){: caption="Figure 2. Pricing calculator estimation" caption-side="bottom"}
-
 ## Backups Pricing
 {: #pricing-backup}
 
