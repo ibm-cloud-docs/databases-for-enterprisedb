@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-09-14"
+  years: 2017, 2023
+lastupdated: "2023-03-03"
 
 keywords: postgresql, databases, pricing, resources, scaling, edb, enterprisedb, backup pricing
 
@@ -9,42 +9,12 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Pricing
 {: #pricing}
 
 A {{site.data.keyword.databases-for-enterprisedb_full}} Standard plan deploys as one highly available cluster with three data members. Your data is replicated on all three members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-enterprisedb}} deployments have a minimum of 20 GB of disk and 1 GB of RAM per data member.
-
-## Cost Breakdown
-{: #cost}
-
-**Disk storage per data member** - gigabytes of disk that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member, or the size of your data.  
-**RAM per data member** - gigabytes of RAM that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.  
-**Backup storage** - amount of storage used for backups by a {{site.data.keyword.databases-for-enterprisedb}} deployment.  
-**Virtual processor core** - number of virtual processor cores that are allocated to a {{site.data.keyword.databases-for-enterprisedb}} data member.
-
-![Standard pricing](images/standard-pricing.png){: caption="Figure 1. Standard pricing" caption-side="bottom"}
-
-| Resources | Breakdown | Price |
-| ------- | ------- | ------- |
-| 20 GB-Month disk | 3 members x 20 GB x $0.58 | $34.80 |
-| 20 GB-Month backup| 3 members x 20 GB x $0.03| $1.80 |
-| 1 GB-Month RAM | 3 members x 1 GB x $11.50 | $34.50 |
-| 3 Virtual processor Cores | 3 members x 3 cores x $100 | $900 |
-{: caption="Table 1. Pricing example for two data members" caption-side="top"}
-
-Total per month = $971.10/Month  
-Total per hour = $1.35/Hour
-
-All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
-{: .tip}
 
 ## Using the Pricing Calculator
 {: #pricing-calc}
@@ -83,4 +53,4 @@ With dedicated cores, your resource group is given a single-tenant host with a g
 | Disk | 20 GB per member | 4 TB per member | 1024 MB per member |
 | RAM | 1 GB per member | 112 GB per member | 128 MB per member |
 | CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member |
-{: caption="Table 2. Per Member Scaling Limits" caption-side="top"}
+{: caption="Table 1. Per Member Scaling Limits" caption-side="top"}
