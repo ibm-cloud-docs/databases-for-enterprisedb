@@ -1,6 +1,6 @@
 {
     "title": "IBM Cloud® Databases for EnterpriseDB docs",
-    "lastupdated": "2023-02-21",
+    "lastupdated": "2023-03-03",
     "introduction": "EDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
     "section_devtools": {
       "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
@@ -31,7 +31,7 @@
       "community": "https://community.ibm.com/community/user/publiccloud/home"
     },
     "section_updates": {
-      "view_more": "/docs/acme-test?topic=acme-test-release-notes",
+      "view_more": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-enterprisedb-relnotes",
       "tiles": [
         {
           "date": "19 October 2022",
