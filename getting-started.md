@@ -10,13 +10,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting Started
 {: #getting-started}
