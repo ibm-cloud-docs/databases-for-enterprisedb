@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-10-26"
+  years: 2019, 2023
+lastupdated: "2023-04-27"
 
 keywords: postgresql, databases, edb, enterprisedb
 
@@ -9,12 +9,6 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 # Changing the {{site.data.keyword.databases-for-enterprisedb}} Configuration
