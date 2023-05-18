@@ -89,6 +89,7 @@ toc:
           - /cloud-databases/cloud-databases-manage-security-compliance
           - /cloud-databases/cloud-databases-cbr
           - /cloud-databases/cloud-databases-cbr-tutorial
+          - include: ../cloud-databases/disk-util-alerts-tutorial.md
   - navgroup: 
       id: help
       topics:
