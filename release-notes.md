@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-05-23"
 
 keywords: databases-for-enterprisedb release notes
 
@@ -20,8 +20,8 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 18 May 2023
-{: #databases-for-enterprisedb-18may2023}
+## 23 May 2023
+{: #databases-for-enterprisedb-23may2023}
 {: release-note}
 
 Setting up disk alerts for disk utilization tutorial
