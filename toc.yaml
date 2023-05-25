@@ -77,7 +77,7 @@ toc:
           - /cloud-databases/cloud-databases-tutorial-provision-mongodbee-tf
           - /cloud-databases/cloud-databases-tutorial-k8s-app
           - /cloud-databases/cloud-databases-truck-tracker-ibmcloud
-          
+          - include: ../cloud-databases/disk-util-alerts-tutorial.md
       - topicgroup: 
           label: Logging and monitoring
           topics: 
@@ -90,7 +90,6 @@ toc:
           - /cloud-databases/cloud-databases-manage-security-compliance
           - /cloud-databases/cloud-databases-cbr
           - /cloud-databases/cloud-databases-cbr-tutorial
-          - include: ../cloud-databases/disk-util-alerts-tutorial.md
   - navgroup: 
       id: help
       topics:
