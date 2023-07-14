@@ -32,7 +32,7 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - /cloud-databases/cloud-databases-provisioning
+      - howto-provisioning.md
       - /cloud-databases/cloud-databases-deprovisioning
       - /cloud-databases/cloud-databases-migrate-data-center
       - howto-getting-connection-strings.md
