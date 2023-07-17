@@ -13,7 +13,7 @@ subcollection: databases-for-enterprisedb
 {{site.data.keyword.attribute-definition-list}}
 
 # Provisioning
-{: #provisioning-new}
+{: #provisioning}
 
 Provision a {{site.data.keyword.databases-for-enterprisedb_full}} deployment through the [catalog](https://cloud.ibm.com/databases/databases-for-enterprisedb/create){: external}, the [{{site.data.keyword.databases-for}} CLI](/docs/databases-for-enterprisedb?topic=databases-cli-plugin-cdb-reference&interface=ui){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
