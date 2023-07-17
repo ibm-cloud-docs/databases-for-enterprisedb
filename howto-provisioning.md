@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-07-17"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision enterprisedb
 
@@ -13,7 +13,7 @@ subcollection: databases-for-enterprisedb
 {{site.data.keyword.attribute-definition-list}}
 
 # Provisioning
-{: #provisioning-new}
+{: #provisioning}
 
 Provision a {{site.data.keyword.databases-for-enterprisedb_full}} deployment through the [catalog](https://cloud.ibm.com/databases/databases-for-enterprisedb/create){: external}, the [{{site.data.keyword.databases-for}} CLI](/docs/databases-for-enterprisedb?topic=databases-cli-plugin-cdb-reference&interface=ui){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
@@ -63,7 +63,7 @@ Before provisioning, follow the instructions provided in the documentation to in
    |-------|------------|------------|
    | `NAME` [Required]{: tag-red} | The instance name can be any string and is the name that is used on the web and in the CLI to identify the new deployment. |  |
    | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.databases-for-enterprisedb}}, use `databases-for-enterprisedb`. |  |
-   | `SERVICE_PLAN_NAME` [Required]{: tag-red} | Standard plan (`standard`) or Enterprise plan (`enterprise`) |  |
+   | `SERVICE_PLAN_NAME` [Required]{: tag-red} | Standard plan (`standard`) |  |
    | `LOCATION` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
    | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
