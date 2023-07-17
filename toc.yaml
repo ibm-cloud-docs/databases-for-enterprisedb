@@ -102,9 +102,9 @@ toc:
           label: Cloud Databases API
           href: https://cloud.ibm.com/apidocs/cloud-databases-api
       - /cloud-databases/cloud-databases-versioning-policy
-      - topicgroup: 
+      - topicgroup:
           label: Connecting over Private Networks
-          topics: 
+          topics:
           - /cloud-databases/cloud-databases-vpes
           - /cloud-databases/cloud-databases-service-endpoints
       - /cloud-databases/cloud-databases-iam
