@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2021-01-13"
+  years: 2019, 2023
+lastupdated: "2023-07-19"
 
 keywords: admin, superuser, roles, service credentials, postgresql, edb, enterprisedb
 
@@ -10,89 +10,113 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
-
-# Managing Users, Roles, and Privileges 
+# Managing Users and Roles
 {: #user-management}
 
-{{site.data.keyword.databases-for-enterprisedb_full}} uses a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. You can determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
+{{site.data.keyword.databases-for-enterprisedb_full}} uses a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. Determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
 
-![Table Results from \du command](images/user_management_du.png){: caption="Figure 1. Table Results from \du command" caption-side="bottom"}
+The `\du` command lists all users in the current database server. It can also be used to determine roles, groups, and privileges for all roles across a deployment.
 
-When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage {{site.data.keyword.databases-for-enterprisedb}}.
+Add users in the UI in _Service Credentials_, with the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin), or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction).
 
 ## The `admin` user
 {: #user-management-admin}
+{: ui}
+{: cli}
+{: api}
 
-When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are automatically given an admin user to access and manage {{site.data.keyword.databases-for-enterprisedb}}. Once you [set the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password), you can use it to connect to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
+When you provision a {{site.data.keyword.databases-for-mongodb}} deployment, an `admin` user is automatically created. 
 
-When admin creates a resource in a database, like a table, admin owns that object. Resources that are created by admin are not accessible by other users, unless you expressly grant permissions to them.
+Set the admin password before using it to connect.
+{: important}
 
-The biggest difference between the admin user and any other users you add to your deployment is the [`pg_monitor`](https://www.postgresql.org/docs/current/default-roles.html) and [`pg_signal_backend`](https://www.postgresql.org/docs/current/default-roles.html) roles. The `pg_monitor` role provides a set of permissions that makes the admin user appropriate for monitoring the database server. The `pg_signal_backend` role provides the admin user the ability to send signals to cancel queries and connections that are initiated by other users. It does not provide the ability to send signals to processes owned by superusers.
+The biggest difference between the `admin` user and any other users you add to your deployment is the [`pg_monitor`](https://www.postgresql.org/docs/current/default-roles.html) and [`pg_signal_backend`](https://www.postgresql.org/docs/current/default-roles.html) roles. The `pg_monitor` role provides a set of permissions that makes the `admin` user appropriate for monitoring the database server. The `pg_signal_backend` role provides the `admin` user the ability to send signals to cancel queries and connections that are initiated by other users. It does not provide the ability to send signals to processes owned by superusers.
 
 You can also use the admin user to grant these two roles to other users on your deployment.
 
-If you want to expose the ability to cancel queries to other database users, you can grant the `pg_signal_backend` role from the admin user. For example, 
+To expose the ability to cancel queries to other database users, grant the `pg_signal_backend` role from the admin user. The command looks like:
+
 ```sql
 GRANT pg_signal_backend TO joe;
-``` 
-to allow the user `joe` to cancel backends. You can also grant `pg_signal_backend` to all the users with the `ibm-cloud-base-user` role with 
+```
+{: pre}
+
+You can also grant `pg_signal_backend` to all users with the `ibm-cloud-base-user` role with a command that looks like:
+
 ```sql
 GRANT pg_signal_backend TO "ibm-cloud-base-user";
-``` 
-Be aware this privilege allows the user or users to terminate any connections to the database, so assign it with care.
+```
+{: pre}
 
-Similarly, if you want to set up a specific monitoring user, `mary`, you can use
-```shell
+This privilege allows the user or users to terminate any connections to the database.
+{: note}
+
+To set up a specific monitoring user, `mary`, use a command like:
+
+```sql
 GRANT pg_monitor TO mary;
 ```
-You can also grant `pg_signal_backend` to all the users with the `ibm-cloud-base-user` role with 
+{: pre}
+
+Grant `pg_signal_backend` to all the users with the `ibm-cloud-base-user` role with a command like:
+
 ```sql
 GRANT pg_monitor TO "ibm-cloud-base-user";
 ```
+{: pre}
 
 ## _Service Credential_ Users
 {: #user-management-service-cred}
+{: ui}
 
-Users that you [create through the _Service Credentials_ pane](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#creating-users-in-_service-credentials_) are members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
+Users that you create through the [_Service Credentials_ pane](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#creating-users-in-_service-credentials_) are members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
 
-When a user in a group creates a resource in a database, like a table, all users that are in the same group have access to that resource. Resources that are created by any of the users in `ibm-cloud-base-user` are accessible to other users in `ibm-cloud-base-user`, including the admin user.
+When a user in a group creates a resource in a database, like a table, all users that are in the same group have access to that resource. Resources that are created by any of the users in `ibm-cloud-base-user` are accessible to other users in `ibm-cloud-base-user`, including the `admin` user.
 
-## Users who are created through the CLI and the API
-{: #user-management-cli-api-users}
+## Users who are created through the CLI
+{: #user-management-cli-users}
+{: cli}
 
-Users that you create through the Cloud Databases API and the Cloud Databases CLI will also be members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
+Users that you create through the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin) are members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
 
 When a user creates a resource in a database, like a table, all users that are in the same group have access to that resource. Resources that are created by any of the users in `ibm-cloud-base-user` are accessible to other users in `ibm-cloud-base-user`, including the admin user.
 
-Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can [add them](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#adding-users-to-_service-credentials_) if you choose.
+Users that are created directly from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin) do not appear in _Service Credentials_, but you can add them.
+{: important}
+
+## Users who are created through the API
+{: #user-management-api-users}
+{: api}
+
+Users that you create through the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction) are members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
+
+When a user creates a resource in a database, like a table, all users that are in the same group have access to that resource. Resources that are created by any of the users in `ibm-cloud-base-user` are accessible to other users in `ibm-cloud-base-user`, including the admin user.
+
+Users that are created directly from the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction) do not appear in _Service Credentials_, but you can add them.
+{: important}
 
 ## The read-only user
 {: #user-management-read-only}
 
-The `ibm-cloud-base-user-ro` manages privileges for users that are created to access read-only replicas. More information can be found on the [Configuring Read-only Replicas](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas) page.
+The `ibm-cloud-base-user-ro` manages privileges for users that are created to access read-only replicas. For more information, see [Configuring Read-only Replicas](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas).
 
 ## Other `ibm` Users
 {: #user-management-other-ibm}
 
-If you run the `\du` command with your admin account, you might notice users that are named `ibm`,  `ibm-cloud-base-user`, and `ibm-replication`.
+If you run the `\du` command with your `admin` account, you see the `ibm`, `ibm-cloud-base-user`, and `ibm-replication` users.
 
-The `ibm-cloud-base-user` is used as a template to manage group roles for other users. It is used to manage the users who are created through the CLI and API as well as enable the integration with the _Service Credentials_ user creation on IBM Cloud. A user that is a member of `ibm-cloud-base-user` inherits the create role and create database attributes from `ibm-cloud-base-user`. The `ibm-cloud-base-user` is not able to log in.
+The `ibm-cloud-base-user` is used as a template to manage group roles for other users. It is used to manage users who are created through the CLI and API. It also enables integration with the _Service Credentials_ user creation. A user that is a member of `ibm-cloud-base-user` inherits the create role and create database attributes from `ibm-cloud-base-user`. The `ibm-cloud-base-user` is not able to log in.
 
 The `ibm` and the `ibm-replication` accounts are the only superusers on your deployment. A superuser account is not available for you to use. These users are internal administrative accounts that manage replication, metrics, and other functions that ensure the stability of your deployment.
 
 ## Users created with `psql`
 {: #user-management-psql}
 
-You can bypass creating users through IBM Cloud entirely, and create users directly in {{site.data.keyword.databases-for-enterprisedb}} with `psql`. This allows you to make use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html). Users and roles created in `psql` must have all of their privileges set manually, including privileges to the objects that they create.
+You can bypass creating users through {{site.data.keyword.cloud_notm}} by creating users directly in EnterpriseDB with `psql`. `psql` makes use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html){: external}. Users and roles created in `psql` must have all of their privileges set manually, including privileges to the objects that they create.
 
-Users that are created directly in {{site.data.keyword.databases-for-enterprisedb}} do not appear in _Service Credentials_, but you can [add them](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#adding-users-to-_service-credentials_) if you choose. 
+Users that are created directly in {{site.data.keyword.databases-for-enterprisedb}} do not appear in _Service Credentials_, but you can [add them](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#adding-users-to-_service-credentials_). 
 
 Note that these users are not integrated with IAM controls, even if added to _Service Credentials_.
 {: .tip}
@@ -100,9 +124,15 @@ Note that these users are not integrated with IAM controls, even if added to _Se
 ## The `emp_admin` user
 {: #user-management-emp_admin}
 
-The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb_full}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. You can connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information. You should not drop this user.
+The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. Connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information.
+
+Do no drop this user.
+{: important}
 
 ## The `aq_administrator_role` user
 {: #user-management-aq_administrator}
 
-The `aq_administrator_role` user is a system-defined privilege that can allow a user to interact with queues. This user is provided by default from EnterpriseDB and is not managed by {{site.data.keyword.databases-for-enterprisedb_full}}. You should not drop this user. For more information, see [CREATE QUEUE](https://www.enterprisedb.com/docs/epas/latest/epas_compat_sql/30_create_queue/) in the EnterpriseDB documentation.
+The `aq_administrator_role` user is a system-defined privilege that allows a user to interact with queues. This user is provided by default from EnterpriseDB and is not managed by {{site.data.keyword.databases-for-enterprisedb}}. For more information, see [CREATE QUEUE](https://www.enterprisedb.com/docs/epas/latest/epas_compat_sql/30_create_queue/){: external}.
+
+Do not drop this user.
+{: important}
