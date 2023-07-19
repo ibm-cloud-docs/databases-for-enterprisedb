@@ -99,11 +99,17 @@ Users that are created directly from the [{{site.data.keyword.databases-for}} AP
 
 ## The read-only user
 {: #user-management-read-only}
+{: ui}
+{: cli}
+{: api}
 
 The `ibm-cloud-base-user-ro` manages privileges for users that are created to access read-only replicas. For more information, see [Configuring Read-only Replicas](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas).
 
 ## Other `ibm` Users
 {: #user-management-other-ibm}
+{: ui}
+{: cli}
+{: api}
 
 If you run the `\du` command with your `admin` account, you see the `ibm`, `ibm-cloud-base-user`, and `ibm-replication` users.
 
@@ -113,6 +119,9 @@ The `ibm` and the `ibm-replication` accounts are the only superusers on your dep
 
 ## Users created with `psql`
 {: #user-management-psql}
+{: ui}
+{: cli}
+{: api}
 
 You can bypass creating users through {{site.data.keyword.cloud_notm}} by creating users directly in EnterpriseDB with `psql`. `psql` makes use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html){: external}. Users and roles created in `psql` must have all of their privileges set manually, including privileges to the objects that they create.
 
@@ -123,6 +132,9 @@ Note that these users are not integrated with IAM controls, even if added to _Se
 
 ## The `emp_admin` user
 {: #user-management-emp_admin}
+{: ui}
+{: cli}
+{: api}
 
 The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. Connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information.
 
@@ -131,6 +143,9 @@ Do no drop this user.
 
 ## The `aq_administrator_role` user
 {: #user-management-aq_administrator}
+{: ui}
+{: cli}
+{: api}
 
 The `aq_administrator_role` user is a system-defined privilege that allows a user to interact with queues. This user is provided by default from EnterpriseDB and is not managed by {{site.data.keyword.databases-for-enterprisedb}}. For more information, see [CREATE QUEUE](https://www.enterprisedb.com/docs/epas/latest/epas_compat_sql/30_create_queue/){: external}.
 
