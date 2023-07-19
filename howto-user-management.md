@@ -71,7 +71,7 @@ GRANT pg_monitor TO "ibm-cloud-base-user";
 {: #user-management-service-cred}
 {: ui}
 
-Users that you create through the [_Service Credentials_ pane](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#creating-users-in-_service-credentials_) are members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
+Users that you create through the [_Service Credentials_](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#creating-users-in-_service-credentials_) are members of `ibm-cloud-base-user`. They are able to log in, create users, and create databases.
 
 When a user in a group creates a resource in a database, like a table, all users that are in the same group have access to that resource. Resources that are created by any of the users in `ibm-cloud-base-user` are accessible to other users in `ibm-cloud-base-user`, including the `admin` user.
 
@@ -123,7 +123,7 @@ The `ibm` and the `ibm-replication` accounts are the only superusers on your dep
 {: cli}
 {: api}
 
-You can bypass creating users through {{site.data.keyword.cloud_notm}} by creating users directly in EnterpriseDB with `psql`. `psql` makes use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html){: external}. Users and roles created in `psql` must have all of their privileges set manually, including privileges to the objects that they create.
+You can bypass creating users through {{site.data.keyword.cloud_notm}} by creating users directly in EnterpriseDB with `psql`. `psql` makes use of PostgreSQL's native [role and user management](https://www.postgresql.org/docs/current/database-roles.html){: external}. Users and roles that are created in `psql` must have all of their privileges set manually, including privileges to the objects that they create.
 
 Users that are created directly in {{site.data.keyword.databases-for-enterprisedb}} do not appear in _Service Credentials_, but you can [add them](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connection-strings#adding-users-to-_service-credentials_). 
 
@@ -136,7 +136,7 @@ Note that these users are not integrated with IAM controls, even if added to _Se
 {: cli}
 {: api}
 
-The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. Connect to the the EDB Migration Portal using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information.
+The `emp_admin` is an internal {{site.data.keyword.databases-for-enterprisedb}} user that is used by the EDB Migration Portal to communicate directly with EnterpriseDB databases. Connect to the EDB Migration Portal by using your [IAM](/docs/databases-for-enterprisedb?topic=cloud-databases-iam) login information.
 
 Do no drop this user.
 {: important}
