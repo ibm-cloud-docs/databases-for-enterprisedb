@@ -33,9 +33,10 @@ toc:
       id: howto
       topics:
       - howto-provisioning.md
+      - howto-user-management.md
+      - howto-getting-connection-strings.md
       - include: ../cloud-databases/howto-deprovisioning.md
       - include: ../cloud-databases/closures.md
-      - howto-getting-connection-strings.md
       - howto-admin-password.md
       - include: ../cloud-databases/ha-dr.md
       - topicgroup:
@@ -44,7 +45,6 @@ toc:
           - connecting-external.md
           - connecting-ibmcloud-app.md
           - connecting-psql.md
-      - howto-user-management.md
       - topicgroup:
           label: Managing Resources
           topics: 
