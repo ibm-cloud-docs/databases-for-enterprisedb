@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: admin, superuser, roles, service credentials, postgresql, edb, enterprisedb
 
@@ -64,6 +64,39 @@ Grant `pg_signal_backend` to all the users with the `ibm-cloud-base-user` role w
 
 ```sql
 GRANT pg_monitor TO "ibm-cloud-base-user";
+```
+{: pre}
+
+### Setting the Admin Password in the UI
+{: #user-management-set-admin-password-ui}
+{: ui}
+
+To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select __Manage__ from the service dashboard. Open the _Settings_ tab, and use _Change Database Admin Password_ to set a new admin password.
+
+### Setting the Admin Password in the CLI
+{: #user-management-set-admin-password-cli}
+{: cli}
+
+Use the `cdb user-password` command from the {{site.data.keyword.cloud_notm}} CLI {{site.data.keyword.databases-for}} plug-in to set the admin password.
+
+For example, to set the admin password for a deployment named `example-deployment`, use the following command:
+
+```sh
+ibmcloud cdb user-password example-deployment admin <newpassword>
+```
+{: pre}
+
+### Setting the Admin Password in the API
+{: #user-management-set-admin-password-api}
+{: api}
+
+The Foundation Endpoint that is shown on the Overview panel Deployment Details section of your service provides the base URL to access this deployment through the API. Use it with the [Set specified user's password](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#changeuserpassword){: external} endpoint to set the admin password.
+
+```sh
+curl -X PATCH `https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/users/admin` \
+-H `Authorization: Bearer <>` \
+-H `Content-Type: application/json` \ 
+-d `{"password":"newrootpasswordsupersecure21"}` \
 ```
 {: pre}
 
