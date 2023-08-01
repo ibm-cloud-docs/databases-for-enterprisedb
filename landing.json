@@ -1,6 +1,6 @@
 {
   "title": "IBM Cloud® Databases for EnterpriseDB docs",
-  "lastupdated": "2023-03-03",
+  "lastupdated": "2023-08-01",
   "introduction": "EDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
   "section_devtools": {
     "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
@@ -16,7 +16,7 @@
     {
       "title": "Setting the Admin Password",
       "description": "The Databases for EnterpriseDB service is provisioned with an admin user. You must set the admin password before you use it to connect.",
-      "href": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password&interface=ui"
+      "href": "https://cloud.ibm.com/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management&interface=ui#user-management-set-admin-password-ui"
     },
     {
       "title": "Getting Connection Strings",
