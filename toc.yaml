@@ -91,10 +91,6 @@ toc:
           - include: ../cloud-databases/howto-cbr.md
           - include: ../cloud-databases/cbr-tutorial.md
   - navgroup:
-      id: help
-      topics:
-      - ts-connect.md
-  - navgroup:
       id: reference
       topics:
       - include: ../databases-cli-plugin/cloud-databases-cli.md
@@ -114,6 +110,7 @@ toc:
   - navgroup:
       id: help
       topics:
+      - ts-connect.md
       - topicgroup:
           label: FAQs
           topics:
