@@ -89,7 +89,7 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/clou
 - Default - 10000
 - Restarts database - No
 - Options - Minimum value of 100
-- Notes - The number of milliseconds to wait before checking for deadlock and the duration where lock waits are logged. Logs available through the [logging integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging). Setting this number too low negatively impacts performance.
+- Notes - The number of milliseconds to wait before checking for deadlock and the duration where lock waits are logged. Logs available through the [logging integration](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-logging). Setting this number too low negatively impacts performance.
 
 [`log_connections`](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-CONNECTIONS)
 - Default - `off`

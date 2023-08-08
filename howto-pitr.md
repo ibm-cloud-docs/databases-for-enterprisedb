@@ -114,7 +114,7 @@ If you need to adjust resources or use a Key Protect key, add the optional param
 ## Verifying PITR
 {: #verify-pitr}
 
-In order to verify the correct recovery time, you must check the database logs. Checking the database logs requires the [Logging Integration](/docs/databases-for-enterprisedb?topic=cloud-databases-logging) to be set up on your deployment.
+In order to verify the correct recovery time, you must check the database logs. Checking the database logs requires the [Logging Integration](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-logging) to be set up on your deployment.
 
 When you perform a recovery, your data is restored from the most recent incremental backup and any outstanding transactions from the WAL log are used to catch your database up to the time you recovered to. After the recovery is finished, and the transactions are run, the logs display a message. You can check that your logs have the message,
 
