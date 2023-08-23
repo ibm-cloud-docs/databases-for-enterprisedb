@@ -24,7 +24,7 @@ You can access your {{site.data.keyword.databases-for-enterprisedb_full}} databa
 
 The admin user comes with the {{site.data.keyword.databases-for-enterprisedb}} default role [`pg_monitor`](https://www.postgresql.org/docs/10/static/default-roles.html), allowing access to {{site.data.keyword.databases-for-enterprisedb}} monitoring views and functions. By default, the admin user does not have permissions on objects that are created by other users.
 
-You must set the admin password before you use it to connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password) page.
+You must set the admin password before you use it to connect to the database. For more information, see the [Setting the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management&interface=ui#user-management-set-admin-password-ui) page.
 {: .tip}
 
 ## Installing `psql`

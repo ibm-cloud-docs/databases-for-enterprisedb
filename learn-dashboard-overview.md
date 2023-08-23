@@ -82,7 +82,7 @@ The _Observability_ tab provides access to the IBM Cloud monitoring, logging, an
 
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
 - view encryption details. Encryption at rest is enabled for all {{site.data.keyword.databases-for-enterprisedb}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-enterprisedb?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
-- [Change the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password)
+- [Change the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management&interface=ui#user-management-set-admin-password-ui)
 - [Implement or modify an IP allowlist](/docs/databases-for-enterprisedb?topic=cloud-databases-allowlisting)
 
 ## Service Credentials
