@@ -28,7 +28,7 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}.
 - You also need a {{site.data.keyword.databases-for-enterprisedb}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb){: external}. Give your deployment a memorable name that appears in your account's Resource List.
-- [Set the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-admin-password) for your deployment.
+- [Set the Admin Password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management&interface=ui#user-management-set-admin-password-ui) for your deployment.
 - Install [pgAdmin4](https://www.pgadmin.org/download/){: external}.
 - Review [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) for general guidance on setting up a basic {{site.data.keyword.databases-for-enterprisedb_full}} deployment.
 
