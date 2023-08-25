@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-07-25"
+  years: 2018, 2023
+lastupdated: "2023-08-25"
 
 keywords: postgresql, databases, soc, hipaa, gdpr, terms, edb, enterprisedb
 
@@ -9,11 +9,7 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Security and Compliance
 {: #security-compliance}
@@ -34,7 +30,7 @@ subcollection: databases-for-enterprisedb
 {: #security-compliance-data-resilience}
 
 - [Backups](/docs/databases-for-enterprisedb?topic=cloud-databases-dashboard-backups) are included in the service. {{site.data.keyword.databases-for-enterprisedb}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage&cloud-object-storage-about-cloud-object-storage) and are also [encrypted](/docs/cloud-object-storage?topic=cloud-object-storage-security).
-- {{site.data.keyword.databases-for-enterprisedb}} deployments are configured with replication. Deployments contain a cluster with two data members. Both members contain a copy of your data by using asynchronous replication, with a distributed consensus mechanism to maintain cluster state and handle failovers. 
+- {{site.data.keyword.databases-for-enterprisedb}} deployments are configured with replication. Deployments contain a cluster with three data members. All members contain a copy of your data by using asynchronous replication, with a distributed consensus mechanism to maintain cluster state and handle failovers. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the data center. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations. 
 
@@ -48,7 +44,7 @@ You can request an SOC 2 Type 2 report from the customer portal or contact your 
 ## ISO 27017, ISO 27018
 {: #security-compliance-iso}
 
-{{site.data.keyword.databases-for-enterprisedb}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services that are defined in [ISO 27017](https://www.iso.org/standard/43757.html) and [ISO 27018](https://www.iso.org/standard/76559.html).
+{{site.data.keyword.databases-for-enterprisedb}} conforms to the guidelines for information security controls applicable to the provision and use of cloud services that are defined in [ISO 27017](https://www.iso.org/standard/43757.html){: .external} and [ISO 27018](https://www.iso.org/standard/76559.html){: .external}.
 
 ## General Data Protection Regulation (GDPR) 
 {: #security-compliance-gdpr}
@@ -79,5 +75,5 @@ A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services,
 ## Terms
 {: #security-compliance-terms}
 
-- [The IBM Privacy Policy](https://www.ibm.com/privacy/us/en/)
-- [The IBM Cloud Notices and Terms of Use](/docs/overview/terms-of-use?topic=overview-terms)
+- [The IBM Privacy Policy](https://www.ibm.com/privacy/us/en/){: .external}
+- [The IBM Cloud Notices and Terms of Use](/docs/overview/terms-of-use?topic=overview-terms){: .external}
