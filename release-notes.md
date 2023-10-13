@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-10-12"
 
 keywords: databases-for-enterprisedb release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 12 October 2023
+{: #databases-for-enterprisedb-12oct2023}
+{: release-note}
+
+{{site.data.keyword.databases-for-enterprisedb}} v12 end of life
+:  End of life announcement: Version 12 reaches end of life December 2024. All {{site.data.keyword.databases-for-enterprisedb}} instances on deprecated versions that are still active will be upgraded in-place to the next major version. We recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups){: external} before the EOL date of your version.
 
 ## 23 May 2023
 {: #databases-for-enterprisedb-23may2023}
