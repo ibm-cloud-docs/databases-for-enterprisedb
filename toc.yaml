@@ -14,8 +14,8 @@ toc:
     product-page: https://www.ibm.com/cloud/databases-for-enterprisedb
     path: databases-for-enterprisedb
     label: Databases For EnterpriseDB
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - link:
@@ -32,7 +32,7 @@ toc:
       - learn-security-compliance.md
       - learn-pricing.md
       - release-notes.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - howto-provisioning.md
@@ -43,13 +43,13 @@ toc:
       - include: ../cloud-databases/ha-dr.md
       - topicgroup:
           label: Connecting to Databases for EnterpriseDB
-          topics: 
+          topics:
           - connecting-external.md
           - connecting-ibmcloud-app.md
           - connecting-psql.md
       - topicgroup:
           label: Managing Resources
-          topics: 
+          topics:
           - howto-resources-scaling.md
           - howto-autoscaling.md
           - howto-managing-connections.md
@@ -58,17 +58,17 @@ toc:
       - include: ../cloud-databases/howto-allowlists.md
       - topicgroup:
           label: Replication
-          topics: 
+          topics:
           - howto-read-replica.md
           - howto-logical-replication.md
       - topicgroup:
           label: Migration
-          topics: 
+          topics:
           - howto-migration-oracle.md
           - howto-migration-postgresql.md
       - topicgroup:
           label: Configuring EnterpriseDB
-          topics: 
+          topics:
           - howto-changing-config.md
       - topicgroup:
           label: Tutorials
@@ -85,7 +85,9 @@ toc:
           topics:
           - include: ../cloud-databases/reference-activity-tracker.md
           - include: ../cloud-databases/reference-logging.md
-          - reference-monitoring.md
+          - link:
+              label: Monitoring Integration
+              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring
           - include: ../cloud-databases/reference-sysdig.md
       - topicgroup:
           label: Enhancing security

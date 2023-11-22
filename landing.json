@@ -1,10 +1,10 @@
 {
   "title": "IBM Cloud® Databases for EnterpriseDB docs",
-  "lastupdated": "2023-08-01",
+  "lastupdated": "2023-11-22",
   "introduction": "EDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
   "section_devtools": {
-    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
-    "cli": "/docs/databases-cli-plugin", 
+    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
+    "cli": "/docs/databases-cli-plugin",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   },
   "section_recommended": [
@@ -34,19 +34,19 @@
     "view_more": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-enterprisedb-relnotes",
     "tiles": [
       {
-        "date": "19 October 2022",
-        "title": "Deploying and Connecting an IBM Cloud® Databases Instance Tutorial",
-        "description": "This tutorial guides you through the process of deploying a Cloud Databases instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on Cloud Databases. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker."
+        "date": "22 November 2023",
+        "title": "Monitoring Integreation documentation updated",
+        "description": "Monitoring Integration documentation now lists metrics for all Cloud Databases services."
       },
       {
-        "date": "11 October 2022",
-        "title": "Protecting IBM Cloud® Databases for EnterpriseDB resources with context-based restrictions",
-        "description": "Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with CBR and identity and access management (IAM) policies."
+        "date": "12 October 2023",
+        "title": "Databases for EnterpriseDB v12 end of life",
+        "description": "End of life announcement: Version 12 reaches end of life December 2024. All Databases for EnterpriseDB instances on deprecated versions that are still active will be upgraded in-place to the next major version. We recommend that you upgrade following our backup and restore process before the EOL date of your version."
       },
       {
-        "date": "29 March 2022",
-        "title": "IBM Cloud® Databases for EnterpriseDB supports synchronous replication",
-        "description": "Available security and compliance goals updated."
+        "date": "23 May 2023",
+        "title": "Setting up disk alerts for disk utilization tutorial",
+        "description": "In this tutorial, you use the IBM Cloud API and the IBM Cloud CLI to set up an alert that emails you whenever the disk utilization of your database exceeds 90%. This specific example creates an alert on a Databases for Elasticsearch deployment, but it is applicable to all the databases in the IBM Cloud Databases catalog."
       }
     ]
   }
