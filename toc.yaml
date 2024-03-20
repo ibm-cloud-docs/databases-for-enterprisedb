@@ -75,7 +75,10 @@ toc:
           topics:
           - include: ../cloud-databases/howto-tutorials.md
           - include: ../cloud-databases/hello-world-tutorial.md
+          - include: ../cloud-databases/terra-postgres-tutorial.md
+          - include: ../cloud-databases/terra-mongodb-tutorial.md
           - include: ../cloud-databases/k8-tutorial.md
+          - include: ../cloud-databases/truck-tracker-tutorial.md
           - include: ../cloud-databases/disk-util-alerts-tutorial.md
       - topicgroup:
           label: Logging and monitoring
@@ -112,7 +115,9 @@ toc:
       - include: ../cloud-databases/reference-key-protect.md
       - include: ../cloud-databases/reference-iam.md
       - include: ../cloud-databases/reference-hpcs.md
-      - include: ../cloud-databases/reference-responsibilities.md
+      - link:
+          label: Responsibilities for Cloud Databases
+          href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases
   - navgroup:
       id: help
       topics:
