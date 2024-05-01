@@ -1,6 +1,6 @@
 {
   "title": "IBM Cloud® Databases for EnterpriseDB docs",
-  "lastupdated": "2023-11-22",
+  "lastupdated": "2024-05-01",
   "introduction": "EDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
   "section_devtools": {
     "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
@@ -34,6 +34,11 @@
     "view_more": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-enterprisedb-relnotes",
     "tiles": [
       {
+        "date": "1 May 2024",
+        "title": "New hosting models",
+        "description": "You can choose between two hosting models: Isolated Compute and Shared Compute. Isolated Compute is a secure single-tenant offering for complex, highly performant enterprise workloads. Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections."
+      },
+      {
         "date": "22 November 2023",
         "title": "Monitoring Integreation documentation updated",
         "description": "Monitoring Integration documentation now lists metrics for all Cloud Databases services."
@@ -42,11 +47,6 @@
         "date": "12 October 2023",
         "title": "Databases for EnterpriseDB v12 end of life",
         "description": "End of life announcement: Version 12 reaches end of life December 2024. All Databases for EnterpriseDB instances on deprecated versions that are still active will be upgraded in-place to the next major version. We recommend that you upgrade following our backup and restore process before the EOL date of your version."
-      },
-      {
-        "date": "23 May 2023",
-        "title": "Setting up disk alerts for disk utilization tutorial",
-        "description": "In this tutorial, you use the IBM Cloud API and the IBM Cloud CLI to set up an alert that emails you whenever the disk utilization of your database exceeds 90%. This specific example creates an alert on a Databases for Elasticsearch deployment, but it is applicable to all the databases in the IBM Cloud Databases catalog."
       }
     ]
   }
