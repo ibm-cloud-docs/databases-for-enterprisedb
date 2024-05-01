@@ -21,7 +21,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 ## 1 May 2024
-{: #databases-for-mongodb-01may2024}
+{: #databases-for-enterprisedb-01may2024}
 {: release-note}
 
 New hosting models
