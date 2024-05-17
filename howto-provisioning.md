@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-05-17"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision enterprisedb
 
@@ -38,6 +38,12 @@ Provision from the console by specifying the following parameters:
 - **Isolated:** Secure single-tenant offering for complex, highly-performant enterprise workloads.
 - **Shared:** Flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.<br>
 For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).
+
+{{site.data.keyword.databases-for-enterprisedb}} is only available on Isolated Compute.
+{: note}
+
+For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).
+
 
 ### Resource allocation
 {: #resource_allocation}
