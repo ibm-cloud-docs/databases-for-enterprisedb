@@ -93,7 +93,6 @@ toc:
           - link:
               label: Monitoring Integration
               href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring
-          - include: ../cloud-databases/reference-sysdig.md
       - topicgroup:
           label: Enhancing security
           topics:
