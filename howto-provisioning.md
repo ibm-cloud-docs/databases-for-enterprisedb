@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-09-16"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision enterprisedb
 
@@ -63,7 +63,7 @@ Specify the disk size depending on your requirements. It can be increased after 
 
 - **Database Version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Database Versioning Policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
 - **Encryption:** If you use [Key Protect](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-- **Endpoints:** [Set only at deployment]{: tag-red} Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
+- **Endpoints:** [Set only at deployment]{: tag-red} Configure the [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment.
 
 After you select the appropriate settings, click **Create** to start the provisioning process.
 
@@ -88,14 +88,14 @@ Before provisioning, follow the instructions provided in the documentation to in
 1. Provision a {{site.data.keyword.databases-for-enterprisedb}} Shared instance with a command like:
 
    ```sh
-   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p `{"members_host_flavor": "multitenant"}`
+   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <RESOURCE_GROUP> -p `{"members_host_flavor": "multitenant"}` --service-endpoints="<endpoint>"
    ```
    {: pre}
 
    Provision a {{site.data.keyword.databases-for-mongodb}} Isolated instance with the same `"members_host_flavor"` -p flag, and then specify the `host_flavor value` parameter. For example: `{"members_host_flavor": "b3c.4x16.encrypted"}`
 
    ```sh
-   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p `{"members_host_flavor": "<host_flavor value>"}`
+   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <RESOURCE_GROUP> -p `{"members_host_flavor": "<host_flavor value>"}` --service-endpoints="<endpoint>"
    ```
    {: pre}
 
@@ -106,10 +106,10 @@ Before provisioning, follow the instructions provided in the documentation to in
    | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.databases-for-enterprisedb}}, use `databases-for-enterprisedb`. |  |
    | `SERVICE_PLAN_NAME` [Required]{: tag-red} | Standard plan (`standard`) |  |
    | `LOCATION` [Required]{: tag-red} | The location where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
-   | `SERVICE_ENDPOINTS_TYPE` | Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public` or `private`. The default value is `public`. |  |
    | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
    | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
    | `host_flavor` | For Shared Compute, specify `multitenant`. To provision an Isolated Compute instance, use `{"members_host_flavor": "<host_flavor value>"}`. The `host_flavor value` parameter defines your Isolated Compute sizing. For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-types).| |
+   | `--service-endpoints` [Required]{: tag-red} | Configure the [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) of your deployment, either `public`, `private` or `public-and-private`. |  |
    {: caption="Table 1. Basic command format fields" caption-side="top"}
    
 The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
@@ -142,7 +142,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
    State:               provisioning
    Type:                service_instance
    Sub Type:            Public
-   Service Endpoints:   public
+   Service Endpoints:   private
    Allow Cleanup:       false
    Locked:              false
    Created at:          2023-06-26T19:42:07Z
@@ -177,7 +177,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
    Type:                  service_instance
    Sub Type:              Public
    Locked:                false
-   Service Endpoints:     public
+   Service Endpoints:     private
    Created at:            2023-06-26T19:42:07Z
    Created by:            USER
    Updated at:            2023-06-26T19:53:25Z
@@ -208,7 +208,7 @@ ibmcloud resource service-instance-create databases-for-enterprisedb <SERVICE_NA
 -p \ '{
   "backup_id": "crn:v1:blue:public:databases-for-enterprisedb:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
   "members_memory_allocation_mb": "3072"
-}'
+}' --service-endpoints="private"
 ```
 {: .pre}
 
@@ -289,7 +289,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 * `members_memory_allocation_mb` -  Total amount of memory to be shared between the database members within the database. For example, if the value is "6144", and there are three database members, then the deployment gets 6 GB of RAM total, giving 2 GB of RAM per member. If omitted, the default value is used for the database type is used. This parameter only applies to `multitenant'.
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used. This parameter only applies to `multitenant'.
 * `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts. This parameter only applies to `multitenant'.
-* `service-endpoints` - The [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment, `public` or `private`.
+* `service-endpoints` - The [Service endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment, `public` or `private`.
 
    In the CLI, `service-endpoints` is a flag, not a parameter.
    {: note}
@@ -315,6 +315,7 @@ resource "ibm_database" "<your_database>" {
   location          = "eu-gb"
   service           = "databases-for-mongodb"
   resource_group_id = data.ibm_resource_group.group.id
+  service_endpoints = "private"
   tags              = ["tag1", "tag2"]
   adminpassword                = "password12"
   group {
@@ -353,6 +354,7 @@ resource "ibm_database" "<your_database>" {
   location          = "eu-gb"
   service           = "databases-for-mongodb"
   resource_group_id = data.ibm_resource_group.group.id
+  service_endpoints = "private"
   tags              = ["tag1", "tag2"]
   adminpassword                = "password12"
   group {
@@ -400,4 +402,3 @@ The `host_flavor` parameter defines your Isolated Compute sizing. Input the appr
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
-
