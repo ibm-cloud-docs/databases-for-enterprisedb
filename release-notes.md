@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2023-05-01"
+lastupdated: "2023-09-16"
 
 keywords: databases-for-enterprisedb release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 16 September 2024
+{: #databases-for-enterprisedb-16sept2024}
+{: release-note}
+
+Private endpoints as new default
+:  To ensure best possible security for your databases, private endpoints are now the default in the {{site.data.keyword.cloud}} console. CLI and Terraform now require the endpoint type to be provided as part of creating an instance.
 
 ## 1 May 2024
 {: #databases-for-enterprisedb-01may2024}
