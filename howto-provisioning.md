@@ -366,7 +366,7 @@ resource "ibm_database" "<your_database>" {
       allocation_count = 3
     }
     memory {
-      allocation_mb = 2048
+      allocation_mb = 12288
     }
     disk {
       allocation_mb = 256000
