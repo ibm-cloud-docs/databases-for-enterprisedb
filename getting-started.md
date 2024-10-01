@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-04-27"
+  years: 2018, 2024
+lastupdated: "2024-09-30"
 
 keywords: pgAdmin, postgresql gui, edb, enterprisedb connection information, enterprisedb
 
@@ -20,6 +20,9 @@ completion-time: 30m
 {: #getting-started}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 This tutorial is a short introduction to using an {{site.data.keyword.databases-for-enterprisedb_full}} deployment. [pgAdmin](https://www.pgadmin.org/){: external} is an open source administration platform for PostgreSQL, and provides many tools for managing your data and databases. [Download and install](https://www.pgadmin.org/download/){: external} the version that is appropriate to your environment, and then follow the steps to connect it to your {{site.data.keyword.databases-for-enterprisedb}} deployment.
 
