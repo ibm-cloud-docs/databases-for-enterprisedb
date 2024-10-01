@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2022-03-09"
+  years: 2019, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, databases, edb, enterprisedb
 
@@ -10,16 +10,13 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Configuring {{site.data.keyword.databases-for-enterprisedb}} as a Logical Replication Destination
 {: #logical-replication}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} supports [logical replication](https://www.postgresql.org/docs/current/logical-replication.html) from an external PostgreSQL instance to your deployment. You can set up your external PostgreSQL as a publisher, your {{site.data.keyword.databases-for-enterprisedb}} deployment as a subscriber, and replicate your data across from an external database into your deployment.
 
