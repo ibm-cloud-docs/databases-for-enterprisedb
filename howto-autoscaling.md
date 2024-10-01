@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-12"
+  years: 2020, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
@@ -11,9 +11,11 @@ subcollection: databases-for-enterprisedb
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Autoscaling
 {: #autoscaling}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 Autoscaling is designed to respond to the short-to-medium term trends in resource usage on your {{site.data.keyword.databases-for-enterprisedb_full}} deployment. When enabled, your deployment is checked at the interval you specify. If it is running short on resources, more resources are added to the deployment. To keep an eye on your resources, use the [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization.
 
