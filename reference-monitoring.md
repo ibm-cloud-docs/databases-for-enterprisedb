@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-04-17"
+  years: 2020, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, monitoring, metrics, iops, disk usage, memory usage, connection usage, edb, enterprisedb
 
@@ -13,6 +13,9 @@ subcollection: databases-for-enterprisedb
 
 # Monitoring Integration
 {: #monitoring}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 Monitoring for {{site.data.keyword.databases-for-enterprisedb_full}} deployments is provided through integration with the {{site.data.keyword.monitoringfull}} Monitoring service. Your deployments forward selected information so you can monitor deployment health and resource usage. To see your {{site.data.keyword.databases-for-enterprisedb}} dashboards in {{site.data.keyword.monitoringfull_notm}}, you must [Enable Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you must provision {{site.data.keyword.monitoringfull_notm}} and enable platform metrics in each region.
 
