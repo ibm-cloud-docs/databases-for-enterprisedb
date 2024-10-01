@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2023-09-16"
+lastupdated: "2024-09-30"
 
 keywords: databases-for-enterprisedb release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 03 October 2024
+{: #databases-for-etcd-03oct2024}
+{: release-note}
+
+Deprecation
+:  {{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
 
 ## 16 September 2024
 {: #databases-for-enterprisedb-16sept2024}

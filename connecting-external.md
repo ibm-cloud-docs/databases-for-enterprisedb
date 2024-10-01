@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-09-29"
+  years: 2017, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql drivers, python, java, javascript, certificate, edb, enterprisedb connection string, enterprisedb connecting application
 
@@ -13,6 +13,9 @@ subcollection: databases-for-enterprisedb
 
 # Connecting an external application
 {: #external-app}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-enterprisedb_full}}. The service provides connection strings specifically for drivers and applications. Connection strings are displayed in the _Endpoints_ pane of your deployment's _Overview_, and can also be retrieved from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [{{site.data.keyword.databases-for}} API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 

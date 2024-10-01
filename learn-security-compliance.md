@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-08-25"
+  years: 2018, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, databases, soc, hipaa, gdpr, terms, edb, enterprisedb
 
@@ -16,6 +16,9 @@ subcollection: databases-for-enterprisedb
 
 ## Protection Against Unauthorized Access
 {: #security-compliance-protect-access}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} use the following methods to protect data in transit or in storage.
 - All {{site.data.keyword.databases-for-enterprisedb}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2.

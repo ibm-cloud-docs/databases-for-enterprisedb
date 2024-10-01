@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-10-25"
+  years: 2017, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, databases, edb, enterprisedb
 
@@ -9,17 +9,14 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 
 # {{site.data.keyword.databases-for-enterprisedb_full}} Connection Strings
 {: #connection-strings}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 In order to connect to {{site.data.keyword.databases-for-enterprisedb_full}}, you need some users and connection strings. 
 
