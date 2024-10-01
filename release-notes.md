@@ -20,6 +20,13 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 03 October 2024
+{: #databases-for-etcd-03oct2024}
+{: release-note}
+
+Deprecation
+:  {{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new instances. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+
 ## 16 September 2024
 {: #databases-for-enterprisedb-16sept2024}
 {: release-note}
