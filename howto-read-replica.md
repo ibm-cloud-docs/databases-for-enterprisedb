@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-10-31"
+  years: 2019, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, databases, read-only replica, resync, promote, cross-region replication, edb, enterprisedb
 
@@ -10,16 +10,13 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 # Configuring Read-only Replicas
 {: #read-only-replicas}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 You can set up your {{site.data.keyword.databases-for-enterprisedb_full}} deployment to be a read-only replica of another {{site.data.keyword.databases-for-enterprisedb}} deployment. 
 
@@ -236,4 +233,3 @@ curl -X POST \
  -H 'Content-Type: application/json' \
  -d '{"promotion": {"skip_initial_backup": true}}' \ 
  ```
-
