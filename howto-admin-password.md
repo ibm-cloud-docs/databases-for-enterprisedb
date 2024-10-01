@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-24"
+  years: 2020, 2024
+lastupdated: "2024-09-30"
 
 keywords: admin password, credentials, edb, enterprisedb
 
@@ -9,16 +9,13 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 # Setting the {{site.data.keyword.databases-for-enterprisedb}} Admin Password
 {: #admin-password}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 The {{site.data.keyword.databases-for-enterprisedb}} service is provisioned with an admin user. You must set the admin password before you can use it to connect. 
 
