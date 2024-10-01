@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-04-27"
+  years: 2019, 2024
+lastupdated: "2024-09-30"
 
 keywords: postgresql, databases, edb, enterprisedb
 
@@ -13,6 +13,9 @@ subcollection: databases-for-enterprisedb
 
 # Changing the {{site.data.keyword.databases-for-enterprisedb}} Configuration
 {: #changing-configuration}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} is configurable to change some of the PosgreSQL settings so you can tune your {{site.data.keyword.databases-for-enterprisedb}} databases to your use-case. To make permanent changes to the database configuration, use the {{site.data.keyword.databases-for}} [cli-plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-configuration) or [API](https://{DomainName}/apidocs/cloud-databases-api#change-your-database-configuration) to write the changes to the configuration file for your deployment.
 
