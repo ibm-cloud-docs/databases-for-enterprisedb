@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-07-25"
+  years: 2020, 2024
+lastupdated: "2024-09-30"
 
 keywords: deployment, crn, task, gui, api endpoint, edb, enterprisedb
 
@@ -10,15 +10,13 @@ subcollection: databases-for-enterprisedb
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # The Dashboard Overview
 {: #dashboard-overview}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
+{: deprecated}
 
 The _Overview_ page shows you information about your {{site.data.keyword.databases-for-enterprisedb_full}} deployment. The overview includes essential identifying information.
 
