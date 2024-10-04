@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # Configuring Read-only Replicas
 {: #read-only-replicas}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 You can set up your {{site.data.keyword.databases-for-enterprisedb_full}} deployment to be a read-only replica of another {{site.data.keyword.databases-for-enterprisedb}} deployment. 
 
 A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment by using asynchronous replication. As the name implies, read-only replicas support read transactions and can be used to balance databases that have both write-heavy and read-heavy operations. The read-only replica has a single {{site.data.keyword.databases-for-enterprisedb}} data member, and it is billed at the [same per member consumption rates as the leader](https://{DomainName}/catalog/services/databases-for-enterprisedb/).
