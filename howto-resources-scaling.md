@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # Scaling disk, RAM, and CPU
 {: #resources-scaling}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 For new [hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models), scaling is available through the CLI, API, and Terraform.
 {: note}
 

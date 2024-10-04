@@ -14,9 +14,6 @@ subcollection: databases-for-enterprisedb
 # {{site.data.keyword.databases-for-enterprisedb}} Migration by using EMP
 {: #oracle-migrating}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 Details how to set up and run a migration from a local Oracle database to an {{site.data.keyword.databases-for-enterprisedb_full}} formation by using the {{site.data.keyword.databases-for}} EnterpriseDB Migration Portal (EMP). 
 
 ## Prerequisites and notes

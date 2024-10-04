@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # Performance
 {: #performance}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 {{site.data.keyword.databases-for-enterprisedb_full}} deployments can be both manually [scaled to your usage](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling), or configured to [autoscale](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling) under certain resource conditions. There are a few factors to consider if you are tuning the performance of your deployment.
 
 ## Monitoring your deployment

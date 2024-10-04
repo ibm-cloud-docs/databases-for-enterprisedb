@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # Connecting an {{site.data.keyword.cloud_notm}} application
 {: #ibmcloud-app}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 Applications running in {{site.data.keyword.cloud_notm}} can be bound to your {{site.data.keyword.databases-for-enterprisedb_full}} deployment. 
 
 ## Connecting a Kubernetes Service application

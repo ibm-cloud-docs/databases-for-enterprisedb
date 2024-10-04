@@ -14,9 +14,6 @@ subcollection: databases-for-enterprisedb
 # Migrating from PostgreSQL to {{site.data.keyword.databases-for-enterprisedb}}
 {: #migrating}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 Various options exist to migrate data from existing PostgreSQL databases to {{site.data.keyword.databases-for-enterprisedb_full}}. We focus on the simplest and most effective method. To get started, you need PostgreSQL installed locally so you have the `psql` and `pg_dump` tools. And while not strictly required, the {{site.data.keyword.databases-for}} CLI makes it easier to connect and restore to a new {{site.data.keyword.databases-for-enterprisedb}} deployment. 
 
 ## pg_dump
