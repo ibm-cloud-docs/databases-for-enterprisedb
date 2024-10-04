@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # Managing {{site.data.keyword.databases-for-enterprisedb}} Connections
 {: #managing-connections}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 Connections to your {{site.data.keyword.databases-for-enterprisedb_full}} deployment use resources, so it is important to consider how many connections you need when tuning your deployment's performance. {{site.data.keyword.databases-for-enterprisedb}} uses a `max_connections` setting to limit the number of connections (and resources that are consumed by connections) to prevent run-away connection behavior from overwhelming your deployment's resources.
 
 You can check the value of `max_connections` with your [admin user](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management#the-admin-user) and [`psql`](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql).
