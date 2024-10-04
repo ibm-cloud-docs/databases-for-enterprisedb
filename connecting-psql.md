@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # Connecting with `psql`
 {: #connecting-psql}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 You can access your {{site.data.keyword.databases-for-enterprisedb_full}} database directly from its command line client, `psql`. You can use `psql` for direct interaction and monitoring of the data structures that are created within the database. It is also useful for testing and monitoring the queries and performance, installing and modifying scripts, and other management activities.
 
 The admin user comes with the {{site.data.keyword.databases-for-enterprisedb}} default role [`pg_monitor`](https://www.postgresql.org/docs/10/static/default-roles.html), allowing access to {{site.data.keyword.databases-for-enterprisedb}} monitoring views and functions. By default, the admin user does not have permissions on objects that are created by other users.
