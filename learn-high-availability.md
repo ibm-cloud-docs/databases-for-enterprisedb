@@ -15,9 +15,6 @@ subcollection: databases-for-enterprisedb
 # High-Availability
 {: #high-availability}
 
-{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 15 March 2025 you can't deploy new applications. Existing instances are supported until 30 September 2025. Any instances that still exist on that date will be deleted. For more information, see Deprecation of {{site.data.keyword.databases-for-etcd_full}}.
-{: deprecated}
-
 {{site.data.keyword.databases-for-enterprisedb_full}} is a managed cloud database service that is fully integrated into the {{site.data.keyword.cloud_notm}} environment. The database, storage, and supporting infrastructure all run in {{site.data.keyword.cloud_notm}}.
 
 {{site.data.keyword.databases-for-enterprisedb}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments typically contain a cluster with three data members: a leader and two replicas. The replica members contain a copy of your data from the leader by using asynchronous replication, with a distributed consensus mechanism to maintain cluster state and handle failovers. If the leader becomes unreachable, the cluster initiates a failover and a replica is selected and promoted to leader. The replica rejoins the cluster and your cluster continues to operate normally, but with reduced capacity. 
