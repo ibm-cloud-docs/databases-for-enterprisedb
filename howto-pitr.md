@@ -19,7 +19,7 @@ subcollection: databases-for-enterprisedb
 
 The _Backups_ tab of your deployment's UI keeps all of your PITR information under _Point-in-Time_.
 
-![PITR section of the Backups tab](images/pitr-backups-tab.png){: caption="Figure 1. PITR section of the Backups tab" caption-side="bottom"}
+![PITR section of the Backups tab](images/pitr-backups-tab.png){: caption="PITR section of the Backups tab" caption-side="bottom"}
 
 Included information is the earliest time for a PITR. To discover the earliest recovery point through the CLI, use the [`cdb postgresql earliest-pitr-timestamp`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#postgresql-earliest-pitr-timestamp) command.
 ```sh
@@ -53,7 +53,7 @@ Do not delete the source deployment while the backup is restoring. You must wait
 
 To initiate a PITR, enter the time that you want to restore back to in Coordinated Universal Time (UTC). If you want to restore to the most recent available time, select that option. Clicking **Restore** brings up the options for your recovery. Enter a name, select the version, region, and allocated resources for the new deployment. Click **Recover** to start the process.
 
-![Recovery Options Dialog](images/pitr-dialog.png){: caption="Figure 2. Recovery Options Dialog" caption-side="bottom"}
+![Recovery Options Dialog](images/pitr-dialog.png){: caption="Recovery Options Dialog" caption-side="bottom"}
 
 If you use Key Protect and have a key, you must use the CLI to recover, and a command is provided for your convenience.
 

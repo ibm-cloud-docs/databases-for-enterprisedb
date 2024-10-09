@@ -23,7 +23,7 @@ In order to connect to {{site.data.keyword.databases-for-enterprisedb_full}}, yo
 
 Connection Strings for your deployment are displayed on the **Dashboard Overview**, in the **Endpoints** pane. 
 
-![Endpoints pane](images/getting-started-endpoints-panel.png){: caption="Figure 1. Endpoints pane" caption-side="bottom"}
+![Endpoints pane](images/getting-started-endpoints-panel.png){: caption="Endpoints pane" caption-side="bottom"}
 
 A {{site.data.keyword.databases-for-enterprisedb}} deployment is provisioned with an admin user, and after [setting the admin password](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management&interface=ui#user-management-set-admin-password-ui), you can use its connection strings to connect to your deployment.
 {: .tip}
@@ -134,7 +134,7 @@ The "postgres" section contains information that is suited to applications that 
 | `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | Base64 | A base64 encoded version of the certificate. |
-{: caption="Table 1. postgresql/URI connection information" caption-side="top"}
+{: caption="postgresql/URI connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.
 
@@ -152,6 +152,6 @@ The "CLI" section contains information that is suited for connecting with `psql`
 | `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
 | `Certificate` | Name | The allocated name for the self-signed certificate. |
 | `Type` | | The type of package that uses this connection information; in this case `cli`.  |
-{: caption="Table 2. psql/cli connection information" caption-side="top"}
+{: caption="psql/cli connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.

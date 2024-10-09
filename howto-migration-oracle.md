@@ -39,7 +39,7 @@ Details how to set up and run a migration from a local Oracle database to an {{s
 - EMP is provisioned along with your {{site.data.keyword.databases-for-enterprisedb}} deployment. 
 - EMP access is provided in the EMP tab in the `Endpoints` section of the overview tab in the {{site.data.keyword.databases-for-enterprisedb}} dashboard. 
 
-    ![EMP Endpoint](images/emp-endpoint.png){: caption="Figure 1. EMP Endpoint" caption-side="bottom"}
+    ![EMP Endpoint](images/emp-endpoint.png){: caption="EMP Endpoint" caption-side="bottom"}
 
    1. Copy the Endpoint URL into a new browser window to start the EMP. 
    2. In the resulting window, log in using your {{site.data.keyword.cloud_notm}} account credentials.
@@ -63,7 +63,7 @@ Details how to set up and run a migration from a local Oracle database to an {{s
 2. Create a project by clicking `New`. 
 3. Enter a project name, and load the DDL Extractor-generated file for assessment. EMP accepts only single string project names without spaces.
     
-    ![migration-portal-setup](images/emp-new-project.png){: caption="Figure 2. migration-portal-setup" caption-side="bottom"}
+    ![migration-portal-setup](images/emp-new-project.png){: caption="migration-portal-setup" caption-side="bottom"}
 
 4. Click `Create & Assess`.
 5. Fix any issue report by the EMP and make sure you are getting 100% coverage successfully
@@ -75,32 +75,32 @@ Export and deploy the converted schema from migration portal to your provisioned
 
 1. Select the `Migrate to...` button to begin the migration process.
 
-    ![Begin migration](images/emp-migrate-to.png){: caption="Figure 3. Begin migration" caption-side="bottom"}
+    ![Begin migration](images/emp-migrate-to.png){: caption="Begin migration" caption-side="bottom"}
 
 1. Choose the `EDB Postgres Advanced Server on Cloud` option to migrate your schemas on EDB Postgres Advanced Server on Cloud, and click "next". 
 
-    ![Select Cloud destination](images/emp-select-cloud.png){: caption="Figure 4. Select Cloud destination" caption-side="bottom"}
+    ![Select Cloud destination](images/emp-select-cloud.png){: caption="Select Cloud destination" caption-side="bottom"}
 
 1. Select the schemas and click "next".
 
-    ![Select schemas](images/emp-select-schemas.png){: caption="Figure 5. Select schemas" caption-side="bottom"}
+    ![Select schemas](images/emp-select-schemas.png){: caption="Select schemas" caption-side="bottom"}
 
 1. Select the schemas and click "next".
 
-    ![Select platform](images/emp-select-platform.png){: caption="Figure 6. Select platform" caption-side="bottom"}
+    ![Select platform](images/emp-select-platform.png){: caption="Select platform" caption-side="bottom"}
 
 1. Click next to use an existing cluster (or click `Go to IBM Cloud` to create a new cluster).
 
-    ![Create or use existing cluster](images/emp-cluster.png){: caption="Figure 6. Create or use existing cluster" caption-side="bottom"}
+    ![Create or use existing cluster](images/emp-cluster.png){: caption="Create or use existing cluster" caption-side="bottom"}
 
 1. Connect to an existing cluster. Enter the target deployment's details (hostname and port are available on the deployment's endpoints PostgresSQL tab) and click `Test Connection` to validate the connection. To deploy, click "next" after a successful connection is confirmed. 
 
-   ![Connection details for an existing cluster](images/emp-connect-existing.png){: caption="Figure 7. Connection details for an existing cluster" caption-side="bottom"}
+   ![Connection details for an existing cluster](images/emp-connect-existing.png){: caption="Connection details for an existing cluster" caption-side="bottom"}
    You can use the admin user (after changing its password), or you can create a new db user on the database and use those credentials.{: .tip}
 
 1. Upon successful migration completion, download and review the summary log file, and click "done" to exit from the process. 
 
-    ![Connection details for an existing cluster](images/emp-done.png){: caption="Figure 7. Connection details for an existing cluster" caption-side="bottom"}
+    ![Connection details for an existing cluster](images/emp-done.png){: caption="Connection details for an existing cluster" caption-side="bottom"}
 
 
 ### Verify schema migration to EnterpriseDB formation
