@@ -47,11 +47,11 @@ A read-only replica is set up to replicate all of your data from the leader depl
 
 On the _Read Replicas_ tab of a {{site.data.keyword.databases-for-enterpisedb}} deployment before any read-only replicas are provisioned, the center pane notes that no read replicas exist and provides a **Create** button.
 
-![Replication pane before a replica](images/replica-before.png){: caption="Figure 1. Replication pane before a replica" caption-side="bottom"}
+![Replication pane before a replica](images/replica-before.png){: caption="Replication pane before a replica" caption-side="bottom"}
 
 If a deployment is a leader and has a read-only replica that is already attached to it, then the _Replication_ pane has a list of replica deployments and a link to each one. Click the cog to the right of the read-only replica's deployment name to manage it.
 
-![List of replicas that are attached to a leader](images/replica-after.png){: caption="Figure 2. List of replicas that are attached to a leader" caption-side="bottom"}
+![List of replicas that are attached to a leader](images/replica-after.png){: caption="List of replicas that are attached to a leader" caption-side="bottom"}
 
 ## Provisioning a Read-only Replica in the UI
 {: #read-only-replicas-provision}
@@ -116,7 +116,7 @@ You must specify both the RAM and disk amounts, keeping in mind the minimum size
 
 On the _Read Replicas_ tab of a read-only replica, the _Replication_ pane contains its name and region, and the name and region of its leader. It also has buttons to resync the read-only replica and to promote it.
 
-![Replication pane of a read-only replica](images/replica-roreplica.png){: caption="Figure 3. Replication pane of a read-only replica" caption-side="bottom"}
+![Replication pane of a read-only replica](images/replica-roreplica.png){: caption="Replication pane of a read-only replica" caption-side="bottom"}
 
 ### Checking Replication Status
 {: #check-repl-status}

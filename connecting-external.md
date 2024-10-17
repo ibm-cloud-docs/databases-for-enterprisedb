@@ -35,7 +35,7 @@ All the information a driver needs to make a connection to your deployment is in
 | `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path |
 | `Certificate` | `Name` | The allocated name for the self-signed certificate for database deployment |
 | `Certificate` | Base64 | A base64 encoded version of the certificate. |
-{: caption="Table 1. postgres/URI connection information" caption-side="top"}
+{: caption="postgres/URI connection information" caption-side="top"}
 
 * `0...` Indicates that there might be one or more of these entries in an array.
 
@@ -205,4 +205,4 @@ PostgreSQL has a vast array of language drivers that can also be used to connect
 | Go|`pq`|[Link](https://godoc.org/github.com/lib/pq){: .external} |
 | Node|`node-postgres`|[Link](https://node-postgres.com/){: .external} |
 | JDBC| EDB Postgres JDBC Connector|[JDBC Guide](https://www.enterprisedb.com/edb-docs/d/jdbc-connector/user-guides/jdbc-guide/42.2.8.1/ using_the_advanced_server_jdbc_connector_with_java_applications.html){: .external} |
-{: caption="Table 2. PostgreSQL drivers" caption-side="top"}
+{: caption="PostgreSQL drivers" caption-side="top"}

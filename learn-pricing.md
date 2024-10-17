@@ -51,4 +51,4 @@ With dedicated cores, your resource group is given a single-tenant host with a g
 | Disk | 20 GB per member | 4 TB per member | 1024 MB per member |
 | RAM | 1 GB per member | 112 GB per member | 128 MB per member |
 | CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member |
-{: caption="Table 1. Per Member Scaling Limits" caption-side="top"}
+{: caption="Per Member Scaling Limits" caption-side="top"}

@@ -75,7 +75,7 @@ If your deployment reaches the connection limit or you are having trouble connec
 
 In the UI, on the _Settings_ tab, there is a button to `End Connections` to your deployment. Use caution, as it disrupts anything that is connected to your deployment.
 
-![End Connections UI](images/settings-end-connections.png){: caption="Figure 1. End Connections UI" caption-side="bottom"}
+![End Connections UI](images/settings-end-connections.png){: caption="End Connections UI" caption-side="bottom"}
 
 The CLI command to end connections to the deployment is 
 ```sh
