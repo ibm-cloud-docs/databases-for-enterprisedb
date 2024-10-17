@@ -252,12 +252,12 @@ Follow these steps to provision using the [Resource Controller API](https://clou
        "resource_plan_id": "databases-for-enterprisedb-standard"
        "parameters": {
        "members_host_flavor": <"members_host_flavor_value">,
-       "service-endpoints": "private"
+       "service_endpoints": "private"
      }'
    ```
    {: .pre}
 
-   The parameters `name`, `target`, `resource_group`,`resource_plan_id`, and `service-endpoints` are all required.
+   The parameters `name`, `target`, `resource_group`,`resource_plan_id`, and `service_endpoints` are all required.
    {: required}
    
    With EnterpriseDB, the Shared Compute host flavor is not available. Provision a {{site.data.keyword.databases-for-enterprisedb}} Isolated instance with the same `"members_host_flavor"` parameter, setting it to the desired Isolated size. Available hosting sizes and their `members_host_flavor value` parameters are listed in Table 1 below. For example, `{"members_host_flavor": "b3c.4x16.encrypted"}`. Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both an Isolated size selection and separate CPU and RAM allocation selections.
