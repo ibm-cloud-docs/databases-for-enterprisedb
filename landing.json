@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "IBM Cloud® Databases for EnterpriseDB",
-  "introduction": "EDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
+  "introduction": "EnterpriseDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
   "product_page": "https://www.ibm.com/products/databases-for-enterprisedb",
   "console_page": "/databases/databases-for-enterprisedb/create",
    "section_topics": {
