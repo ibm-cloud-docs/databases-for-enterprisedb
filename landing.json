@@ -56,7 +56,7 @@
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
     },
   "section_updates": {
-    "view_more": "/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodb-relnotes",
+    "view_more": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-enterprisedb-relnotes",
     "tiles": [
       {
         "date": "16 September 2024",
