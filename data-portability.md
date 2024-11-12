@@ -14,7 +14,7 @@ subcollection: databases-for-enterprisedb
 
 
 
-# Understanding data portability for {{site.data.keyword._service-name_notm}}
+# Understanding data portability for {{site.data.keyword.databases-for-enterprisedb}}
 {: #data-portability}
 
 [Data Portability](#x2113280){: term} involves a set of tools, and procedures that enable customers to export the digital artifacts that would be needed to implement similar workload and data processing on different service providers or on-prem software. It includes procedures for copying and storing the service customer's content, including the related configuration used by the service to store and process the data, on customer's own location.
@@ -31,17 +31,17 @@ The customer then is responsible for the use of the exported data and configurat
 - Planning and execution for the porting of the required application code on the alternate infrastructure, including the adaptation of customer's application code, and deployment automation.
 - Conversion of the exported data and configuration to format required by the alternate infrastructure and adapted applications,
 
-For more information about your responsibilities when using {{site.data.keyword.databases-for-enterpriseDB}}, see [Shared responsibilities for {{site.data.keyword._service-name_notm}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
+For more information about your responsibilities when using {{site.data.keyword.databases-for-enterprisedb}}, see [Shared responsibilities for {{site.data.keyword.databases-for-enterprisedb}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
 
 ## Data export procedures
 {: #data-portability-procedures}
 
-{{site.data.keyword.databases-for-enterpriseDB}} provides mechanisms to export your content that has been uploaded, stored, and processed using the service.
+{{site.data.keyword.databases-for-enterprisedb}} provides mechanisms to export your content that has been uploaded, stored, and processed using the service.
 
-## Migrating data from {{site.data.keyword.databases-for-enterpriseDB}}
+## Migrating data from {{site.data.keyword.databases-for-enterprisedb}}
 {: #data-portability-migrating-data-enterprisedb}
 
-You can use the following methods to export data from {{site.data.keyword.databases-for-enterpriseDB}}.
+You can use the following methods to export data from {{site.data.keyword.databases-for-enterprisedb}}.
 
 Connect to your {{site.data.keyword.cloud}} deployment: 
 
@@ -59,7 +59,7 @@ ibmcloud cdb cxn <<CRN>> -s
 
 Run `pg_dump` on your database to create an SQL file that can be used to re-create the database. At a minimum, `pg_dump` takes a hostname (`-h` flag), port number (`-p` flag), database name (`-d` flag), username (`-U` flag), and a file (or directory name) to write the dump to (`-f` flag). 
 
-For example, the following command dumps the {{site.data.keyword.databases-for-enterpriseDB}} "compose" database that is hosted on `sl-eu-lon-2-portal.4.dblayer.com`, `port 17980`, using the `admin user` and saves the results in `dump.sql`.
+For example, the following command dumps the {{site.data.keyword.databases-for-enterprisedb}} "compose" database that is hosted on `sl-eu-lon-2-portal.4.dblayer.com`, `port 17980`, using the `admin user` and saves the results in `dump.sql`.
 
 ```sh
 pg_dump -h sl-eu-lon-2-portal.4.dblayer.com -p 17980 -d compose -U admin -f dump.sql
