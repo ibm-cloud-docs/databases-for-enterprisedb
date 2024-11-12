@@ -103,7 +103,7 @@ toc:
       id: reference
       topics:
       - link:
-          label: Versioning Policy
+          label: Versioning policy
           href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-versioning-policy
       - link:
           label: Cloud Databases CLI plug-in
@@ -112,7 +112,7 @@ toc:
           label: Cloud Databases API
           href: https://cloud.ibm.com/apidocs/cloud-databases-api
       - topicgroup:
-          label: Connecting over Private Networks
+          label: Connecting over private networks
           topics:
           - include: ../cloud-databases/howto-vpes.md
           - include: ../cloud-databases/reference-service-endpoints.md
@@ -122,6 +122,8 @@ toc:
       - link:
           label: Responsibilities for Cloud Databases
           href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases
+      - topic: data-portability.md
+        navtitle: Data portability
   - navgroup:
       id: help
       topics:
