@@ -86,13 +86,12 @@ toc:
           - include: ../cloud-databases/truck-tracker-tutorial.md
           - include: ../cloud-databases/disk-util-alerts-tutorial.md
       - topicgroup:
-          label: Logging and monitoring
+          label: Observability
           topics:
-          - include: ../cloud-databases/reference-activity-tracker.md
-          - include: ../cloud-databases/reference-logging.md
-          - link:
-              label: Monitoring integration
-              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring
+          - include: ../cloud-databases/cdb-logging-monitoring.md
+          - include: ../cloud-databases/logging.md
+          - include: ../cloud-databases/reference-monitoring.md 
+          - include: ../cloud-databases/at-events.md
       - topicgroup:
           label: Enhancing security
           topics:

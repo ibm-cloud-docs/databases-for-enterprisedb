@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-30"
+lastupdated: 2024-11-15
 
 keywords: postgresql, databases, scaling, memory, disk IOPS, CPU, edb, enterprisedb
 
@@ -93,7 +93,7 @@ Old style dedicated core instances are deprecated, and will be removed in May 20
 
 - Similarly, drastically increasing RAM or disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
-- Scaling operations are logged in [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker-integration).
+- Scaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-at_events).
 
 - If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, consider enabling [autoscaling](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling) on your deployment.
 
@@ -237,6 +237,7 @@ To view the current and scalable resources on a deployment, use the [/deployment
 ```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups'
 ```
+
 ## Scaling with the API
 {: #resources-scaling-api}
 {: api}
@@ -302,7 +303,8 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 
 ### The `host flavor` parameter
 {: #host-flavor-parameter-api}
-{: api
+{: api}
+
 The `host_flavor` parameter defines your compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration.
 
 | **Host flavor** | **host_flavor value** |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-30"
+lastupdated: 2024-11-15
 
 keywords: deployment, crn, task, gui, api endpoint, edb, enterprisedb
 
@@ -33,7 +33,7 @@ The ID is a [CRN (Cloud Resource Name)](/docs/account?topic=account-crn) which u
 ### Recent Tasks
 {: #dashboard-overview-recent-tasks}
 
-Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.at_full}} integration](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker-integration).
+Every time that you make administrative changes to your service (such as scaling, or taking a manual backup), a task starts up. The _Recent Tasks_ panel shows the task name and progress bar for any running tasks, and a list of the most recent completed tasks. Depending on how busy your deployment is, successful tasks can be shown for 24-48 hours. Unsuccessful tasks can show for 7-8 days. Tasks can also be retrieved from the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-running-tasks-on-a-deployment) and [CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-tasks-list). A historical record of tasks from any time period is available through the [{{site.data.keyword.atracker_full}} integration](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-at_events).
 
 ### Endpoints
 {: #dashboard-overview-endpoints}
@@ -68,9 +68,9 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 {: #dashboard-overview-observability}
 
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment.
-- [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker)
-- [{{site.data.keyword.la_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-logging)
-- [{{site.data.keyword.monitoringfull}}](/docs/cloud-databases?topic=cloud-databases-monitoring)
+- [{{site.data.keyword.atracker_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-at_events)
+- [{{site.data.keyword.logs_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring)
 
 ## Settings
 {: #dashboard-overview-settings}
