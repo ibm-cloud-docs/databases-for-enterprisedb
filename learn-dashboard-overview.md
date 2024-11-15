@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-30"
+lastupdated: 2024-11-15
 
 keywords: deployment, crn, task, gui, api endpoint, edb, enterprisedb
 
@@ -68,9 +68,9 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 {: #dashboard-overview-observability}
 
 The _Observability_ tab provides access to the IBM Cloud monitoring, logging, and event tracking integrations available for your deployment.
-- [{{site.data.keyword.at_full}}](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker)
-- [{{site.data.keyword.la_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-logging)
-- [{{site.data.keyword.monitoringfull}}](/docs/cloud-databases?topic=cloud-databases-monitoring)
+- [{{site.data.keyword.atracker_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-at_events)
+- [{{site.data.keyword.logs_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-logging)
+- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring)
 
 ## Settings
 {: #dashboard-overview-settings}
