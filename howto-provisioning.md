@@ -251,8 +251,9 @@ Follow these steps to provision using the [Resource Controller API](https://clou
        "resource_group": "RESOURCE_GROUP_ID",
        "resource_plan_id": "databases-for-enterprisedb-standard"
        "parameters": {
-       "members_host_flavor": <"members_host_flavor_value">,
-       "service_endpoints": "private"
+           "members_host_flavor": <"members_host_flavor_value">,
+           "service_endpoints": "private",
+           "version": "<version>"
      }'
    ```
    {: .pre}
