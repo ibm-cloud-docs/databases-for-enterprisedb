@@ -15,7 +15,7 @@ subcollection: databases-for-enterprisedb
 # Scaling disk, RAM, and CPU
 {: #resources-scaling}
 
-For new [hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models), scaling is available through the CLI, API, and Terraform.
+The Shared Compute hosting model supports more fine-grained resource allocations that are not shown in the UI to maintain clarity. For more information, see [Hosting models](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-hosting-models&interface=cli).
 {: ui}
 
 To scale an [Isolated Compute](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=cli#hosting-models-iso-compute-cli) host flavor instance, set the relevant `hostflavor` parameter to the Isolated Compute size you're targeting, such as "b3c.4x16.encrypted". As this includes CPU and RAM allocation selections, do not separately select CPU and RAM.
@@ -91,18 +91,42 @@ Old style dedicated core instances are deprecated, and will be removed in May 20
 
 - If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, consider enabling [autoscaling](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling) on your deployment.
 
+## Review current resources and hosting model
+{: #review-resources-ui}
+{: ui}
+
+In the **Resources** tab, you will find both **Hosting model** and **Resource allocations** tiles. These tiles will reflect your current resources and hosting model. Select *Configure* to adjust the settings in each tile.
+
 ## Scaling in the UI
 {: #ui-scaling}
 {: ui}
 
-A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
+In the **Resources** tab of the UI on the **Resource allocations** tile, select *Configure* . This opens up a panel where you can adjust your resources. 
 
-![The Scale Resources Pane in _Resources_](images/scaling-update.png){: caption="The Scale Resources Pane in Resources" caption-side="bottom"}
+If your database is on the Isolated Compute hosting model, you will then see a "Host sizes" table, where you can select the vCPU and RAM configuration per member for your database. 
 
-Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
+If you are on the Shared Compute hosting model, you will be able to see the Small configuration, providing 0.5 vCPU and 4 GB RAM per member; the Small Custom option; or Custom configuration. Small Custom indicates that your database was scaled with the CLI, API, or Terraform, which provides more fine-grained resource scaling, along with an option for automatically allocated vCPU pro-rated against RAM value. On the UI, you can scale to Small and Custom, but will not be able to scale to the fine-grained values provided by the CLI, API, or Terraform. With Custom, drag the slider or adjust the value in the input box to select your database's per member vCPU and RAM values. 
 
-The UI currently uses a coarser-grained resolution for scaling than the CLI or API commands. Use the API or CLI to scale if the stops on the slider do not meet your size requirements.
-{: .tip}
+The "Disk (GB/member)" slider is your disk selection per member. Drag the slider or adjust the number in the input box to change the number of GB disk. Note that Disk is tied to IOPS at 1 GB = 10 IOPS. 
+
+Members is the number of members of your database. For EnterpriseDB, members are set to 3. 
+
+Review your total estimated cost in our calculator on the bottom. Note that if you have grandfathered costs, also known as legacy pricing structure, scaling your database instance will remove some or all of your legacy pricing. For more information on grandfathering and when it ends, [please see the docs here]([url](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-hosting-model-transition&interface=ui#hosting-model-transition-timeline-may25)). 
+
+After you are done, click *Apply changes* to trigger the scaling operation. 
+
+
+## Switch to and between hosting models in the UI
+{: #resources-switching-ui}
+{: ui}
+
+In the **Resources** tab of the UI, select *Configure* on the **Hosting model** tile. This opens up a panel where you can adjust your hosting model selection. 
+
+The first option available is **Select your hosting model**. Here, you can switch to a different hosting model.
+
+Below, you see the options to also adjust the resources of the new hosting model you've selected. Follow the instructions in the previous section, "Scaling in the UI" to adjust your resources. 
+
+Click *Apply changes* to trigger this scale operation. 
 
 ## Review current resources and hosting model 
 {: #review-resources-cli}
@@ -123,11 +147,14 @@ Group   member
 Count   3
 |
 +   Memory
-|   Allocation              3072mb
-|   Allocation per member   1024mb
-|   Minimum                 1024mb
-|   Step Size               1024mb
-|   Adjustable              true
+|   Allocation                      3072mb
+|   Allocation per member           1024mb
+|   Minimum                         1024mb
+|   Step Size                       1024mb
+|   Adjustable                      true
+|   Cpu Enforcement Ratio Ceiling   49152mb
+|   Cpu Enforcement Ratio           8192mb
+
 |
 +   CPU
 |   Allocation              9
@@ -135,6 +162,11 @@ Count   3
 |   Minimum                 9
 |   Step Size               1
 |   Adjustable              true
+|                           
++   HostFlavor    
+|   ID            multitenant
+|   Name          
+|   HostingSize  
 |
 +   Disk
 |   Allocation              61440mb
