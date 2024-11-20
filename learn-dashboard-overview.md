@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: 2024-11-15
+lastupdated: 2024-11-20
 
 keywords: deployment, crn, task, gui, api endpoint, edb, enterprisedb
 

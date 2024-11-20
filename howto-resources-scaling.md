@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: 2024-11-18
+lastupdated: 2024-11-20
 
 keywords: postgresql, databases, scaling, memory, disk IOPS, CPU, edb, enterprisedb
 

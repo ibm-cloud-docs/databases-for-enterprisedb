@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: 2024-11-15
+lastupdated: 2024-11-20
 
 keywords: databases-for-enterprisedb release notes
 

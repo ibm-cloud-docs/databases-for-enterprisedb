@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: 2024-11-15
+lastupdated: 2024-11-20
 
 keywords: postgresql, databases, scaling, autoscaling, memory, disk I/O, edb, enterprisedb
 
