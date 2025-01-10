@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-09-30"
+  years: 2019, 2025
+lastupdated: "2025-01-10"
 
 keywords: admin, superuser, roles, service credentials, postgresql, edb, enterprisedb
 
@@ -14,6 +14,9 @@ subcollection: databases-for-enterprisedb
 
 # Managing Users and Roles
 {: #user-management}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+{: deprecated}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} uses a system of roles to manage database permissions. Roles are used to give a single user or a group of users a set of privileges. Determine roles, groups, and privileges for all roles across your deployment by using the `psql` command `\du`.
 
