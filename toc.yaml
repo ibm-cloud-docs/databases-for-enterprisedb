@@ -18,6 +18,7 @@ toc:
   - navgroup:
       id: learn
       topics:
+      - deprecation.md
       - link:
           label: IBM Cloud Databases
           href: https://cloud.ibm.com/docs/cloud-databases
