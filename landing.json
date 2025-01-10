@@ -6,6 +6,10 @@
   "console_page": "/databases/databases-for-enterprisedb/create",
    "section_topics": {
     "links": [
+            {
+        "title": "Deprecation",
+        "href": "/docs//databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation"
+      },
       {
         "title": "Managing Databases for EnterpriseDB connections",
         "href": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-managing-connections"
@@ -29,10 +33,6 @@
       {
         "title": "Connecting with psql",
         "href": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-connecting-psql"
-      },
-      {
-        "title": "Managing users and roles",
-        "href": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-user-management&interface=ui"
       }
     ]
   },
@@ -58,6 +58,10 @@
   "section_updates": {
     "view_more": "/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-enterprisedb-relnotes",
     "tiles": [
+            {
+        "date": "16 January 2025",
+        "title": "Deprecation"
+      },
       {
         "date": "16 September 2024",
         "title": "Private endpoints as new default"
@@ -69,11 +73,8 @@
       {
         "date": "22 November 2023",
         "title": "Monitoring Integration documentation updated"
-      },
-      {
-        "date": "23 May 2023",
-        "title": "Setting up disk alerts for disk utilization tutorial"
       }
+
     ]
   }
 }
