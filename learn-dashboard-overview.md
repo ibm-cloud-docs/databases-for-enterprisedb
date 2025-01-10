@@ -15,6 +15,9 @@ subcollection: databases-for-enterprisedb
 # The Dashboard Overview
 {: #dashboard-overview}
 
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+{: deprecated}
+
 The _Overview_ page shows you information about your {{site.data.keyword.databases-for-enterprisedb_full}} deployment. The overview includes essential identifying information.
 
 ## Overview
