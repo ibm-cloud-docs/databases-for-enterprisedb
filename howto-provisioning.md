@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-09-30"
+  years: 2024, 2025
+lastupdated: "2025-01-10"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision enterprisedb
 
@@ -14,6 +14,9 @@ subcollection: databases-for-enterprisedb
 
 # Provisioning
 {: #provisioning}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+{: deprecated}
 
 Provision a {{site.data.keyword.databases-for-enterprisedb_full}} deployment through the [catalog](https://cloud.ibm.com/databases/databases-for-enterprisedb/create){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
