@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-12"
+  years: 2024, 2025
+lastupdated: "2025-01-10"
 
 keywords: data export, portability, pg_dump, pg_restore
 
@@ -16,6 +16,9 @@ subcollection: databases-for-enterprisedb
 
 # Understanding data portability for {{site.data.keyword.databases-for-enterprisedb}}
 {: #data-portability}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+{: deprecated}
 
 [Data Portability](#x2113280){: term} involves a set of tools, and procedures that enable customers to export the digital artifacts that would be needed to implement similar workload and data processing on different service providers or on-prem software. It includes procedures for copying and storing the service customer's content, including the related configuration used by the service to store and process the data, on customer's own location.
 {: shortdesc}
