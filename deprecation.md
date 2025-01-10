@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-09-30"
+  years: 2025
+lastupdated: "2025-01-10"
 
 keywords: deprecation, migration
 
@@ -15,8 +15,7 @@ subcollection: databases-for-enterprisedb
 # Deprecation of {{site.data.keyword.databases-for-enterprisedb}}
 {: #deprecation}
 
-{{site.data.keyword.cloud}} is announcing the full deprecation of {{site.data.keyword.databases-for-enterprisedb_full}} on 30 September 2025. After this date, any deployments 
-of {{site.data.keyword.databases-for-enterprisedb}} that are still running will be permanently disabled and deprovisioned.
+{{site.data.keyword.cloud}} is announcing the full deprecation of {{site.data.keyword.databases-for-enterprisedb_full}} on 15 October 2025. After this date, any deployments of {{site.data.keyword.databases-for-enterprisedb}} that are still running will be permanently disabled and deprovisioned.
 
 The following describes the details of the deprecation, possible migration targets for your applications, and additional information.
 {: shortdesc}
@@ -26,9 +25,9 @@ The following describes the details of the deprecation, possible migration targe
 
 | Stage | Date | Description |
 | ---------------- | ----------------- | ------------------------------------------------------------ |
-| Deprecation announcement | 03 October 2024 | Announcement of the {{site.data.keyword.databases-for-enterprisedb}} deprecation. Existing instances will continue to run. |
-| End of marketing | 15 March 2025 | No new instances of {{site.data.keyword.databases-for-enterprisedb}} can be created or purchased. Existing instances will continue to run. |
-| End of support   | 30 September 2025 | Support is no longer available. Running instances of {{site.data.keyword.databases-for-enterprisedb}} are permanently disabled and deprovisioned. |
+| Deprecation announcement | 16 January 2025 | Announcement of the {{site.data.keyword.databases-for-enterprisedb}} deprecation. Existing instances will continue to run. |
+| End of marketing | 16 June 2025 | No new instances of {{site.data.keyword.databases-for-enterprisedb}} can be created or purchased. Existing instances will continue to run. |
+| End of support   | 15 October 2025 | Support is no longer available. Running instances of {{site.data.keyword.databases-for-enterprisedb}} are permanently disabled and deprovisioned. |
 {: caption="Deprecation timeline" caption-side="bottom"}
 
 ## Deprecation details
@@ -66,4 +65,3 @@ Also, refer to our [blog post](https://www.ibm.com/blog/announcement/breaking-bo
 - Migrate your data to the target {{site.data.keyword.cloud_notm}} service and compare the operation of your applications.
 
 - When ready, move application traffic as appropriate.
-
