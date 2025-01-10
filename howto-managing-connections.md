@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-09-30"
+  years: 2019, 2025
+lastupdated: "2025-01-10"
 
 keywords: postgresql, databases, connection limits, terminating connections, connection pooling, edb, enterprisedb
 
@@ -14,6 +14,9 @@ subcollection: databases-for-enterprisedb
 
 # Managing {{site.data.keyword.databases-for-enterprisedb}} Connections
 {: #managing-connections}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+{: deprecated}
 
 Connections to your {{site.data.keyword.databases-for-enterprisedb_full}} deployment use resources, so it is important to consider how many connections you need when tuning your deployment's performance. {{site.data.keyword.databases-for-enterprisedb}} uses a `max_connections` setting to limit the number of connections (and resources that are consumed by connections) to prevent run-away connection behavior from overwhelming your deployment's resources.
 
