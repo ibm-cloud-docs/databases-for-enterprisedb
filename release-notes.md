@@ -20,7 +20,7 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 16 January 2025
+## 17 January 2025
 {: #databases-for-enterprisedb-16jan2025}
 {: release-note}
 
