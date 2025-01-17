@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-09-30"
+  years: 2020, 2025
+lastupdated: "2025-01-10"
 
 keywords: postgresql, databases, monitoring, scaling, autoscaling, resources, connection limits, edb, enterprisedb
 
@@ -14,6 +14,9 @@ subcollection: databases-for-enterprisedb
 
 # Performance
 {: #performance}
+
+{{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+{: deprecated}
 
 {{site.data.keyword.databases-for-enterprisedb_full}} deployments can be both manually [scaled to your usage](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling), or configured to [autoscale](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling) under certain resource conditions. There are a few factors to consider if you are tuning the performance of your deployment.
 

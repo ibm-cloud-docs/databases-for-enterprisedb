@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: 2024-11-20
+  years: 2018, 2025
+lastupdated: 2025-01-17
 
 keywords: databases-for-enterprisedb release notes
 
@@ -19,6 +19,14 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-enterprisedb_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 17 January 2025
+{: #databases-for-enterprisedb-16jan2025}
+{: release-note}
+
+Deprecation
+:  {{site.data.keyword.databases-for-enterprisedb}} is deprecated. As of 16 June 2025 you can't deploy new instances. Existing instances are supported until 15 October 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation).
+
 
 ## 15 November 2024
 {: #databases-for-enterprisedb-15nov2024}
