@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-01-17"
 
 keywords: deprecation, migration
 
@@ -25,7 +25,7 @@ The following describes the details of the deprecation, possible migration targe
 
 | Stage | Date | Description |
 | ---------------- | ----------------- | ------------------------------------------------------------ |
-| Deprecation announcement | 16 January 2025 | Announcement of the {{site.data.keyword.databases-for-enterprisedb}} deprecation. Existing instances will continue to run. |
+| Deprecation announcement | 17 January 2025 | Announcement of the {{site.data.keyword.databases-for-enterprisedb}} deprecation. Existing instances will continue to run. |
 | End of marketing | 16 June 2025 | No new instances of {{site.data.keyword.databases-for-enterprisedb}} can be created or purchased. Existing instances will continue to run. |
 | End of support   | 15 October 2025 | Support is no longer available. Running instances of {{site.data.keyword.databases-for-enterprisedb}} are permanently disabled and deprovisioned. |
 {: caption="Deprecation timeline" caption-side="bottom"}
