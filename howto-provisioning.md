@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-03-11"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision enterprisedb
 
@@ -32,7 +32,7 @@ Provision from the console by specifying the following parameters:
 
 - **Service name:** The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
 - **Resource group:** If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
-- **Location:** The deployment's public cloud region or Satellite location.
+- **Location** - The deployment's public cloud region.
 
 ### Hosting model
 {: #hosting_model}
