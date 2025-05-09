@@ -48,6 +48,19 @@ However, all users {{site.data.keyword.databases-for-enterprisedb}} instances de
 
 - Reminders of the approaching *end of support* date will continue to be sent periodically by email to all users that have {{site.data.keyword.databases-for-etcd}} deployments.
 
+## Next steps for current users
+{: #deprecation-next-steps}
+
+The following is a suggested checklist to plan your migration:
+
+- Understand and plan for the timeline and key milestone dates.
+- Evaluate the {{site.data.keyword.cloud_notm}} database migration options.
+- Pick an {{site.data.keyword.cloud_notm}} service migration database target that best meets your requirements and goals.
+- IBM recommends [ICD PostgreSQL](https://cloud.ibm.com/databases/databases-for-postgresql/create) for customer consideration. 
+Also, refer to our [blog post](https://www.ibm.com/blog/announcement/breaking-boundaries-postgresql-16-is-now-available-on-ibm-cloud/) for detailed information on the latest PostgreSQL version.
+- Migrate your data to the target {{site.data.keyword.cloud_notm}} service and compare the operation of your applications.
+- When ready, move application traffic as appropriate.
+
 ## Migration to {{site.data.keyword.databases-for-postgresql}}
 {: #migration-pg}
 
@@ -122,21 +135,3 @@ pg_restore -h <pg-target-instance>.databases.appdomain.cloud -p 32012 -U admin -
 For advanced options, see the [pg_restore documentation](https://www.postgresql.org/docs/current/app-pgrestore.html).
 
 Submit a [support ticket](https://cloud.ibm.com/login?redirect=%2Funifiedsupport%2Fsupportcenter) if you have any questions.
-
-## Next steps for current users
-{: #deprecation-next-steps}
-
-The following is a suggested checklist to plan your migration:
-
-- Understand and plan for the timeline and key milestone dates.
-
-- Evaluate the {{site.data.keyword.cloud_notm}} database migration options.
-
-- Pick an {{site.data.keyword.cloud_notm}} service migration database target that best meets your requirements and goals.
-
-- IBM recommends [ICD PostgreSQL](https://cloud.ibm.com/databases/databases-for-postgresql/create) for customer consideration. 
-Also, refer to our [blog post](https://www.ibm.com/blog/announcement/breaking-boundaries-postgresql-16-is-now-available-on-ibm-cloud/) for detailed information on the latest PostgreSQL version.
-
-- Migrate your data to the target {{site.data.keyword.cloud_notm}} service and compare the operation of your applications.
-
-- When ready, move application traffic as appropriate.
