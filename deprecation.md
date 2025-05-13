@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-09"
+lastupdated: "2025-05-13"
 
 keywords: deprecation, migration
 
@@ -76,7 +76,7 @@ Migrating to {{site.data.keyword.databases-for-postgresql}} using a logical back
 ### `pg_dump`
 {: #migration-pg_dump}
 
-On your source {{site.data.keyword.databases-for-enterprisedb} database, run `pg_dump` to create a plain SQL file that can be used to recreate the schema and data.
+On your source {{site.data.keyword.databases-for-enterprisedb}} database, run `pg_dump` to create a plain SQL file that can be used to recreate the schema and data.
 
 At a minimum, `pg_dump` takes:
 
@@ -104,7 +104,7 @@ The `pg_dump` command has many options, and it is recommended that you refer to 
 ### Restoring `pg_dump`'s output
 {: #migration-restoring-pg_dump}
 
-The resulting output of `pg_dump` (i.e., edb_dump.sql) can then be uploaded into a PostgreSQL deployment.
+The resulting output of `pg_dump` (for example, edb_dump.sql) can then be uploaded into a PostgreSQL deployment.
 Since it is plain SQL, it can be streamed directly to the database via psql.
 
 Execute dump with psql, as in the following example:
